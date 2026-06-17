@@ -1,0 +1,154 @@
+<?php helper('settings'); $settings = get_settings(); $validation = \Config\Services::validation(); ?>
+<?= $this->extend('frontend/layout') ?>
+
+<?= $this->section('content') ?>
+
+<!-- Page Title -->
+<section class="page-header text-center">
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>We have three accessible centers across Chennai, and offer online video sessions worldwide.</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="<?= base_url() ?>">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+
+<!-- Locations Section -->
+<section class="section-padding bg-white" id="contact">
+    <div class="container">
+        <!-- Location Cards -->
+        <div class="row g-4 mb-5">
+            <?php if (!empty($branches)): ?>
+                <?php foreach ($branches as $branch): ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="contact-card bg-body-secondary">
+                            <div class="location-icon-box">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3"><?= esc($branch['name']) ?></h5>
+                            <p class="text-muted small mb-4"><?= esc($branch['address']) ?></p>
+                            <div class="mb-2 small">
+                                <i class="fas fa-phone me-2 text-primary-color"></i>
+                                <a href="tel:<?= preg_replace('/\s+/', '', $branch['phone']) ?>" class="text-decoration-none text-reset"><?= esc($branch['phone']) ?></a>
+                            </div>
+                            <div class="mb-3 small">
+                                <i class="fas fa-envelope me-2 text-primary-color"></i>
+                                <a href="mailto:<?= esc($branch['email']) ?>" class="text-decoration-none text-reset"><?= esc($branch['email']) ?></a>
+                            </div>
+                            <?php if (!empty($branch['map_url'])): ?>
+                                <a href="<?= esc($branch['map_url']) ?>" target="_blank" class="text-primary-color fw-bold small text-decoration-none">GET DIRECTIONS <i class="fas fa-external-link-alt ms-1"></i></a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="col-12 text-center text-muted">No branch locations available at the moment.</div>
+            <?php endif; ?>
+        </div>
+
+        <!-- Form and Sidebar -->
+        <div class="row g-5">
+            <!-- Enquiry Form -->
+            <div class="col-lg-7">
+                <div class="card p-4 p-md-5 border-0 shadow-sm rounded-4" style="background-color: #f8f9fa;">
+                    <h3 class="fw-bold text-primary-color mb-2">Send an Enquiry</h3>
+                    <p class="text-muted small mb-4">Fill out the form below and our counseling support team will respond to you within 24 hours.</p>
+                    
+                    <form action="<?= base_url('contact/submit') ?>" method="POST">
+                        <?= csrf_field() ?>
+                        
+                        <div class="mb-3">
+                            <label for="name" class="form-label fw-bold small text-dark">Full Name <span class="text-danger">*</span></label>
+                            <input type="text" name="name" id="name" class="form-control py-2 <?= $validation->hasError('name') ? 'is-invalid' : '' ?>" placeholder="e.g. John Doe" value="<?= old('name') ?>" required>
+                            <?php if ($validation->hasError('name')): ?>
+                                <div class="invalid-feedback small"><?= $validation->getError('name') ?></div>
+                            <?php endif; ?>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label fw-bold small text-dark">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" name="email" id="email" class="form-control py-2 <?= $validation->hasError('email') ? 'is-invalid' : '' ?>" placeholder="e.g. john@example.com" value="<?= old('email') ?>" required>
+                                <?php if ($validation->hasError('email')): ?>
+                                    <div class="invalid-feedback small"><?= $validation->getError('email') ?></div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label fw-bold small text-dark">Phone Number <span class="text-danger">*</span></label>
+                                <input type="tel" name="phone" id="phone" class="form-control py-2 <?= $validation->hasError('phone') ? 'is-invalid' : '' ?>" placeholder="e.g. +91 98765 43210" value="<?= old('phone') ?>" required>
+                                <?php if ($validation->hasError('phone')): ?>
+                                    <div class="invalid-feedback small"><?= $validation->getError('phone') ?></div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="subject" class="form-label fw-bold small text-dark">Subject <span class="text-danger">*</span></label>
+                            <select name="subject" id="subject" class="form-select py-2 <?= $validation->hasError('subject') ? 'is-invalid' : '' ?>" required>
+                                <option value="" disabled selected>Select an enquiry subject...</option>
+                                <option value="General Enquiry" <?= old('subject') === 'General Enquiry' ? 'selected' : '' ?>>General Enquiry</option>
+                                <option value="Appointment Booking" <?= old('subject') === 'Appointment Booking' ? 'selected' : '' ?>>Appointment Booking</option>
+                                <option value="Career / Opportunities" <?= old('subject') === 'Career / Opportunities' ? 'selected' : '' ?>>Career / Opportunities</option>
+                                <option value="Feedback / Suggestions" <?= old('subject') === 'Feedback / Suggestions' ? 'selected' : '' ?>>Feedback / Suggestions</option>
+                            </select>
+                            <?php if ($validation->hasError('subject')): ?>
+                                <div class="invalid-feedback small"><?= $validation->getError('subject') ?></div>
+                            <?php endif; ?>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="message" class="form-label fw-bold small text-dark">Your Message <span class="text-danger">*</span></label>
+                            <textarea name="message" id="message" class="form-control <?= $validation->hasError('message') ? 'is-invalid' : '' ?>" rows="5" placeholder="Write details about your query here..." required><?= old('message') ?></textarea>
+                            <?php if ($validation->hasError('message')): ?>
+                                <div class="invalid-feedback small"><?= $validation->getError('message') ?></div>
+                            <?php endif; ?>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-3">
+                            <i class="fas fa-paper-plane me-2"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-5">
+                <div class="whatsapp-box h-auto mb-4">
+                    <h3 class="fw-bold mb-3 text-white">Need a Quick Response?</h3>
+                    <p class="mb-4 opacity-75 text-white">WhatsApp is the fastest way to get in touch with our intake team and book your session immediately.</p>
+                    <a href="https://wa.me/<?= esc($settings['whatsapp']) ?>/" target="_blank" class="btn-whatsapp-light">
+                        <i class="fab fa-whatsapp fs-4"></i> Chat on WhatsApp
+                    </a>
+                </div>
+
+                <div class="direct-channels-box">
+                    <h5 class="fw-bold mb-4 text-white">Direct Channels</h5>
+                    <div class="channel-item mb-3">
+                        <div class="channel-icon-box">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="channel-content">
+                            <h6>EMAIL US</h6>
+                            <p><a href="mailto:<?= esc($settings['email']) ?>" class="text-decoration-none text-white"><?= esc($settings['email']) ?></a></p>
+                        </div>
+                    </div>
+                    <div class="channel-item">
+                        <div class="channel-icon-box">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <div class="channel-content">
+                            <h6>CALL US</h6>
+                            <p><a href="tel:<?= preg_replace('/\s+/', '', $settings['phone']) ?>" class="text-decoration-none text-white"><?= esc($settings['phone']) ?></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?= $this->endSection() ?>

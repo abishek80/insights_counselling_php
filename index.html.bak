@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ═══════════════════════════════════════════════
+         PRIMARY SEO META TAGS
+    ═══════════════════════════════════════════════ -->
+    <title>Best Counseling Psychologist in Chennai | Insight Counseling Services</title>
+    <meta name="description" content="Insight Counseling Services (ICS) – Chennai's trusted counseling psychologist. Expert support for anxiety, depression, stress, relationship issues, teen counseling & more. Online & in-person sessions. Call +91 94456 62922.">
+    <meta name="keywords" content="counseling psychologist Chennai, mental health Chennai, anxiety counseling Chennai, depression therapy Chennai, couple counseling Chennai, teen counseling Chennai, online counseling India, Lekha Edwin psychologist, stress management Chennai, relationship counseling, Insight Counseling Services">
+    <meta name="author" content="Insight Counseling Services">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="revisit-after" content="7 days">
+    <meta name="language" content="English">
+    <meta name="rating" content="general">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://insightcounselings.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/favicon.png">
+
+    <!-- ═══════════════════════════════════════════════
+         GEO / LOCAL SEO TAGS
+    ═══════════════════════════════════════════════ -->
+    <meta name="geo.region" content="IN-TN">
+    <meta name="geo.placename" content="Chennai, Tamil Nadu, India">
+    <meta name="geo.position" content="13.0827;80.2707">
+    <meta name="ICBM" content="13.0827, 80.2707">
+
+    <!-- ═══════════════════════════════════════════════
+         OPEN GRAPH (Facebook / LinkedIn / WhatsApp)
+    ═══════════════════════════════════════════════ -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Insight Counseling Services">
+    <meta property="og:title" content="Best Counseling Psychologist in Chennai | Insight Counseling Services">
+    <meta property="og:description" content="Professional mental health support in Chennai. Individual, couple & teen counseling by expert psychologists. Online & in-person. Book your session today.">
+    <meta property="og:url" content="https://insightcounselings.com/">
+    <meta property="og:image" content="https://insightcounselings.com/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Insight Counseling Services – Talk. Resolve. Heal.">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- ═══════════════════════════════════════════════
+         TWITTER CARD
+    ═══════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Best Counseling Psychologist in Chennai | Insight Counseling Services">
+    <meta name="twitter:description" content="Professional mental health support in Chennai. Individual, couple & teen counseling. Online & in-person sessions available.">
+    <meta name="twitter:image" content="https://insightcounselings.com/assets/og-image.png">
+    <meta name="twitter:image:alt" content="Insight Counseling Services Chennai">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11346428021"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-11346428021');
+    </script>
+
+    <!-- Google Ads Conversion: Phone Call Click -->
+    <script>
+    function gtag_report_phone_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11346428021/z7JyCNXBkP4bEPWAs6Iq',
+            'event_callback': callback
+        });
+        return false;
+    }
+    </script>
+
+    <!-- Google Ads Conversion: WhatsApp Click -->
+    <script>
+    function gtag_report_whatsapp_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11346428021/KxQPCMnG__0bEPWAs6Iq',
+            'event_callback': callback
+        });
+        return false;
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg shadow-md bg-white py-3 sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="./assets/logo-dark.png" alt="Insight Counseling Services" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="#about">About</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="#teams">Teams</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3"
+                            href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3"
+                            href="#testimonial">Testimonial</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="#contact">Contact
+                            Us</a></li>
+                </ul>
+                <a href="https://insightcounselings.com/bookings/" target="_blank"
+                    class="btn btn-primary px-4 fw-bold mt-3 mt-lg-0"
+                    style="background-color: #2D2A70; border: none; border-radius: 8px;">Book Your Consultation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title fw-bold">Talk. Resolve. <br class="d-none d-lg-block"> <span>Heal.</span>
+                    </h1>
+                    <p class="hero-subtext">Providing confidential, non-judgmental psychological support for
+                        individuals, teenagers, and couples seeking emotional wellbeing.</p>
+                    <a href="https://insightcounselings.com/bookings/" target="_blank"
+                        class="btn btn-secondary px-4 py-3 fw-bold d-inline-flex align-items-center">
+                        Book Your Consultation <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="hero-img-container shadow-lg">
+                        <img src="./assets/hero.png" alt="Counselor" class="hero-img d-none d-lg-block">
+                        <img src="./assets/about-img.png" alt="Lekha Edwin"
+                            class="img-fluid w-100 rounded-5 shadow-lg d-block d-lg-none">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Founder -->
+    <section class="section-padding" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <div class="position-relative">
+                        <img src="./assets/about-img.png" alt="Lekha Edwin"
+                            class="img-fluid w-100 rounded-5 shadow-lg d-none d-lg-block">
+                    </div>
+                </div>
+                <div class="col-lg-7 ps-lg-5">
+                    <h6 class="text-primary-color fw-bold text-uppercase mb-2 small" style="letter-spacing: 1px;">ABOUT
+                        FOUNDER</h6>
+                    <h2 class="about-founder-title">MRS. LEKHA EDWIN</h2>
+                    <div class="title-underline"></div>
+                    <div class="about-content">
+                        <p class="text-muted mb-3" style="font-size: 1rem;">Mrs. Lekha Edwin is a Counseling
+                            Psychologist in Chennai, providing professional mental health support for clients in India
+                            and abroad. She offers online therapy for international clients and in-person counseling
+                            sessions in Chennai for individuals, teenagers, and couples.</p>
+                        <p class="text-muted mb-4" style="font-size: 1rem;">She helps clients understand their
+                            emotions, thoughts, and behaviors, supporting them in building healthier coping strategies
+                            and emotional balance.</p>
+
+                        <h6 class="fw-bold mb-3 text-dark">She works with:</h6>
+                        <div class="row g-2 mb-4">
+                            <div class="col-md-6">
+                                <ul class="feature-list">
+                                    <li>Stress, Anxiety & Emotional Overwhelm</li>
+                                    <li>Relationship & Couple Counseling</li>
+                                    <li>Teen Emotional & Academic Support</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="feature-list">
+                                    <li>Self-Confidence</li>
+                                    <li>Self-Esteem & Personal Growth</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <p class="text-muted italic"
+                            style="font-size: 1rem; border-left: 4px solid var(--primary-color); padding-left: 20px;">
+                            "Her therapeutic approach is warm, confidential, and non-judgmental, creating a safe and
+                            supportive space where clients feel heard and understood."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner -->
+    <section class="banner-section">
+        <div class="container">
+            <h2 class="fw-bold">Guiding you through life's challenges.</h2>
+            <p>"Our mission is to provide you with the professional support and tools needed to achieve emotional
+                balance and mental well-being."</p>
+        </div>
+    </section>
+
+    <!-- 3 Boxes -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <div class="icon-box">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h4 class="fw-bold">Our Vision</h4>
+                        <p>To impart essential skills to take care of mental health of individuals belonging to all the
+                            age group.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <div class="icon-box">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <h4 class="fw-bold">Our Mission</h4>
+                        <p>Aspiring to serve the Indians all over the world to come forward in taking care of their
+                            mental health.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-card">
+                        <div class="icon-box">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4 class="fw-bold">Our Motto</h4>
+                        <p>Empowering lives through personalized support, healing, and transformational guidance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team -->
+    <section class="section-padding pt-3" id="teams">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-4">Our Team</h2>
+                <div class="mx-auto" style="width: 60px; height: 4px; background: var(--primary-color);"></div>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <!-- Row 1: 4 Members -->
+                <!-- Lekha Edwin -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card bg-body-secondary h-100">
+                        <div class="team-img-wrapper">
+                            <img src="./assets/team/lekha-edwin.jpg" class="team-img" alt="Lekha Edwin">
+                        </div>
+                        <h5>Lekha Edwin</h5>
+                        <div class="team-role">FOUNDER/ PSYCHOLOGIST</div>
+                        <p class="team-desc">M. Sc Counseling Psychology., M.A., B.Ed PG Diploma in Life Coaching and
+                            Counselling</p>
+                        <div class="team-langs">Tamil, English</div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal"
+                                data-team-id="lekha">VIEW
+                                PROFILE</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Praveen -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card bg-body-secondary h-100">
+                        <div class="team-img-wrapper">
+                            <img src="./assets/team/praveen.jpg" class="team-img" alt="Praveen">
+                        </div>
+                        <h5>Praveen</h5>
+                        <div class="team-role">PSYCHOLOGIST</div>
+                        <p class="team-desc">M.Sc Psychology, PhD (Psychology) – Pursuing</p>
+                        <div class="team-langs">Tamil, English</div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal"
+                                data-team-id="praveen">VIEW
+                                PROFILE</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bala Krishna M -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card bg-body-secondary h-100">
+                        <div class="team-img-wrapper">
+                            <img src="./assets/team/placeholder.png" class="team-img" alt="Bala Krishna M">
+                        </div>
+                        <h5>Bala Krishna M</h5>
+                        <div class="team-role">PSYCHOLOGIST (ONLINE COUNSELOR)</div>
+                        <p class="team-desc">M. Sc Psychology & PG Diploma in Life Coaching & Counseling</p>
+                        <div class="team-langs">English, Hindi, Telugu, Tamil</div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal"
+                                data-team-id="bala">VIEW
+                                PROFILE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: 3 Members -->
+                <!-- Banupriya G Subash -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card bg-body-secondary h-100">
+                        <div class="team-img-wrapper">
+                            <img src="./assets/team/banupriya.jpg" class="team-img" alt="Banupriya G Subash">
+                        </div>
+                        <h5>Banupriya G Subash</h5>
+                        <div class="team-role">PSYCHOLOGIST (ONLINE COUNSELOR)</div>
+                        <p class="team-desc">M.Sc HRD Psychology., PG Dip Counseling & Psychotherapy., PGD(Clinical
+                            Hypnotherapy)</p>
+                        <div class="team-langs">English, Tamil</div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal"
+                                data-team-id="banupriya">VIEW
+                                PROFILE</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gayathri Parthiban -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card bg-body-secondary h-100">
+                        <div class="team-img-wrapper">
+                            <img src="./assets/team/gayathri.jpg" class="team-img" alt="Gayathri Parthiban">
+                        </div>
+                        <h5>Gayathri Parthiban</h5>
+                        <div class="team-role">COUNSELING PSYCHOLOGIST (ONLINE COUNSELOR)</div>
+                        <p class="team-desc">M.Sc. Counselling Psychology & PG Diploma in Life Coaching and Counselling
+                        </p>
+                        <div class="team-langs">English, Tamil, Malayalam</div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal"
+                                data-team-id="gayathri">VIEW PROFILE</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kavya C -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card bg-body-secondary h-100">
+                        <div class="team-img-wrapper">
+                            <img src="./assets/team/kavya.jpg" class="team-img" alt="Kavya C">
+                        </div>
+                        <h5>Kavya C</h5>
+                        <div class="team-role">PSYCHOLOGIST (ONLINE COUNSELOR)</div>
+                        <p class="team-desc">M.Sc Psychology., Certified CBT Practitioner., Certified Career Counselling
+                        </p>
+                        <div class="team-langs">English, Tamil, Telugu, Kannada</div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal"
+                                data-team-id="kavya">VIEW PROFILE</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Krishna Moorthy -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-card bg-body-secondary h-100">
+                        <div class="team-img-wrapper">
+                            <img src="./assets/team/placeholder.png" class="team-img" alt="Krishna Moorthy">
+                        </div>
+                        <h5>Krishna Moorthy</h5>
+                        <div class="team-role">CLINICAL PSYCHOLOGIST</div>
+                        <p class="team-desc">B.Sc. Psychology., MSc Psychology., & M.Phil in Clinical Psychology</p>
+                        <div class="team-langs">English, Tamil, Telugu, Kannada, Malayalam</div>
+                        <div class="d-flex gap-2 justify-content-center mt-3">
+                            <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal"
+                                data-team-id="krishna">VIEW
+                                PROFILE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section class="section-padding bg-body-secondary" id="services">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-4">Our Services</h2>
+                <div class="mx-auto" style="width: 60px; height: 4px; background: var(--primary-color);"></div>
+            </div>
+            <div class="row gx-4 gy-5">
+                <!-- Service 1 -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card h-100">
+                        <img src="./assets/services/depression.png" class="card-img-top" alt="Depression & Anxiety">
+                        <h5>Depression & Anxiety</h5>
+                        <p>Managing persistent sadness, worry, and fear that interfere with daily life.</p>
+                        <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-read-more"
+                            data-bs-toggle="modal" data-bs-target="#serviceModal" data-service-id="depression">READ
+                            MORE</a>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card h-100">
+                        <img src="./assets/services/stress.png" class="card-img-top" alt="Stress Management">
+                        <h5>Stress Management</h5>
+                        <p>Strategies for handling daily pressures and significant life stressors effectively.</p>
+                        <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-read-more"
+                            data-bs-toggle="modal" data-bs-target="#serviceModal" data-service-id="stress">READ MORE</a>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card h-100">
+                        <img src="./assets/services/anger.png" class="card-img-top" alt="Anger Management">
+                        <h5>Anger Management</h5>
+                        <p>Understanding the roots of anger and learning techniques for healthy expression.</p>
+                        <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-read-more"
+                            data-bs-toggle="modal" data-bs-target="#serviceModal" data-service-id="anger">READ MORE</a>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card h-100">
+                        <img src="./assets/services/grief.png" class="card-img-top" alt="Grief Counselling">
+                        <h5>Grief Counselling</h5>
+                        <p>Support for those experiencing loss and navigating the complex stages of grief.</p>
+                        <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-read-more"
+                            data-bs-toggle="modal" data-bs-target="#serviceModal" data-service-id="grief">READ MORE</a>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card h-100">
+                        <img src="./assets/services/adolescent.png" class="card-img-top" alt="Adolescent Counselling">
+                        <h5>Adolescent Counselling</h5>
+                        <p>Support for teenagers dealing with academic, social, and emotional challenges.</p>
+                        <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-read-more"
+                            data-bs-toggle="modal" data-bs-target="#serviceModal" data-service-id="adolescent">READ
+                            MORE</a>
+                    </div>
+                </div>
+                <!-- Service 7 -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card h-100">
+                        <img src="./assets/services/couple.png" class="card-img-top" alt="Couple Counselling">
+                        <h5>Couple Counselling</h5>
+                        <p>Improving communication and resolving conflicts to strengthen relationship bonds.</p>
+                        <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-read-more"
+                            data-bs-toggle="modal" data-bs-target="#serviceModal" data-service-id="couple">READ MORE</a>
+                    </div>
+                </div>
+                <!-- Service 8 -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card h-100">
+                        <img src="./assets/services/relationship.png" class="card-img-top"
+                            alt="Relationship Counselling">
+                        <h5>Relationship Counselling</h5>
+                        <p>Addressing dynamics in family, friendship, and interpersonal relationships.</p>
+                        <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-read-more"
+                            data-bs-toggle="modal" data-bs-target="#serviceModal" data-service-id="relationship">READ
+                            MORE</a>
+                    </div>
+                </div>
+                <!-- Service 9 -->
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="service-card h-100">
+                        <img src="./assets/services/bullying.png" class="card-img-top" alt="Bullying Issues">
+                        <h5>Bullying Issues</h5>
+                        <p>Building resilience and recovery strategies for victims of school or workplace bullying.</p>
+                        <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-read-more"
+                            data-bs-toggle="modal" data-bs-target="#serviceModal" data-service-id="bullying">READ
+                            MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Need Counseling -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h2 class="fw-bold mb-3 display-5">Need Counseling?</h2>
+                    <p class="mb-0 opacity-75" style="max-width: 500px;">Insight Counseling Services is a private mental
+                        health clinic in Chennai offering compassionate, confidential, and evidence-based psychological
+                        support for all.</p>
+                </div>
+                <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                    <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-cta-request">Request
+                        an appointment</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How we help you -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 mb-5 mb-lg-0">
+                    <img src="./assets/service.png" alt="How we help you" class="img-fluid w-100 rounded-5 shadow-lg">
+                </div>
+                <div class="col-lg-7 ps-lg-5">
+                    <h6 class="text-primary-color fw-bold text-uppercase mb-2 small" style="letter-spacing: 1px;">HOW WE
+                        HELP
+                        YOU</h6>
+                    <h2 class="how-we-help-title">Guiding you through life's challenges.</h2>
+                    <p class="text-muted mb-5">Our team of experts is dedicated to providing you with the best possible
+                        support and guidance to help you navigate life's challenges. We combine clinical expertise with
+                        a deeply human approach.</p>
+
+                    <div class="d-flex align-items-start mb-4">
+                        <div class="help-icon-box bg-body-secondary">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <h5 class="help-feature-title">Expert Guidance</h5>
+                            <p class="help-feature-desc mb-0">Our team of experts is dedicated to providing you with the
+                                best possible support through evidence-based interventions.</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start">
+                        <div class="help-icon-box bg-body-secondary">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <h5 class="help-feature-title">Holistic Healing</h5>
+                            <p class="help-feature-desc mb-0">We believe in a holistic approach to healing that
+                                addresses the mind, body, and spirit for long-lasting change.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section-padding bg-body-secondary" id="testimonial">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-4">Our Clients Loves Us</h2>
+                <div class="mx-auto" style="width: 60px; height: 4px; background: var(--primary-color);"></div>
+            </div>
+            <div class="swiper testimonialSwiper pb-5">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card shadow-sm h-100">
+                            <div class="text-warning mb-4">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-muted mb-4 small">"One of the best Chennai therapists. I felt safe,
+                                supported, and understood throughout the sessions. Thank you madam."</p>
+                            <div class="testimonial-separator"></div>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-initial">D</div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">Dinesh Kumar</h6>
+                                    <p class="mb-0 text-muted extra-small">Verified Client • 4 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card shadow-sm h-100">
+                            <div class="text-warning mb-4">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-muted mb-4 small">"Lekha ma'am made me feel completely comfortable during our
+                                sessions. She listens patiently and offers practical tools to cope with stress and
+                                anxiety."</p>
+                            <div class="testimonial-separator"></div>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-initial">A</div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">Amir Appash</h6>
+                                    <p class="mb-0 text-muted extra-small">Verified Client • 7 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card shadow-sm h-100">
+                            <div class="text-warning mb-4">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-muted mb-4 small">"Lekha Mam's exceptional listening skills and empathetic
+                                nature helped me feel heard and understood. She skillfully identified patterns in my
+                                thought process."</p>
+                            <div class="testimonial-separator"></div>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-initial">M</div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">Mano</h6>
+                                    <p class="mb-0 text-muted extra-small">Verified Client • 3 weeks ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial 4 (Extra) -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card shadow-sm h-100">
+                            <div class="text-warning mb-4">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <p class="text-muted mb-4 small">"Very professional and empathetic. The sessions helped me
+                                navigate through a very difficult transition in my career."</p>
+                            <div class="testimonial-separator"></div>
+                            <div class="d-flex align-items-center">
+                                <div class="avatar-initial">S</div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold small">Suresh Raina</h6>
+                                    <p class="mb-0 text-muted extra-small">Verified Client • 2 months ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination testimonial-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get in Touch -->
+    <section class="section-padding bg-white" id="contact">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold display-4">Get in Touch</h2>
+                <p class="text-muted mx-auto" style="max-width: 600px;">Whether you have a question about our services
+                    or are ready to book a session, we are here to support you across multiple locations in Chennai.</p>
+            </div>
+
+            <!-- Location Cards -->
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card bg-body-secondary">
+                        <div class="location-icon-box">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Kovur Center (Main)</h5>
+                        <p class="text-muted small mb-4">No 8/124 Ragavendra nagar, near ECI church, Kovur, Chennai,
+                            Tamil Nadu 600128</p>
+                        <div class="mb-2 small">
+                            <i class="fas fa-phone me-2 text-primary-color"></i>
+                            <a href="tel:+919445662922" class="text-decoration-none text-reset">+91 94456 62922</a>
+                        </div>
+                        <div class="mb-3 small">
+                            <i class="fas fa-envelope me-2 text-primary-color"></i>
+                            <a href="mailto:lekhapsy@gmail.com"
+                                class="text-decoration-none text-reset">lekhapsy@gmail.com</a>
+                        </div>
+                        <a href="https://maps.app.goo.gl/fwGDsnt9rKUb8D7T9?g_st=aw" target="_blank"
+                            class="text-primary-color fw-bold small text-decoration-none">GET DIRECTIONS <i
+                                class="fas fa-external-link-alt ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card bg-body-secondary">
+                        <div class="location-icon-box">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Porur (Family Clinic)</h5>
+                        <p class="text-muted small mb-4">71-A, 1st St, Karambakkam, Rajeswari Nagar, Porur, Chennai,
+                            Tamil Nadu 600116</p>
+                        <div class="mb-2 small">
+                            <i class="fas fa-phone me-2 text-primary-color"></i>
+                            <a href="tel:+919445662922" class="text-decoration-none text-reset">+91 94456 62922</a>
+                        </div>
+                        <div class="mb-3 small">
+                            <i class="fas fa-envelope me-2 text-primary-color"></i>
+                            <a href="mailto:lekhapsy@gmail.com"
+                                class="text-decoration-none text-reset">lekhapsy@gmail.com</a>
+                        </div>
+                        <a href="https://maps.app.goo.gl/kuWxs1sb5ZoWhnN19?g_st=aw" target="_blank"
+                            class="text-primary-color fw-bold small text-decoration-none">GET DIRECTIONS <i
+                                class="fas fa-external-link-alt ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-card bg-body-secondary">
+                        <div class="location-icon-box">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Ashok Nagar (Magna Clinic)</h5>
+                        <p class="text-muted small mb-4">12, 18th Ave, Sector 10, Sector 13, Ashok Nagar, Chennai, Tamil
+                            Nadu 600083</p>
+                        <div class="mb-2 small">
+                            <i class="fas fa-phone me-2 text-primary-color"></i>
+                            <a href="tel:+919445662922" class="text-decoration-none text-reset">+91 94456 62922</a>
+                        </div>
+                        <div class="mb-3 small">
+                            <i class="fas fa-envelope me-2 text-primary-color"></i>
+                            <a href="mailto:lekhapsy@gmail.com"
+                                class="text-decoration-none text-reset">lekhapsy@gmail.com</a>
+                        </div>
+                        <a href="https://maps.app.goo.gl/kenMFE1gNzEAGSqS8?g_st=aw" target="_blank"
+                            class="text-primary-color fw-bold small text-decoration-none">GET DIRECTIONS <i
+                                class="fas fa-external-link-alt ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form and Sidebar -->
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="whatsapp-box h-auto">
+                        <h3 class="fw-bold mb-3">Need a Quick Response?</h3>
+                        <p class="mb-4 opacity-75">WhatsApp is the fastest way to get in touch with our intake team and
+                            book your session immediately.</p>
+                        <a href="https://wa.me/919445662922/" target="_blank" class="btn-whatsapp-light">
+                            <i class="fab fa-whatsapp fs-4"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="direct-channels-box">
+                        <h5 class="fw-bold mb-4">Direct Channels</h5>
+                        <div class="channel-item">
+                            <div class="channel-icon-box">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="channel-content">
+                                <h6>EMAIL US</h6>
+                                <p><a href="mailto:lekhapsy@gmail.com"
+                                        class="text-decoration-none text-white">lekhapsy@gmail.com</a></p>
+                            </div>
+                        </div>
+                        <div class="channel-item">
+                            <div class="channel-icon-box">
+                                <i class="fas fa-phone-volume"></i>
+                            </div>
+                            <div class="channel-content">
+                                <h6>CALL US</h6>
+                                <p><a href="tel:+919445662922" class="text-decoration-none text-white">+91 94456
+                                        62922</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <!-- Center Logo -->
+            <img src="./assets/logo-light.png" alt="Insight Counseling Services" class="footer-logo-main">
+
+            <!-- Description Text -->
+            <p class="footer-description">
+                Insight Counseling Services (ICS), Chennai established in the year 2014.
+                Providing compassionate, confidential, and evidence-based psychological support for all,
+                helping individuals and couples navigate life's challenges with professional care.
+            </p>
+
+            <!-- Contact Bar -->
+            <div class="footer-contact-bar">
+                <a href="mailto:lekhapsy@gmail.com" class="footer-contact-item">
+                    <i class="fas fa-envelope"></i> lekhapsy@gmail.com
+                </a>
+                <div class="footer-separator"></div>
+                <a href="tel:+919445662922" class="footer-contact-item">
+                    <i class="fas fa-phone"></i> +91 94456 62922
+                </a>
+            </div>
+
+            <!-- Bottom Divider and Flex -->
+            <div class="footer-divider">
+                <div class="d-flex  flex-column flex-md-row gap-3 justify-content-between w-100 align-items-center">
+                    <p class="mb-0 small opacity-75">Copyright © 2026 INSIGHT COUNSELING SERVICES. All Rights Reserved.
+                    </p>
+
+                    <div class="d-flex align-items-center">
+                        <div class="footer-social-circles">
+                            <a href="https://www.facebook.com/share/18wRNfkPeE/" target="_blank"
+                                class="social-circle"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.instagram.com/lekhaedwin_psychologist?igsh=MTlubjViY3hrcXB1dg=="
+                                target="_blank" class="social-circle"><i class="fab fa-instagram"></i></a>
+                            <a href="https://youtube.com/@lekhaedwinpsychologist?si=4-nhvp-idsdt8Sc-" target="_blank"
+                                class="social-circle"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Team Profile Modal -->
+    <div class="modal fade" id="teamModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content modal-profile position-relative">
+                <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="modal-body">
+                    <div class="row g-0">
+                        <div class="col-lg-5 profile-img-col d-none d-lg-block"
+                            style="background-image: url('./assets/team/lekha-edwin.jpg');">
+                            <!-- Image handled by background-image -->
+                        </div>
+                        <div class="col-lg-7 profile-info-col">
+                            <h2 class="fw-bold mb-1" id="modal-name">Lekha Edwin</h2>
+                            <div class="profile-role" id="modal-role">Founder/ Psychologist</div>
+
+                            <div class="profile-detail-item">
+                                <div class="profile-detail-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="profile-detail-content">
+                                    <h6>Qualifications</h6>
+                                    <p id="modal-qual">M. Sc Counseling Psychology., M.A., B.Ed PG Diploma in Life
+                                        Coaching and Counselling</p>
+                                </div>
+                            </div>
+
+                            <div class="profile-detail-item">
+                                <div class="profile-detail-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="profile-detail-content">
+                                    <h6>Languages</h6>
+                                    <p id="modal-langs">Tamil, English</p>
+                                </div>
+                            </div>
+
+                            <div class="profile-detail-item">
+                                <div class="profile-detail-icon">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <div class="profile-detail-content">
+                                    <h6>Specialties</h6>
+                                    <div id="modal-specialties">
+                                        <span class="specialty-tag">Individual Counseling</span>
+                                        <span class="specialty-tag">Marital Counseling</span>
+                                        <span class="specialty-tag">Anxiety Support</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-about-label">ABOUT</div>
+                            <p class="profile-about-text" id="modal-about">
+                                "Mrs. Lekha Edwin is the founder of Insight Counseling Services. With over 10 years of
+                                experience, she specializes in individual and marital counseling, helping clients
+                                navigate life's challenges with compassion and professional expertise."
+                            </p>
+
+                            <button class="btn-book-profile">
+                                <i class="fas fa-comment-dots"></i> Book Appointment
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Detail Modal -->
+    <div class="modal fade" id="serviceModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content modal-service">
+                <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="service-modal-header">
+                    <h2 class="service-modal-title mb-0" id="modal-service-title">Depression & Anxiety</h2>
+                </div>
+                <div class="service-modal-body pt-0">
+                    <p class="service-modal-text text-center" id="modal-service-desc">
+                        Managing persistent sadness, worry, and fear that interfere with daily life. Our evidence-based
+                        approach helps you identify triggers, manage symptoms, and build lasting resilience.
+                    </p>
+                    <h6 class="fw-bold mb-3">What we provide:</h6>
+                    <ul class="service-benefit-list">
+                        <li><i class="fas fa-check-circle"></i> Evidence-based Cognitive Behavioral Therapy</li>
+                        <li><i class="fas fa-check-circle"></i> Safe and non-judgmental environment</li>
+                        <li><i class="fas fa-check-circle"></i> Practical coping strategies for daily life</li>
+                        <li><i class="fas fa-check-circle"></i> Personalized treatment plans</li>
+                    </ul>
+                    <button class="btn btn-primary w-100 py-3 rounded-3 fw-bold">
+                        Book This Session <i class="fas fa-calendar-check ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fixed Action Buttons -->
+    <div class="fixed-actions-container">
+        <a href="tel:+919445662922" class="btn-call-fixed"
+           onclick="return gtag_report_phone_conversion('tel:+919445662922');">
+            <i class="fas fa-phone fs-4"></i>
+        </a>
+        <a href="https://wa.me/919445662922/" target="_blank" class="btn-whatsapp-fixed"
+           onclick="return gtag_report_whatsapp_conversion('https://wa.me/919445662922/');">
+            <i class="fab fa-whatsapp fs-4"></i>
+            <span class="d-none d-md-block">Chat with us</span>
+        </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

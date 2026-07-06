@@ -12,7 +12,7 @@ class Services extends BaseController
         $serviceModel = new ServiceModel();
         $data = [
             'title' => 'Service Management | Insight Admin',
-            'services' => $serviceModel->findAll()
+            'services' => $serviceModel->orderBy('id', 'DESC')->findAll()
         ];
         return view('admin/services/index', $data);
     }
@@ -35,7 +35,7 @@ class Services extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please verify that all fields are filled.');
+            return redirect()->back()->withInput()->with('error', 'Please verify that all fields are filled.')->with('errors', $this->validator->getErrors());
         }
 
         $title = $this->request->getPost('title');
@@ -105,7 +105,7 @@ class Services extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please verify that all fields are filled.');
+            return redirect()->back()->withInput()->with('error', 'Please verify that all fields are filled.')->with('errors', $this->validator->getErrors());
         }
 
         $imageName = $service['image'];

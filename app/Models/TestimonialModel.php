@@ -14,7 +14,6 @@ class TestimonialModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = [
         'client_name',
-        'rating',
         'content',
         'meta_info',
         'status'

@@ -19,6 +19,7 @@ $routes->get('privacy-policy', 'Home::privacy');
 $routes->get('refund-policy', 'Home::refund');
 $routes->get('terms-and-conditions', 'Home::terms');
 $routes->get('error-404', 'Home::notFound');
+$routes->get('thank-you', 'Home::thankyou');
 $routes->post('contact/submit', 'Home::submitEnquiry');
 
 // Admin Auth Routes

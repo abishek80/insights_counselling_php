@@ -18,7 +18,7 @@
 
 <!-- Document Body -->
 <section class="section-padding bg-white">
-    <div class="container" style="max-width: 800px;">
+    <div class="container">
         <div class="text-muted" style="line-height: 1.8;">
             <h4 class="text-dark fw-bold mb-3">1. Appointment Cancellations</h4>
             <p>We request that cancellations be made at least 24 hours prior to the scheduled session. If you cancel less than 24 hours in advance, the session fee may be charged as a cancellation fee.</p>

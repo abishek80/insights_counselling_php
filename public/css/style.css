@@ -546,14 +546,15 @@ footer {
     padding: 80px 0 30px;
     position: relative;
     overflow: hidden;
-    text-align: center;
+    text-align: left;
 }
 
 .footer-logo-main {
     height: 100px;
     margin-bottom: 25px;
     object-fit: contain;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
 }
 
 .footer-description {
@@ -834,10 +835,21 @@ footer {
     font-size: 0.9rem;
 }
 
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border: 1.5px solid #dc3545 !important;
+}
+
+.accordion-button {
+    box-shadow: 0px 0px 0px transparent !important;
+}
+
 .form-control:focus,
-.form-select:focus {
+.form-select:focus,
+.form-control.is-invalid:focus,
+.form-select.is-invalid:focus {
     background-color: #eef2f6;
-    box-shadow: none;
+    box-shadow: none !important;
 }
 
 .whatsapp-box {
@@ -1148,13 +1160,18 @@ footer {
     content: "\f105" !important; /* FontAwesome angle right */
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    padding-right: 0.5rem;
+    padding-right: 1rem;
     padding-left: 0.5rem;
+}
+
+.table-response {
+    border-radius: 20px !important;
 }
 
 .page-header .breadcrumb-item a {
     color: rgba(255, 255, 255, 0.8) !important;
     transition: var(--transition);
+    text-decoration: none;
 }
 
 .page-header .breadcrumb-item a:hover {

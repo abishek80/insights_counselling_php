@@ -1,6 +1,10 @@
 <?= $this->extend('admin/layout') ?>
 
 <?= $this->section('content') ?>
+<?php 
+$validation = \Config\Services::validation(); 
+$errors = session()->getFlashdata('errors') ?? [];
+?>
 
 <div class="page-header">
     <h2 class="fw-bold text-primary-color mb-1">Edit FAQ</h2>
@@ -8,17 +12,23 @@
 </div>
 
 <div class="card p-4">
-    <form action="<?= base_url('admin/faq/update/' . $faq['id']) ?>" method="POST">
+    <form class="needs-validation" novalidate action="<?= base_url('admin/faq/update/' . $faq['id']) ?>" method="POST">
         <?= csrf_field() ?>
         
         <div class="mb-3">
             <label for="question" class="form-label fw-bold small text-dark">Question</label>
-            <input type="text" name="question" id="question" class="form-control" value="<?= esc(old('question', $faq['question'])) ?>" required>
+            <input type="text" name="question" id="question" class="form-control <?= (isset($errors['question']) || $validation->hasError('question')) ? 'is-invalid' : '' ?>" value="<?= esc(old('question', $faq['question'])) ?>" required>
+                <?php if (isset($errors['question']) || $validation->hasError('question')): ?>
+                    <div class="invalid-feedback small"><?= esc($errors['question'] ?? $validation->getError('question')) ?></div>
+                <?php endif; ?>
         </div>
 
         <div class="mb-4">
             <label for="answer" class="form-label fw-bold small text-dark">Answer</label>
-            <textarea name="answer" id="answer" class="form-control" rows="5" required><?= esc(old('answer', $faq['answer'])) ?></textarea>
+            <textarea name="answer" id="answer" class="form-control summernote <?= (isset($errors['answer']) || $validation->hasError('answer')) ? 'is-invalid' : '' ?>" rows="5" required><?= esc(old('answer', $faq['answer'])) ?></textarea>
+                <?php if (isset($errors['answer']) || $validation->hasError('answer')): ?>
+                    <div class="invalid-feedback small"><?= esc($errors['answer'] ?? $validation->getError('answer')) ?></div>
+                <?php endif; ?>
         </div>
 
         <button type="submit" class="btn btn-primary px-4 fw-bold"><i class="fas fa-save me-1"></i> Save Changes</button>

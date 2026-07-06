@@ -18,7 +18,7 @@
 
 <!-- Document Body -->
 <section class="section-padding bg-white">
-    <div class="container" style="max-width: 800px;">
+    <div class="container">
         <div class="text-muted" style="line-height: 1.8;">
             <h4 class="text-dark fw-bold mb-3">1. Information Collection</h4>
             <p>We collect basic contact information (name, phone number, email) when you request an appointment. Clinical notes taken during counseling sessions are strictly confidential medical records.</p>

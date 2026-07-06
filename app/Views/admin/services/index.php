@@ -19,8 +19,8 @@
                     <th>Title</th>
                     <th>Slug</th>
                     <th>Short Description</th>
-                    <th style="width: 120px;">Status</th>
-                    <th style="width: 180px;">Actions</th>
+                    <th>Status</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -41,8 +41,8 @@
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="<?= base_url('admin/services/edit/' . $service['id']) ?>" class="btn btn-sm btn-outline-primary btn-action me-1"><i class="fas fa-edit"></i> Edit</a>
-                                <a href="<?= base_url('admin/services/delete/' . $service['id']) ?>" onclick="return confirm('Are you sure you want to delete this service category?');" class="btn btn-sm btn-outline-danger btn-action"><i class="fas fa-trash"></i> Delete</a>
+                                <a href="<?= base_url('admin/services/edit/' . $service['id']) ?>" class="btn btn-sm btn-outline-primary btn-action me-1" title="Edit"><i class="fas fa-edit"></i></a>
+                                <a href="<?= base_url('admin/services/delete/' . $service['id']) ?>" onclick="return confirm('Are you sure you want to delete this service category?');" class="btn btn-sm btn-outline-danger btn-action" title="Delete"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

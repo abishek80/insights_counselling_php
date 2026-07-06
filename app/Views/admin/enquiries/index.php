@@ -20,7 +20,7 @@
                     <th>Phone</th>
                     <th>Subject</th>
                     <th>Date</th>
-                    <th style="width: 240px;">Actions</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,14 +35,13 @@
                             <td class="small text-muted"><?= date('d M Y, h:i A', strtotime($enquiry['created_at'])) ?></td>
                             <td>
                                 <button type="button" class="btn btn-sm btn-outline-primary btn-action me-1" 
-                                        data-bs-toggle="modal" 
-                                        data-bs-target="#enquiryModal<?= $enquiry['id'] ?>">
-                                    <i class="fas fa-eye"></i> View Message
+                                        data-bs-toggle="modal" data-bs-target="#enquiryModal<?= $enquiry['id'] ?>" title="View">
+                                    <i class="fas fa-eye"></i>
                                 </button>
                                 <a href="<?= base_url('admin/enquiries/delete/' . $enquiry['id']) ?>" 
                                    onclick="return confirm('Are you sure you want to delete this enquiry?');" 
-                                   class="btn btn-sm btn-outline-danger btn-action">
-                                    <i class="fas fa-trash"></i> Delete
+                                   class="btn btn-sm btn-outline-danger btn-action" title="Delete">
+                                    <i class="fas fa-trash"></i>
                                 </a>
                             </td>
                         </tr>

@@ -12,7 +12,7 @@ class Testimonials extends BaseController
         $testimonialModel = new TestimonialModel();
         $data = [
             'title' => 'Testimonials | Insight Admin',
-            'testimonials' => $testimonialModel->findAll()
+            'testimonials' => $testimonialModel->orderBy('id', 'DESC')->findAll()
         ];
         return view('admin/testimonials/index', $data);
     }
@@ -28,18 +28,16 @@ class Testimonials extends BaseController
 
         $rules = [
             'client_name' => 'required',
-            'rating' => 'required|integer|greater_than_equal_to[1]|less_than_equal_to[5]',
             'content' => 'required',
             'meta_info' => 'required'
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please verify your input fields.');
+            return redirect()->back()->withInput()->with('error', 'Please verify your input fields.')->with('errors', $this->validator->getErrors());
         }
 
         $testimonialModel->insert([
             'client_name' => $this->request->getPost('client_name'),
-            'rating' => $this->request->getPost('rating'),
             'content' => $this->request->getPost('content'),
             'meta_info' => $this->request->getPost('meta_info')
         ]);
@@ -75,18 +73,16 @@ class Testimonials extends BaseController
 
         $rules = [
             'client_name' => 'required',
-            'rating' => 'required|integer|greater_than_equal_to[1]|less_than_equal_to[5]',
             'content' => 'required',
             'meta_info' => 'required'
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please verify your input fields.');
+            return redirect()->back()->withInput()->with('error', 'Please verify your input fields.')->with('errors', $this->validator->getErrors());
         }
 
         $testimonialModel->update($id, [
             'client_name' => $this->request->getPost('client_name'),
-            'rating' => $this->request->getPost('rating'),
             'content' => $this->request->getPost('content'),
             'meta_info' => $this->request->getPost('meta_info')
         ]);

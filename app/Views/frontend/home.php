@@ -121,14 +121,16 @@
             <?php if (!empty($team)): ?>
                 <?php foreach ($team as $member): ?>
                     <div class="col-lg-3 col-md-6">
-                        <div class="team-card bg-body-secondary h-100">
-                            <div class="team-img-wrapper">
-                                <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" class="team-img" alt="<?= esc($member['name']) ?>">
+                        <div class="team-card bg-body-secondary h-100 d-flex flex-column gap-2 justify-content-between mt-3">
+                            <div>
+                                <div class="team-img-wrapper">
+                                    <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" class="team-img" alt="<?= esc($member['name']) ?>">
+                                </div>
+                                <h5><?= esc($member['name']) ?></h5>
+                                <div class="team-role"><?= esc($member['role']) ?></div>
+                                <p class="team-desc"><?= esc($member['qualifications']) ?></p>
+                                <div class="team-langs"><?= esc($member['languages']) ?></div>
                             </div>
-                            <h5><?= esc($member['name']) ?></h5>
-                            <div class="team-role"><?= esc($member['role']) ?></div>
-                            <p class="team-desc"><?= esc($member['qualifications']) ?></p>
-                            <div class="team-langs"><?= esc($member['languages']) ?></div>
                             <div class="d-flex gap-2 justify-content-center mt-3">
                                 <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">VIEW PROFILE</button>
                             </div>
@@ -231,19 +233,16 @@
                 <?php if (!empty($testimonials)): ?>
                     <?php foreach ($testimonials as $testimonial): ?>
                         <div class="swiper-slide">
-                            <div class="testimonial-card shadow-sm h-100">
-                                <div class="text-warning mb-4">
-                                    <?php for ($i = 0; $i < esc($testimonial['rating']); $i++): ?>
-                                        <i class="fas fa-star"></i>
-                                    <?php endfor; ?>
-                                </div>
-                                <p class="text-muted mb-4 small">"<?= esc($testimonial['content']) ?>"</p>
-                                <div class="testimonial-separator"></div>
-                                <div class="d-flex align-items-center">
-                                    <div class="avatar-initial"><?= strtoupper(substr($testimonial['client_name'], 0, 1)) ?></div>
-                                    <div>
-                                        <h6 class="mb-0 fw-bold small"><?= esc($testimonial['client_name']) ?></h6>
-                                        <p class="mb-0 text-muted extra-small"><?= esc($testimonial['meta_info']) ?></p>
+                            <div class="testimonial-card shadow-sm h-100 d-flex flex-column justify-content-between">
+                                <p class="text-muted mb-0 small">"<?= esc($testimonial['content']) ?>"</p>
+                                <div>
+                                    <div class="testimonial-separator bg-dark-subtle"></div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="avatar-initial"><?= strtoupper(substr($testimonial['client_name'], 0, 1)) ?></div>
+                                        <div>
+                                            <h6 class="mb-0 fw-bold small"><?= esc($testimonial['client_name']) ?></h6>
+                                            <p class="mb-0 text-muted extra-small"><?= esc($testimonial['meta_info']) ?></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -414,36 +413,38 @@
     });
 
     // Inject data dynamically inside the modal profile structure
-    const teamMembers = <?= json_encode($team) ?>;
-    const teamModal = document.getElementById('teamModal');
-    
-    if (teamModal) {
-        teamModal.addEventListener('show.bs.modal', function(event) {
-            const button = event.relatedTarget;
-            const memberId = button.getAttribute('data-id');
-            const member = teamMembers.find(m => m.id == memberId);
-            
-            if (member) {
-                document.getElementById('modal-name').textContent = member.name;
-                document.getElementById('modal-role').textContent = member.role;
-                document.getElementById('modal-qual').textContent = member.qualifications;
-                document.getElementById('modal-langs').textContent = member.languages;
-                document.getElementById('modal-about').textContent = member.about;
+    (function() {
+        const teamMembers = <?= json_encode($team) ?>;
+        const teamModal = document.getElementById('teamModal');
+        
+        if (teamModal) {
+            teamModal.addEventListener('show.bs.modal', function(event) {
+                const button = event.relatedTarget;
+                const memberId = button.getAttribute('data-id');
+                const member = teamMembers.find(m => m.id == memberId);
                 
-                const imgCol = document.getElementById('modal-img-col');
-                imgCol.style.backgroundImage = `url('<?= base_url("assets/team/") ?>${member.image}')`;
-                
-                const specialtiesContainer = document.getElementById('modal-specialties');
-                specialtiesContainer.innerHTML = '';
-                const specialties = member.specialties.split(',');
-                specialties.forEach(spec => {
-                    const tag = document.createElement('span');
-                    tag.className = 'specialty-tag';
-                    tag.textContent = spec.trim();
-                    specialtiesContainer.appendChild(tag);
-                });
-            }
-        });
-    }
+                if (member) {
+                    document.getElementById('modal-name').textContent = member.name;
+                    document.getElementById('modal-role').textContent = member.role;
+                    document.getElementById('modal-qual').textContent = member.qualifications;
+                    document.getElementById('modal-langs').textContent = member.languages;
+                    document.getElementById('modal-about').textContent = member.about;
+                    
+                    const imgCol = document.getElementById('modal-img-col');
+                    imgCol.style.backgroundImage = `url('<?= base_url("assets/team/") ?>${member.image}')`;
+                    
+                    const specialtiesContainer = document.getElementById('modal-specialties');
+                    specialtiesContainer.innerHTML = '';
+                    const specialties = member.specialties.split(',');
+                    specialties.forEach(spec => {
+                        const tag = document.createElement('span');
+                        tag.className = 'specialty-tag';
+                        tag.textContent = spec.trim();
+                        specialtiesContainer.appendChild(tag);
+                    });
+                }
+            });
+        }
+    })();
 </script>
 <?= $this->endSection() ?>

@@ -18,7 +18,7 @@
 
 <!-- FAQ Accordion -->
 <section class="section-padding bg-white">
-    <div class="container" style="max-width: 800px;">
+    <div class="container">
         <?php if (!empty($faqs)): ?>
             <div class="accordion shadow-sm" id="faqAccordion">
                 <?php foreach ($faqs as $index => $faq): ?>
@@ -29,7 +29,7 @@
                             </button>
                         </h2>
                         <div id="collapse<?= $faq['id'] ?>" class="accordion-collapse collapse <?= $index === 0 ? 'show' : '' ?>" aria-labelledby="heading<?= $faq['id'] ?>" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body text-muted small" style="line-height: 1.7;">
+                            <div class="accordion-body" style="line-height: 1.7;">
                                 <?= nl2br(esc($faq['answer'])) ?>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                         </button>
                     </h2>
                     <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body text-muted small" style="line-height: 1.7;">
+                        <div class="accordion-body" style="line-height: 1.7;">
                             The first session is a safe space to discuss what brings you to therapy. The counselor will collect historical context, understand your challenges, and collaborate with you to define your healing goals.
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                         </button>
                     </h2>
                     <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body text-muted small" style="line-height: 1.7;">
+                        <div class="accordion-body" style="line-height: 1.7;">
                             A standard session lasts between 45 to 60 minutes for individuals and up to 75 minutes for couples.
                         </div>
                     </div>
@@ -70,7 +70,7 @@
                         </button>
                     </h2>
                     <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body text-muted small" style="line-height: 1.7;">
+                        <div class="accordion-body" style="line-height: 1.7;">
                             Absolutely. Everything shared in your counseling session remains strictly confidential, conforming to ethical guidelines. Details are only disclosed in extreme safety crises as legally required.
                         </div>
                     </div>

@@ -12,7 +12,7 @@ class Team extends BaseController
         $teamModel = new TeamModel();
         $data = [
             'title' => 'Team Management | Insight Admin',
-            'team' => $teamModel->findAll()
+            'team' => $teamModel->orderBy('id', 'DESC')->findAll()
         ];
         return view('admin/team/index', $data);
     }
@@ -36,7 +36,7 @@ class Team extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please verify all fields are filled.');
+            return redirect()->back()->withInput()->with('error', 'Please verify all fields are filled.')->with('errors', $this->validator->getErrors());
         }
 
         $imageName = 'placeholder.png';
@@ -95,7 +95,7 @@ class Team extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please verify all fields are filled.');
+            return redirect()->back()->withInput()->with('error', 'Please verify all fields are filled.')->with('errors', $this->validator->getErrors());
         }
 
         $imageName = $member['image'];

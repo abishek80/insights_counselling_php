@@ -18,7 +18,7 @@
 
 <!-- Document Body -->
 <section class="section-padding bg-white">
-    <div class="container" style="max-width: 800px;">
+    <div class="container">
         <div class="text-muted" style="line-height: 1.8;">
             <h4 class="text-dark fw-bold mb-3">1. Scope of Service</h4>
             <p>Our counselors offer psychological support, stress coaching, and therapy. These sessions are NOT emergency services. If you are in a severe crisis, please contact local emergency telephone lines immediately.</p>

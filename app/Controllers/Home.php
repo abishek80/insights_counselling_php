@@ -159,15 +159,48 @@ class Home extends BaseController
         $enquiryModel = new \App\Models\EnquiryModel();
 
         $rules = [
-            'name'    => 'required|min_length[3]',
-            'email'   => 'required|valid_email',
-            'phone'   => 'required',
-            'subject' => 'required',
-            'message' => 'required|min_length[10]'
+            'name' => [
+                'label'  => 'Full Name',
+                'rules'  => 'required|min_length[3]',
+                'errors' => [
+                    'required'   => 'Please enter your name.',
+                    'min_length' => 'Name must be at least 3 characters long.'
+                ]
+            ],
+            'email' => [
+                'label'  => 'Email Address',
+                'rules'  => 'required|valid_email',
+                'errors' => [
+                    'required'    => 'Please enter your email address.',
+                    'valid_email' => 'Please enter a valid email address.'
+                ]
+            ],
+            'phone' => [
+                'label'  => 'Phone Number',
+                'rules'  => 'required',
+                'errors' => [
+                    'required' => 'Please enter your phone number.'
+                ]
+            ],
+            'subject' => [
+                'label'  => 'Subject',
+                'rules'  => 'required',
+                'errors' => [
+                    'required' => 'Please select an enquiry subject.'
+                ]
+            ],
+            'message' => [
+                'label'  => 'Your Message',
+                'rules'  => 'required|min_length[10]',
+                'errors' => [
+                    'required'   => 'Please enter your message.',
+                    'min_length' => 'Message must be at least 10 characters long.'
+                ]
+            ]
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please ensure all fields are filled out correctly.');
+            return redirect()->back()->withInput()->with('error', 'Please ensure all fields are filled out correctly.')->with('errors', $this->validator->getErrors());
         }
 
         $enquiryModel->insert([
@@ -178,6 +211,16 @@ class Home extends BaseController
             'message' => $this->request->getPost('message')
         ]);
 
-        return redirect()->back()->with('success', 'Your enquiry has been submitted successfully! We will get back to you soon.');
+        return redirect()->to(base_url('thank-you'))->with('success', 'Your enquiry has been submitted successfully! We will get back to you soon.');
+    }
+
+    public function thankyou()
+    {
+        $data = [
+            'title' => 'Thank You for Your Enquiry | Insight Counseling Services',
+            'meta_desc' => 'Thank you for reaching out to Insight Counseling Services. We will get back to you shortly.'
+        ];
+
+        return view('frontend/thankyou', $data);
     }
 }

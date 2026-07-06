@@ -23,19 +23,16 @@
             <?php if (!empty($testimonials)): ?>
                 <?php foreach ($testimonials as $testimonial): ?>
                     <div class="col-lg-4 col-md-6">
-                        <div class="testimonial-card shadow-sm h-100">
-                            <div class="text-warning mb-4">
-                                <?php for ($i = 0; $i < esc($testimonial['rating']); $i++): ?>
-                                    <i class="fas fa-star"></i>
-                                <?php endfor; ?>
-                            </div>
-                            <p class="text-muted mb-4 small">"<?= esc($testimonial['content']) ?>"</p>
-                            <div class="testimonial-separator"></div>
-                            <div class="d-flex align-items-center">
-                                <div class="avatar-initial"><?= strtoupper(substr($testimonial['client_name'], 0, 1)) ?></div>
-                                <div>
-                                    <h6 class="mb-0 fw-bold small"><?= esc($testimonial['client_name']) ?></h6>
-                                    <p class="mb-0 text-muted extra-small"><?= esc($testimonial['meta_info']) ?></p>
+                        <div class="testimonial-card shadow-sm h-100 d-flex flex-column justify-content-between">
+                            <p class="text-muted mb-0 small">"<?= esc($testimonial['content']) ?>"</p>
+                            <div>
+                                <div class="testimonial-separator bg-dark-subtle"></div>
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-initial"><?= strtoupper(substr($testimonial['client_name'], 0, 1)) ?></div>
+                                    <div>
+                                        <h6 class="mb-0 fw-bold small"><?= esc($testimonial['client_name']) ?></h6>
+                                        <p class="mb-0 text-muted extra-small"><?= esc($testimonial['meta_info']) ?></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

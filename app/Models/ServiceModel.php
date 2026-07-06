@@ -19,6 +19,9 @@ class ServiceModel extends Model
         'long_description',
         'benefits',
         'image',
+        'cta',
+        'icon',
+        'price',
         'status'
     ];
 

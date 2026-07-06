@@ -31,15 +31,12 @@ class Settings extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please check that all inputs are filled correctly.');
+            return redirect()->back()->withInput()->with('error', 'Please check that all inputs are filled correctly.')->with('errors', $this->validator->getErrors());
         }
 
         $settingModel->update(1, [
             'phone' => $this->request->getPost('phone'),
             'email' => $this->request->getPost('email'),
-            'address_kovur' => $this->request->getPost('address_kovur') ?? '',
-            'address_porur' => $this->request->getPost('address_porur') ?? '',
-            'address_ashok_nagar' => $this->request->getPost('address_ashok_nagar') ?? '',
             'facebook' => $this->request->getPost('facebook'),
             'instagram' => $this->request->getPost('instagram'),
             'youtube' => $this->request->getPost('youtube'),

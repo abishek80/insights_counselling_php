@@ -16,11 +16,10 @@
             <thead>
                 <tr>
                     <th>Client Name</th>
-                    <th>Rating</th>
                     <th>Review Content</th>
                     <th>Meta Info</th>
-                    <th style="width: 120px;">Status</th>
-                    <th style="width: 180px;">Actions</th>
+                    <th>Status</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,11 +27,6 @@
                     <?php foreach ($testimonials as $testimonial): ?>
                         <tr>
                             <td><strong><?= esc($testimonial['client_name']) ?></strong></td>
-                            <td class="text-warning">
-                                <?php for ($i = 0; $i < esc($testimonial['rating']); $i++): ?>
-                                    <i class="fas fa-star"></i>
-                                <?php endfor; ?>
-                            </td>
                             <td><span class="text-muted small"><?= esc(strlen($testimonial['content']) > 80 ? substr($testimonial['content'], 0, 80) . '...' : $testimonial['content']) ?></span></td>
                             <td><span class="badge bg-light text-secondary border"><?= esc($testimonial['meta_info']) ?></span></td>
                             <td>
@@ -43,8 +37,8 @@
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="<?= base_url('admin/testimonials/edit/' . $testimonial['id']) ?>" class="btn btn-sm btn-outline-primary btn-action me-1"><i class="fas fa-edit"></i> Edit</a>
-                                <a href="<?= base_url('admin/testimonials/delete/' . $testimonial['id']) ?>" onclick="return confirm('Are you sure you want to delete this testimonial?');" class="btn btn-sm btn-outline-danger btn-action"><i class="fas fa-trash"></i> Delete</a>
+                                <a href="<?= base_url('admin/testimonials/edit/' . $testimonial['id']) ?>" class="btn btn-sm btn-outline-primary btn-action me-1" title="Edit"><i class="fas fa-edit"></i></a>
+                                <a href="<?= base_url('admin/testimonials/delete/' . $testimonial['id']) ?>" onclick="return confirm('Are you sure you want to delete this testimonial?');" class="btn btn-sm btn-outline-danger btn-action" title="Delete"><i class="fas fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

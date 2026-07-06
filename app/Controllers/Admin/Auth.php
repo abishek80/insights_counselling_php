@@ -18,10 +18,14 @@ class Auth extends BaseController
     public function loginSubmit()
     {
         $userModel = new UserModel();
-        $username = $this->request->getPost('username');
+        $usernameOrEmail = $this->request->getPost('username');
         $password = $this->request->getPost('password');
 
-        $user = $userModel->where('username', $username)->first();
+        $user = $userModel->groupStart()
+                          ->where('username', $usernameOrEmail)
+                          ->orWhere('email', $usernameOrEmail)
+                          ->groupEnd()
+                          ->first();
 
         if ($user && password_verify($password, $user['password'])) {
             session()->set([
@@ -33,7 +37,7 @@ class Auth extends BaseController
             return redirect()->to(base_url('admin'))->with('success', 'Welcome back, ' . $user['username'] . '!');
         }
 
-        return redirect()->back()->with('error', 'Invalid username or password.')->withInput();
+        return redirect()->to(base_url('admin/login'))->with('error', 'Invalid username or password.')->withInput();
     }
 
     public function logout()

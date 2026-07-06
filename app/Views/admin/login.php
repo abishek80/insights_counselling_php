@@ -75,7 +75,7 @@
             <h5 class="fw-bold mt-3 text-muted">ADMIN PORTAL</h5>
         </div>
 
-        <!-- Alerts -   ->
+        <!-- Alerts -->
         <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <?= session()->getFlashdata('error') ?>
@@ -90,7 +90,7 @@
             </div>
         <?php endif; ?>
 
-        <form action="<?= base_url('admin/login') ?>" method="POST">
+        <form class="needs-validation" novalidate action="<?= base_url('admin/login') ?>" method="POST">
             <?= csrf_field() ?>
             <div class="mb-3">
                 <label for="username" class="form-label fw-bold text-dark small">Username</label>

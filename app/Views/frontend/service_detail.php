@@ -56,10 +56,25 @@
                     </ul>
                 </div>
 
+                <!-- Pricing Box (Session Fee) -->
+                <?php if (!empty($service['price'])): ?>
+                <div class="card p-4 border-0 bg-light rounded-4 shadow-sm mb-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="fw-bold text-primary-color mb-1">Session Fee</h5>
+                            <p class="text-muted small mb-0">Per consulting session</p>
+                        </div>
+                        <div class="text-primary-color fw-bold fs-4">
+                            ₹<?= number_format($service['price']) ?>
+                        </div>
+                    </div>
+                </div>
+                <?php endif; ?>
+
                 <!-- Call to Action Box -->
-                <div class="card p-4 bg-primary text-white border-0 rounded-4 shadow-sm text-center">
+                <div class="card p-4 bg-primary-color text-white border-0 rounded-4 shadow-sm text-center">
                     <h4 class="fw-bold mb-3">Schedule a Session</h4>
-                    <p class="small opacity-75 mb-4">Talk to a mental health professional today and take the first step towards resolving emotional stress.</p>
+                    <p class="small opacity-75 mb-4"><?= !empty($service['cta']) ? esc($service['cta']) : 'Talk to a mental health professional today and take the first step towards resolving emotional stress.' ?></p>
                     <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn btn-light w-100 py-3 fw-bold text-primary-color rounded-3">
                         <i class="fas fa-calendar-check me-2"></i> Book Consultation
                     </a>

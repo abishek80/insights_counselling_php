@@ -1,6 +1,10 @@
 <?= $this->extend('admin/layout') ?>
 
 <?= $this->section('content') ?>
+<?php 
+$validation = \Config\Services::validation(); 
+$errors = session()->getFlashdata('errors') ?? [];
+?>
 
 <div class="page-header">
     <h2 class="fw-bold text-primary-color mb-1">Edit Team Member</h2>
@@ -8,38 +12,53 @@
 </div>
 
 <div class="card p-4">
-    <form action="<?= base_url('admin/team/update/' . $member['id']) ?>" method="POST" enctype="multipart/form-data">
+    <form class="needs-validation" novalidate action="<?= base_url('admin/team/update/' . $member['id']) ?>" method="POST" enctype="multipart/form-data">
         <?= csrf_field() ?>
         
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="name" class="form-label fw-bold small text-dark">Full Name</label>
-                <input type="text" name="name" id="name" class="form-control" value="<?= esc(old('name', $member['name'])) ?>" required>
+                <input type="text" name="name" id="name" class="form-control <?= (isset($errors['name']) || $validation->hasError('name')) ? 'is-invalid' : '' ?>" value="<?= esc(old('name', $member['name'])) ?>" required>
+                <?php if (isset($errors['name']) || $validation->hasError('name')): ?>
+                    <div class="invalid-feedback small"><?= esc($errors['name'] ?? $validation->getError('name')) ?></div>
+                <?php endif; ?>
             </div>
             
             <div class="col-md-6 mb-3">
                 <label for="role" class="form-label fw-bold small text-dark">Professional Role</label>
-                <input type="text" name="role" id="role" class="form-control" value="<?= esc(old('role', $member['role'])) ?>" required>
+                <input type="text" name="role" id="role" class="form-control <?= (isset($errors['role']) || $validation->hasError('role')) ? 'is-invalid' : '' ?>" value="<?= esc(old('role', $member['role'])) ?>" required>
+                <?php if (isset($errors['role']) || $validation->hasError('role')): ?>
+                    <div class="invalid-feedback small"><?= esc($errors['role'] ?? $validation->getError('role')) ?></div>
+                <?php endif; ?>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="qualifications" class="form-label fw-bold small text-dark">Qualifications</label>
-                <input type="text" name="qualifications" id="qualifications" class="form-control" value="<?= esc(old('qualifications', $member['qualifications'])) ?>" required>
+                <input type="text" name="qualifications" id="qualifications" class="form-control <?= (isset($errors['qualifications']) || $validation->hasError('qualifications')) ? 'is-invalid' : '' ?>" value="<?= esc(old('qualifications', $member['qualifications'])) ?>" required>
+                <?php if (isset($errors['qualifications']) || $validation->hasError('qualifications')): ?>
+                    <div class="invalid-feedback small"><?= esc($errors['qualifications'] ?? $validation->getError('qualifications')) ?></div>
+                <?php endif; ?>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="languages" class="form-label fw-bold small text-dark">Languages Spoken</label>
-                <input type="text" name="languages" id="languages" class="form-control" value="<?= esc(old('languages', $member['languages'])) ?>" required>
+                <input type="text" name="languages" id="languages" class="form-control <?= (isset($errors['languages']) || $validation->hasError('languages')) ? 'is-invalid' : '' ?>" value="<?= esc(old('languages', $member['languages'])) ?>" required>
+                <?php if (isset($errors['languages']) || $validation->hasError('languages')): ?>
+                    <div class="invalid-feedback small"><?= esc($errors['languages'] ?? $validation->getError('languages')) ?></div>
+                <?php endif; ?>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="specialties" class="form-label fw-bold small text-dark">Specialties (comma-separated)</label>
-                <input type="text" name="specialties" id="specialties" class="form-control" value="<?= esc(old('specialties', $member['specialties'])) ?>" required>
+                <input type="text" name="specialties" id="specialties" class="form-control <?= (isset($errors['specialties']) || $validation->hasError('specialties')) ? 'is-invalid' : '' ?>" value="<?= esc(old('specialties', $member['specialties'])) ?>" required>
+                <?php if (isset($errors['specialties']) || $validation->hasError('specialties')): ?>
+                    <div class="invalid-feedback small"><?= esc($errors['specialties'] ?? $validation->getError('specialties')) ?></div>
+                <?php endif; ?>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="image" class="form-label fw-bold small text-dark">Change Photo (leave blank to keep current)</label>
-                <input type="file" name="image" id="image" class="form-control" accept="image/*">
+                <input type="file" name="image" id="image" class="form-control <?= (isset($errors['image']) || $validation->hasError('image')) ? 'is-invalid' : '' ?>" accept="image/*">
                 <div class="mt-2 text-muted small">
                     Current file: <strong><?= esc($member['image']) ?></strong>
                 </div>
@@ -47,7 +66,10 @@
 
             <div class="col-md-12 mb-4">
                 <label for="about" class="form-label fw-bold small text-dark">About Profile Description</label>
-                <textarea name="about" id="about" class="form-control" rows="4" required><?= esc(old('about', $member['about'])) ?></textarea>
+                <textarea name="about" id="about" class="form-control summernote <?= (isset($errors['about']) || $validation->hasError('about')) ? 'is-invalid' : '' ?>" rows="4" required><?= esc(old('about', $member['about'])) ?></textarea>
+                <?php if (isset($errors['about']) || $validation->hasError('about')): ?>
+                    <div class="invalid-feedback small"><?= esc($errors['about'] ?? $validation->getError('about')) ?></div>
+                <?php endif; ?>
             </div>
         </div>
 

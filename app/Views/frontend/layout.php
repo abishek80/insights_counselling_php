@@ -49,6 +49,7 @@
         }
         /* Style fixes for footer social circles */
         .footer-social-circles a {
+            text-decoration: auto;
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -122,16 +123,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="<?= base_url() ?>">Home</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="<?= base_url('about') ?>">About</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="<?= base_url('services') ?>">Services</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="<?= base_url('team') ?>">Team</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="<?= base_url('faq') ?>">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="<?= base_url('testimonials') ?>">Testimonial</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold text-primary-color px-3" href="<?= base_url('contact') ?>">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url() ?>">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('about') ?>">About</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('services') ?>">Services</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('team') ?>">Team</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('faq') ?>">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('testimonials') ?>">Testimonial</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('contact') ?>">Contact Us</a></li>
                 </ul>
                 <a href="<?= esc($settings['booking_url']) ?>" target="_blank"
-                    class="btn btn-primary px-4 fw-bold mt-3 mt-lg-0"
+                    class="btn btn-primary px-4 fw-semibold mt-3 mt-lg-0"
                     style="border-radius: 8px;">Book Your Consultation</a>
             </div>
         </div>
@@ -146,7 +147,7 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <img src="<?= base_url('assets/logo-light.png') ?>" alt="Insight Counseling Services" class="footer-logo-main mb-3" style="max-height: 70px;">
-                    <p class="text-white-50 small">
+                    <p class="text-white-50 small pe-0 pe-md-4">
                         Insight Counseling Services (ICS), Chennai established in the year 2014.
                         Providing compassionate, confidential, and evidence-based psychological support for all.
                     </p>

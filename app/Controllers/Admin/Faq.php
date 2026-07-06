@@ -12,7 +12,7 @@ class Faq extends BaseController
         $faqModel = new FaqModel();
         $data = [
             'title' => 'FAQ Management | Insight Admin',
-            'faqs' => $faqModel->findAll()
+            'faqs' => $faqModel->orderBy('id', 'DESC')->findAll()
         ];
         return view('admin/faq/index', $data);
     }
@@ -32,7 +32,7 @@ class Faq extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please verify your input fields.');
+            return redirect()->back()->withInput()->with('error', 'Please verify your input fields.')->with('errors', $this->validator->getErrors());
         }
 
         $faqModel->insert([
@@ -75,7 +75,7 @@ class Faq extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please verify your input fields.');
+            return redirect()->back()->withInput()->with('error', 'Please verify your input fields.')->with('errors', $this->validator->getErrors());
         }
 
         $faqModel->update($id, [

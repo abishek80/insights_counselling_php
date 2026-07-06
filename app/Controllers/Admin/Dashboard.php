@@ -7,6 +7,7 @@ use App\Models\TeamModel;
 use App\Models\ServiceModel;
 use App\Models\TestimonialModel;
 use App\Models\FaqModel;
+use App\Models\EnquiryModel;
 
 class Dashboard extends BaseController
 {
@@ -16,6 +17,7 @@ class Dashboard extends BaseController
         $serviceModel = new ServiceModel();
         $testimonialModel = new TestimonialModel();
         $faqModel = new FaqModel();
+        $enquiryModel = new EnquiryModel();
 
         $data = [
             'title' => 'Dashboard | Insight Counseling Services',
@@ -23,6 +25,7 @@ class Dashboard extends BaseController
             'servicesCount' => $serviceModel->countAllResults(),
             'testimonialsCount' => $testimonialModel->countAllResults(),
             'faqCount' => $faqModel->countAllResults(),
+            'recentEnquiries' => $enquiryModel->orderBy('created_at', 'DESC')->findAll(5),
         ];
 
         return view('admin/dashboard', $data);

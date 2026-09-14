@@ -27,8 +27,8 @@ class Faq extends BaseController
         $faqModel = new FaqModel();
 
         $rules = [
-            'question' => 'required',
-            'answer' => 'required'
+            'question' => ['label' => 'Question', 'rules' => 'required'],
+            'answer'   => ['label' => 'Answer', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {
@@ -70,8 +70,8 @@ class Faq extends BaseController
         }
 
         $rules = [
-            'question' => 'required',
-            'answer' => 'required'
+            'question' => ['label' => 'Question', 'rules' => 'required'],
+            'answer'   => ['label' => 'Answer', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {

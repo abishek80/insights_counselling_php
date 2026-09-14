@@ -19,23 +19,60 @@
 <!-- Document Body -->
 <section class="section-padding bg-white">
     <div class="container">
-        <div class="text-muted" style="line-height: 1.8;">
-            <h4 class="text-dark fw-bold mb-3">1. Information Collection</h4>
-            <p>We collect basic contact information (name, phone number, email) when you request an appointment. Clinical notes taken during counseling sessions are strictly confidential medical records.</p>
+        <div class="text-muted" style="line-height: 1.8; font-size: 1.05rem;">
+            <p class="mb-4">At Insight Counseling Services, we are committed to protecting your privacy and maintaining the confidentiality of your personal information. When you visit our website, submit an enquiry, or book an appointment, we may collect information such as your name, phone number, email address, appointment details, and other details necessary to provide our counseling services. We may also collect basic technical information, including your IP address, browser type, and website usage data through cookies and analytics tools to improve your browsing experience.</p>
 
-            <h4 class="text-dark fw-bold mt-4 mb-3">2. Confidentiality & Disclosure</h4>
-            <p>Our counseling sessions conform to standard psychologist ethical codes. No details shared during sessions are disclosed to third parties unless:</p>
-            <ul>
-                <li>We have your explicit written consent.</li>
-                <li>There is an immediate risk of harm to yourself or others.</li>
-                <li>We are legally required by a court subpoena.</li>
-            </ul>
+            <p class="mb-4">The information we collect is used only for appointment scheduling, communication, providing counseling services, sending appointment reminders, improving our website and services, and complying with applicable legal requirements. We understand the importance of confidentiality in mental health services and take appropriate measures to protect your personal information. We do not sell, rent, or share your personal information with third parties for marketing purposes. Information will only be disclosed with your consent or when required by law.</p>
 
-            <h4 class="text-dark fw-bold mt-4 mb-3">3. Data Security</h4>
-            <p>We enforce technical security and organizational protocols to prevent unauthorized access or disclosure of clinical data.</p>
-            
-            <h4 class="text-dark fw-bold mt-4 mb-3">4. Contact Information</h4>
-            <p>If you have questions about data usage, please reach out directly via our contact details.</p>
+            <p class="mb-4">We implement appropriate security measures to safeguard your data from unauthorized access, misuse, or disclosure. While we make every effort to protect your information, no method of internet transmission or electronic storage is completely secure. By using our website, you agree to the collection and use of your information as described in this Privacy Policy. If you have any questions or wish to access, update, or delete your personal information, please contact us through the details provided on our website.</p>
+        
+            <div class="row g-4 my-2">
+                <!-- Card 1: Need a Quick Response? -->
+                <div class="col-md-6">
+                    <div class="p-4 p-md-5 rounded-4 text-white position-relative overflow-hidden h-100 d-flex flex-column justify-content-between" style="background-color: var(--primary-color, #2e2a70);">
+                        <div>
+                            <h4 class="fw-bold mb-3 text-white" style="font-size: 1.5rem;">Need a Quick Response?</h4>
+                            <p class="text-white-50 mb-4" style="line-height: 1.6;">
+                                WhatsApp is the fastest way to get in touch with our intake team and book your session immediately.
+                            </p>
+                        </div>
+                        <div>
+                            <a href="https://wa.me/919445662922/" target="_blank" class="btn btn-light rounded-4 px-4 py-3 fw-bold d-inline-flex align-items-center shadow-sm" style="color: var(--primary-color, #2e2a70); background-color: #ffffff; border: none;">
+                                <i class="fab fa-whatsapp me-2 fs-5" style="color: #2e2a70;"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Direct Channels -->
+                <div class="col-md-6">
+                    <div class="p-4 p-md-5 rounded-4 text-white h-100 d-flex flex-column justify-content-center" style="background-color: var(--primary-color, #2e2a70);">
+                        <h4 class="fw-bold mb-4 text-white" style="font-size: 1.5rem;">Direct Channels</h4>
+                        
+                        <!-- Email item -->
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="d-flex align-items-center justify-content-center rounded-3 me-3 flex-shrink-0" style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.12);">
+                                <i class="fas fa-envelope text-white fs-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-white-50 text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">EMAIL US</div>
+                                <a href="mailto:insightcounselings@gmail.com" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;">insightcounselings@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Phone item -->
+                        <div class="d-flex align-items-center">
+                            <div class="d-flex align-items-center justify-content-center rounded-3 me-3 flex-shrink-0" style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.12);">
+                                <i class="fas fa-phone-alt text-white fs-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-white-50 text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">CALL US</div>
+                                <a href="tel:+919445662922" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;">+91 94456 62922</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

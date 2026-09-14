@@ -27,7 +27,7 @@
                         404
                     </div>
                     <h3 class="fw-bold mb-3 text-dark">Oops! Page Not Found</h3>
-                    <p class="text-muted mb-4 small" style="line-height: 1.7;">
+                    <p class="text-muted mb-5" style="line-height: 1.7;">
                         The address you entered might be incorrect, or the page may have moved. 
                         Use the buttons below to return home, explore our counseling services, or get in touch with our team.
                     </p>
@@ -35,7 +35,7 @@
                         <a href="<?= base_url() ?>" class="btn btn-primary px-4 py-3 fw-bold shadow-sm" style="border-radius: 8px;">
                             <i class="fas fa-home me-2"></i> Go Back Home
                         </a>
-                        <a href="<?= base_url('services') ?>" class="btn btn-outline-secondary px-4 py-3 fw-bold border-2" style="border-radius: 8px; color: var(--primary-color); border-color: var(--primary-color);">
+                        <a href="<?= base_url('services') ?>" class="btn btn-secondary px-4 py-3 fw-bold shadow-sm" style="border-radius: 8px;">
                             <i class="fas fa-hand-holding-heart me-2"></i> View Services
                         </a>
                     </div>

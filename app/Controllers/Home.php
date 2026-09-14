@@ -19,6 +19,7 @@ class Home extends BaseController
 
         $data = [
             'title' => 'Best Counseling Psychologist in Chennai | Insight Counseling Services',
+            'meta_desc' => 'Insight Counseling Services (ICS) – Top-rated Counseling Psychologist in Chennai led by Mrs. Lekha Edwin. Expert therapy for anxiety, depression, relationship issues, academic stress & teen counseling.',
             'services' => $serviceModel->where('status', 1)->findAll(),
             'team' => $teamModel->where('status', 1)->findAll(),
             'testimonials' => $testimonialModel->where('status', 1)->findAll(),
@@ -31,8 +32,8 @@ class Home extends BaseController
     public function about()
     {
         $data = [
-            'title' => 'About Mrs. Lekha Edwin & Insight Counseling Services',
-            'meta_desc' => 'Learn more about Mrs. Lekha Edwin, Counseling Psychologist in Chennai, and the mission of Insight Counseling Services.'
+            'title' => 'About Mrs. Lekha Edwin & Insight Counseling Services | Chennai',
+            'meta_desc' => 'Learn about Mrs. Lekha Edwin, leading Counseling Psychologist in Chennai, and the mission of Insight Counseling Services since 2014 in Kovur, Porur & Ashok Nagar.'
         ];
 
         return view('frontend/about', $data);
@@ -42,8 +43,8 @@ class Home extends BaseController
     {
         $branchModel = new BranchModel();
         $data = [
-            'title' => 'Contact Us | Clinic Locations in Kovur, Porur & Ashok Nagar',
-            'meta_desc' => 'Reach out to Insight Counseling Services. Book an appointment or chat via WhatsApp. Clinic locations in Chennai.',
+            'title' => 'Contact Us | Clinic Locations in Kovur, Porur & Ashok Nagar | Chennai',
+            'meta_desc' => 'Contact Insight Counseling Services. Book an in-person or online consultation with expert psychologists in Kovur, Porur, and Ashok Nagar, Chennai.',
             'branches' => $branchModel->where('status', 1)->findAll()
         ];
 
@@ -55,7 +56,8 @@ class Home extends BaseController
         $serviceModel = new ServiceModel();
 
         $data = [
-            'title' => 'Psychological Counseling Services | Insight Counseling Services',
+            'title' => 'Psychological Counseling & Therapy Services in Chennai | ICS',
+            'meta_desc' => 'Explore professional counseling services in Chennai: Individual Therapy, Couple Counseling, Teen Therapy, Academic Stress Management, LGBTQ+ Affirmative Therapy & Online Sessions.',
             'services' => $serviceModel->where('status', 1)->findAll()
         ];
 
@@ -72,7 +74,8 @@ class Home extends BaseController
         }
 
         $data = [
-            'title' => esc($service['title']) . ' | Insight Counseling Services',
+            'title' => esc($service['title']) . ' | Insight Counseling Services Chennai',
+            'meta_desc' => esc(strip_tags(mb_substr($service['description'] ?? $service['short_description'] ?? 'Professional counseling service at Insight Counseling Services Chennai.', 0, 160))),
             'service' => $service
         ];
 
@@ -85,6 +88,7 @@ class Home extends BaseController
 
         $data = [
             'title' => 'Our Team of Expert Psychologists & Counselors | Insight Counseling Services',
+            'meta_desc' => 'Meet our team of licensed counseling psychologists and mental health experts at Insight Counseling Services in Chennai dedicated to your emotional well-being.',
             'team' => $teamModel->where('status', 1)->findAll()
         ];
 
@@ -96,7 +100,8 @@ class Home extends BaseController
         $faqModel = new FaqModel();
 
         $data = [
-            'title' => 'Frequently Asked Questions | Insight Counseling Services',
+            'title' => 'Frequently Asked Questions (FAQ) | Insight Counseling Services',
+            'meta_desc' => 'Find answers to 26 common questions about psychological counseling, therapy sessions, confidentiality, fees, online sessions, and booking in Chennai.',
             'faqs' => $faqModel->where('status', 1)->findAll()
         ];
 
@@ -109,6 +114,7 @@ class Home extends BaseController
 
         $data = [
             'title' => 'Client Testimonials & Feedback | Insight Counseling Services',
+            'meta_desc' => 'Read authentic client testimonials and reviews about Insight Counseling Services and psychologist Mrs. Lekha Edwin in Chennai.',
             'testimonials' => $testimonialModel->where('status', 1)->findAll()
         ];
 
@@ -118,7 +124,8 @@ class Home extends BaseController
     public function privacy()
     {
         $data = [
-            'title' => 'Privacy Policy | Insight Counseling Services'
+            'title' => 'Privacy Policy | Insight Counseling Services',
+            'meta_desc' => 'Read our Privacy Policy to understand how Insight Counseling Services safeguards your personal information, appointment details, and medical confidentiality.'
         ];
 
         return view('frontend/privacy', $data);
@@ -127,19 +134,31 @@ class Home extends BaseController
     public function refund()
     {
         $data = [
-            'title' => 'Refund & Cancellation Policy | Insight Counseling Services'
+            'title' => 'Refund & Rescheduling Policy | Insight Counseling Services',
+            'meta_desc' => 'Review the official Refund and Rescheduling Policy for appointment bookings at Insight Counseling Services in Chennai.'
         ];
 
         return view('frontend/refund', $data);
     }
 
-    public function terms()
+    public function ourValues()
     {
         $data = [
-            'title' => 'Terms and Conditions | Insight Counseling Services'
+            'title' => 'Our Values | Insight Counseling Services Chennai',
+            'meta_desc' => 'Discover the core values of Insight Counseling Services in Chennai: respect, dignity, compassion, empathy, confidentiality, integrity, client-centered care, and excellence.'
         ];
 
-        return view('frontend/terms', $data);
+        return view('frontend/our_values', $data);
+    }
+
+    public function helplines()
+    {
+        $data = [
+            'title' => 'Mental Health Helplines Chennai & Tamil Nadu | Insight Counseling Services',
+            'meta_desc' => 'Directory of 24/7 mental health helplines, suicide prevention numbers, and emergency crisis support services in Chennai, Tamil Nadu & India.'
+        ];
+
+        return view('frontend/helplines', $data);
     }
 
     public function notFound()
@@ -222,5 +241,63 @@ class Home extends BaseController
         ];
 
         return view('frontend/thankyou', $data);
+    }
+
+    public function sitemap()
+    {
+        $serviceModel = new ServiceModel();
+        $services = $serviceModel->where('status', 1)->findAll();
+
+        $urls = [
+            base_url('/'),
+            base_url('about'),
+            base_url('services'),
+            base_url('team'),
+            base_url('faq'),
+            base_url('testimonials'),
+            base_url('contact'),
+            base_url('privacy-policy'),
+            base_url('refund-policy'),
+            base_url('our-values'),
+            base_url('helpline-details')
+        ];
+
+        foreach ($services as $s) {
+            $urls[] = base_url('services/' . $s['slug']);
+        }
+
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+
+        foreach ($urls as $url) {
+            $xml .= '  <url>' . "\n";
+            $xml .= '    <loc>' . esc($url) . '</loc>' . "\n";
+            $xml .= '    <lastmod>' . date('Y-m-d') . '</lastmod>' . "\n";
+            $xml .= '    <changefreq>weekly</changefreq>' . "\n";
+            $xml .= '    <priority>' . ($url === base_url('/') ? '1.0' : '0.8') . '</priority>' . "\n";
+            $xml .= '  </url>' . "\n";
+        }
+
+        $xml .= '</urlset>';
+
+        return $this->response->setHeader('Content-Type', 'text/xml')->setBody($xml);
+    }
+
+    public function llmsTxt()
+    {
+        $path = FCPATH . 'llms.txt';
+        if (file_exists($path)) {
+            return $this->response->setHeader('Content-Type', 'text/plain; charset=utf-8')->setBody(file_get_contents($path));
+        }
+        return $this->response->setStatusCode(404);
+    }
+
+    public function llmsFullTxt()
+    {
+        $path = FCPATH . 'llms-full.txt';
+        if (file_exists($path)) {
+            return $this->response->setHeader('Content-Type', 'text/plain; charset=utf-8')->setBody(file_get_contents($path));
+        }
+        return $this->response->setStatusCode(404);
     }
 }

@@ -23,7 +23,7 @@
         <div class="row g-4 justify-content-center">
             <?php if (!empty($team)): ?>
                 <?php foreach ($team as $member): ?>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="team-card bg-body-secondary h-100 d-flex flex-column gap-2 justify-content-between mt-3">
                             <div>
                                 <div class="team-img-wrapper">
@@ -34,8 +34,9 @@
                                 <p class="team-desc"><?= esc($member['qualifications']) ?></p>
                                 <div class="team-langs"><?= esc($member['languages']) ?></div>
                             </div>
-                            <div class="d-flex gap-2 justify-content-center mt-3">
-                                <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">VIEW PROFILE</button>
+                            <div class="d-flex gap-3 justify-content-center flex-column">
+                                <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">View Profile</button>
+                                <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-book-now">Book Your Appointment</a>
                             </div>
                         </div>
                     </div>

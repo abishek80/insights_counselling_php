@@ -78,7 +78,7 @@ trait ControllerTestTrait
      *
      * @var string
      */
-    protected $uri = 'http://example.com';
+    protected $uri = 'https://insightcounselings.com';
 
     /**
      * Request body.

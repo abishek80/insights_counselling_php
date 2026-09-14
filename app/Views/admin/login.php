@@ -25,7 +25,7 @@
             background: rgba(255, 255, 255, 0.95);
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-            padding: 40px;
+            padding: 30px;
             width: 100%;
             max-width: 420px;
             backdrop-filter: blur(10px);
@@ -61,9 +61,23 @@
             border: 1px solid #ced4da;
         }
 
-        .form-control:focus {
-            border-color: #2D2A70;
-            box-shadow: 0 0 0 0.25rem rgba(45, 42, 112, 0.25);
+        .form-control:focus,
+        .form-control:focus-visible,
+        .input-group-text:focus,
+        .btn:focus,
+        .btn:focus-visible {
+            box-shadow: none !important;
+            outline: none !important;
+            border-color: #ced4da !important;
+        }
+
+        #togglePassword {
+            cursor: pointer;
+            border-radius: 0 8px 8px 0;
+        }
+
+        #togglePassword:hover i {
+            color: #2D2A70 !important;
         }
     </style>
 </head>
@@ -72,7 +86,6 @@
     <div class="login-card">
         <div class="login-logo">
             <img src="<?= base_url('assets/logo-dark.png') ?>" alt="Insight Counseling Services">
-            <h5 class="fw-bold mt-3 text-muted">ADMIN PORTAL</h5>
         </div>
 
         <!-- Alerts -->
@@ -95,15 +108,18 @@
             <div class="mb-3">
                 <label for="username" class="form-label fw-bold text-dark small">Username</label>
                 <div class="input-group">
-                    <span class="input-group-text bg-light border-end-0"><i class="fas fa-user text-muted"></i></span>
+                    <span class="input-group-text bg-body-secondary border-end-0"><i class="fas fa-user text-muted"></i></span>
                     <input type="text" name="username" class="form-control border-start-0" id="username" placeholder="Enter username" required autocomplete="username">
                 </div>
             </div>
             <div class="mb-4">
                 <label for="password" class="form-label fw-bold text-dark small">Password</label>
                 <div class="input-group">
-                    <span class="input-group-text bg-light border-end-0"><i class="fas fa-lock text-muted"></i></span>
-                    <input type="password" name="password" class="form-control border-start-0" id="password" placeholder="Enter password" required autocomplete="current-password">
+                    <span class="input-group-text bg-body-secondary border-end-0"><i class="fas fa-lock text-muted"></i></span>
+                    <input type="password" name="password" class="form-control border-start-0 border-end-0" id="password" placeholder="Enter password" required autocomplete="current-password">
+                    <button type="button" class="btn bg-body-secondary border border-start-0 text-muted" id="togglePassword" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye" id="togglePasswordIcon"></i>
+                    </button>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary w-100 mb-2">Log In</button>
@@ -115,6 +131,22 @@
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const togglePassword = document.getElementById('togglePassword');
+            const passwordInput = document.getElementById('password');
+            const togglePasswordIcon = document.getElementById('togglePasswordIcon');
+
+            if (togglePassword && passwordInput && togglePasswordIcon) {
+                togglePassword.addEventListener('click', function () {
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+                    togglePasswordIcon.classList.toggle('fa-eye');
+                    togglePasswordIcon.classList.toggle('fa-eye-slash');
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>

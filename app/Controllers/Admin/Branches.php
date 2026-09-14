@@ -27,11 +27,11 @@ class Branches extends BaseController
         $branchModel = new BranchModel();
 
         $rules = [
-            'name' => 'required',
-            'address' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-            'map_url' => 'required'
+            'name'    => ['label' => 'Branch Name', 'rules' => 'required'],
+            'address' => ['label' => 'Address', 'rules' => 'required'],
+            'phone'   => ['label' => 'Phone Number', 'rules' => 'required'],
+            'email'   => ['label' => 'Email Address', 'rules' => 'required|valid_email'],
+            'map_url' => ['label' => 'Map URL', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {
@@ -77,11 +77,11 @@ class Branches extends BaseController
         }
 
         $rules = [
-            'name' => 'required',
-            'address' => 'required',
-            'phone' => 'required',
-            'email' => 'required',
-            'map_url' => 'required'
+            'name'    => ['label' => 'Branch Name', 'rules' => 'required'],
+            'address' => ['label' => 'Address', 'rules' => 'required'],
+            'phone'   => ['label' => 'Phone Number', 'rules' => 'required'],
+            'email'   => ['label' => 'Email Address', 'rules' => 'required|valid_email'],
+            'map_url' => ['label' => 'Map URL', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {

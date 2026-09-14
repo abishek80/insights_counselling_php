@@ -27,12 +27,12 @@ class Team extends BaseController
         $teamModel = new TeamModel();
 
         $rules = [
-            'name' => 'required',
-            'role' => 'required',
-            'qualifications' => 'required',
-            'languages' => 'required',
-            'specialties' => 'required',
-            'about' => 'required'
+            'name'           => ['label' => 'Full Name', 'rules' => 'required'],
+            'role'           => ['label' => 'Role / Designation', 'rules' => 'required'],
+            'qualifications' => ['label' => 'Qualifications', 'rules' => 'required'],
+            'languages'      => ['label' => 'Languages Spoken', 'rules' => 'required'],
+            'specialties'    => ['label' => 'Specialties', 'rules' => 'required'],
+            'about'          => ['label' => 'About / Bio', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {
@@ -86,12 +86,12 @@ class Team extends BaseController
         }
 
         $rules = [
-            'name' => 'required',
-            'role' => 'required',
-            'qualifications' => 'required',
-            'languages' => 'required',
-            'specialties' => 'required',
-            'about' => 'required'
+            'name'           => ['label' => 'Full Name', 'rules' => 'required'],
+            'role'           => ['label' => 'Role / Designation', 'rules' => 'required'],
+            'qualifications' => ['label' => 'Qualifications', 'rules' => 'required'],
+            'languages'      => ['label' => 'Languages Spoken', 'rules' => 'required'],
+            'specialties'    => ['label' => 'Specialties', 'rules' => 'required'],
+            'about'          => ['label' => 'About / Bio', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {

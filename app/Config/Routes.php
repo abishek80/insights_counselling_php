@@ -17,9 +17,14 @@ $routes->get('faq', 'Home::faq');
 $routes->get('testimonials', 'Home::testimonials');
 $routes->get('privacy-policy', 'Home::privacy');
 $routes->get('refund-policy', 'Home::refund');
-$routes->get('terms-and-conditions', 'Home::terms');
+$routes->get('our-values', 'Home::ourValues');
+$routes->get('helpline-details', 'Home::helplines');
+$routes->get('helplines', 'Home::helplines');
 $routes->get('error-404', 'Home::notFound');
 $routes->get('thank-you', 'Home::thankyou');
+$routes->get('sitemap.xml', 'Home::sitemap');
+$routes->get('llms.txt', 'Home::llmsTxt');
+$routes->get('llms-full.txt', 'Home::llmsFullTxt');
 $routes->post('contact/submit', 'Home::submitEnquiry');
 
 // Admin Auth Routes
@@ -86,8 +91,5 @@ $routes->group('admin', ['filter' => 'adminAuth'], function($routes) {
     $routes->post('settings/update', 'Admin\Settings::update');
 });
 
-// 404 Override Redirect
-$routes->set404Override(function() {
-    header('Location: ' . base_url('error-404'));
-    exit;
-});
+// 404 Override Handler
+$routes->set404Override('App\Controllers\Home::notFound');

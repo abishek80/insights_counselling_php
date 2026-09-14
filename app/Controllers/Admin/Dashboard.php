@@ -25,6 +25,7 @@ class Dashboard extends BaseController
             'servicesCount' => $serviceModel->countAllResults(),
             'testimonialsCount' => $testimonialModel->countAllResults(),
             'faqCount' => $faqModel->countAllResults(),
+            'enquiries' => $enquiryModel->orderBy('created_at', 'DESC')->findAll(),
             'recentEnquiries' => $enquiryModel->orderBy('created_at', 'DESC')->findAll(5),
         ];
 

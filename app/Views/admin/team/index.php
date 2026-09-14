@@ -10,9 +10,9 @@
     <a href="<?= base_url('admin/team/create') ?>" class="btn btn-primary fw-bold"><i class="fas fa-plus me-1"></i> Add Team Member</a>
 </div>
 
-<div class="card p-4">
+<div class="card p-3">
     <div class="table-responsive">
-        <table class="table table-hover align-middle">
+        <table class="table table-hover align-middle rounded-3 overflow-hidden">
             <thead>
                 <tr>
                     <th style="width: 80px;">Photo</th>
@@ -31,7 +31,7 @@
                                 <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" alt="<?= esc($member['name']) ?>" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #2D2A70;">
                             </td>
                             <td><strong><?= esc($member['name']) ?></strong></td>
-                            <td><span class="badge bg-light text-primary border"><?= esc($member['role']) ?></span></td>
+                            <td><span class="badge bg-body-secondary text-primary border"><?= esc($member['role']) ?></span></td>
                             <td><?= esc($member['languages']) ?></td>
                             <td>
                                 <?php if ($member['status'] == 1): ?>
@@ -41,8 +41,10 @@
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="<?= base_url('admin/team/edit/' . $member['id']) ?>" class="btn btn-sm btn-outline-primary btn-action me-1" title="Edit"><i class="fas fa-edit"></i></a>
-                                <a href="<?= base_url('admin/team/delete/' . $member['id']) ?>" onclick="return confirm('Are you sure you want to delete this team member?');" class="btn btn-sm btn-outline-danger btn-action" title="Delete"><i class="fas fa-trash"></i></a>
+                                <div class="d-flex gap-2">
+                                    <a href="<?= base_url('admin/team/edit/' . $member['id']) ?>" class="btn btn-sm btn-outline-primary btn-action me-1" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= base_url('admin/team/delete/' . $member['id']) ?>" onclick="return confirm('Are you sure you want to delete this team member?');" class="btn btn-sm btn-outline-danger btn-action" title="Delete"><i class="fas fa-trash"></i></a>
+                                </div>
                             </td>
                         </tr>
                     <?php endforeach; ?>

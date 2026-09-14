@@ -10,9 +10,9 @@
     <a href="<?= base_url('admin/faq/create') ?>" class="btn btn-primary fw-bold"><i class="fas fa-plus me-1"></i> Add FAQ</a>
 </div>
 
-<div class="card p-4">
+<div class="card p-3">
     <div class="table-responsive">
-        <table class="table table-hover align-middle">
+        <table class="table table-hover align-middle rounded-3 overflow-hidden">
             <thead>
                 <tr>
                     <th>Question</th>
@@ -35,8 +35,10 @@
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <a href="<?= base_url('admin/faq/edit/' . $faq['id']) ?>" class="btn btn-sm btn-outline-primary btn-action me-1" title="Edit"><i class="fas fa-edit"></i></a>
-                                <a href="<?= base_url('admin/faq/delete/' . $faq['id']) ?>" onclick="return confirm('Are you sure you want to delete this FAQ?');" class="btn btn-sm btn-outline-danger btn-action" title="Delete"><i class="fas fa-trash"></i></a>
+                                <div class="d-flex gap-2">
+                                    <a href="<?= base_url('admin/faq/edit/' . $faq['id']) ?>" class="btn btn-sm btn-outline-primary btn-action me-1" title="Edit"><i class="fas fa-edit"></i></a>
+                                    <a href="<?= base_url('admin/faq/delete/' . $faq['id']) ?>" onclick="return confirm('Are you sure you want to delete this FAQ?');" class="btn btn-sm btn-outline-danger btn-action" title="Delete"><i class="fas fa-trash"></i></a>
+                                </div>
                             </td>
                         </tr>
                     <?php endforeach; ?>

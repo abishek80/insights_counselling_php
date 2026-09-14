@@ -35,17 +35,17 @@ $errors = session()->getFlashdata('errors') ?? [];
                                 <i class="fas fa-location-dot"></i>
                             </div>
                             <h5 class="fw-bold mb-3"><?= esc($branch['name']) ?></h5>
-                            <p class="text-muted small mb-4"><?= esc($branch['address']) ?></p>
-                            <div class="mb-2 small">
+                            <p class="text-muted mb-4"><?= esc($branch['address']) ?></p>
+                            <div class="mb-2">
                                 <i class="fas fa-phone me-2 text-primary-color"></i>
                                 <a href="tel:<?= preg_replace('/\s+/', '', $branch['phone']) ?>" class="text-decoration-none text-reset"><?= esc($branch['phone']) ?></a>
                             </div>
-                            <div class="mb-3 small">
+                            <div class="mb-3">
                                 <i class="fas fa-envelope me-2 text-primary-color"></i>
                                 <a href="mailto:<?= esc($branch['email']) ?>" class="text-decoration-none text-reset"><?= esc($branch['email']) ?></a>
                             </div>
                             <?php if (!empty($branch['map_url'])): ?>
-                                <a href="<?= esc($branch['map_url']) ?>" target="_blank" class="text-primary-color fw-bold small text-decoration-none">GET DIRECTIONS <i class="fas fa-external-link-alt ms-1"></i></a>
+                                <a href="<?= esc($branch['map_url']) ?>" target="_blank" class="text-primary-color fw-bold text-decoration-none">GET DIRECTIONS <i class="fas fa-external-link-alt ms-1"></i></a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -59,41 +59,41 @@ $errors = session()->getFlashdata('errors') ?? [];
         <div class="row g-5">
             <!-- Enquiry Form -->
             <div class="col-lg-7">
-                <div class="card p-4 p-md-5 border-0 shadow-sm rounded-4" style="background-color: #f8f9fa;">
+                <div class="card p-4 border-0 shadow-sm rounded-4 bg-body-secondary">
                     <h3 class="fw-bold text-primary-color mb-2">Send an Enquiry</h3>
-                    <p class="text-muted small mb-4">Fill out the form below and our counseling support team will respond to you within 24 hours.</p>
+                    <p class="text-muted mb-4">Fill out the form below and our counseling support team will respond to you within 24 hours.</p>
                     
                     <form action="<?= base_url('contact/submit') ?>" method="POST" novalidate>
                         <?= csrf_field() ?>
                         
                         <div class="mb-3">
-                            <label for="name" class="form-label fw-bold small text-dark">Full Name <span class="text-danger">*</span></label>
-                            <input type="text" name="name" id="name" class="form-control py-2 <?= (isset($errors['name']) || $validation->hasError('name')) ? 'is-invalid' : '' ?>" placeholder="e.g. John Doe" value="<?= old('name') ?>" required>
+                            <label for="name" class="form-label fw-bold text-dark">Full Name <span class="text-danger">*</span></label>
+                            <input type="text" name="name" id="name" class="form-control <?= (isset($errors['name']) || $validation->hasError('name')) ? 'is-invalid' : '' ?>" placeholder="e.g. John Doe" value="<?= old('name') ?>" required>
                             <?php if (isset($errors['name']) || $validation->hasError('name')): ?>
-                                <div class="invalid-feedback small"><?= esc($errors['name'] ?? $validation->getError('name')) ?></div>
+                                <div class="invalid-feedback"><?= esc($errors['name'] ?? $validation->getError('name')) ?></div>
                             <?php endif; ?>
                         </div>
                         
                         <div class="row">
                             <div class="col-md-6 mb-3">
-                                <label for="email" class="form-label fw-bold small text-dark">Email Address <span class="text-danger">*</span></label>
-                                <input type="email" name="email" id="email" class="form-control py-2 <?= (isset($errors['email']) || $validation->hasError('email')) ? 'is-invalid' : '' ?>" placeholder="e.g. john@example.com" value="<?= old('email') ?>" required>
+                                <label for="email" class="form-label fw-bold text-dark">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" name="email" id="email" class="form-control <?= (isset($errors['email']) || $validation->hasError('email')) ? 'is-invalid' : '' ?>" placeholder="e.g. john@example.com" value="<?= old('email') ?>" required>
                                 <?php if (isset($errors['email']) || $validation->hasError('email')): ?>
-                                    <div class="invalid-feedback small"><?= esc($errors['email'] ?? $validation->getError('email')) ?></div>
+                                    <div class="invalid-feedback"><?= esc($errors['email'] ?? $validation->getError('email')) ?></div>
                                 <?php endif; ?>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <label for="phone" class="form-label fw-bold small text-dark">Phone Number <span class="text-danger">*</span></label>
-                                <input type="tel" name="phone" id="phone" class="form-control py-2 <?= (isset($errors['phone']) || $validation->hasError('phone')) ? 'is-invalid' : '' ?>" placeholder="e.g. +91 98765 43210" value="<?= old('phone') ?>" required>
+                                <label for="phone" class="form-label fw-bold text-dark">Phone Number <span class="text-danger">*</span></label>
+                                <input type="tel" name="phone" id="phone" class="form-control <?= (isset($errors['phone']) || $validation->hasError('phone')) ? 'is-invalid' : '' ?>" placeholder="e.g. +91 98765 43210" value="<?= old('phone') ?>" required>
                                 <?php if (isset($errors['phone']) || $validation->hasError('phone')): ?>
-                                    <div class="invalid-feedback small"><?= esc($errors['phone'] ?? $validation->getError('phone')) ?></div>
+                                    <div class="invalid-feedback"><?= esc($errors['phone'] ?? $validation->getError('phone')) ?></div>
                                 <?php endif; ?>
                             </div>
                         </div>
                         
                         <div class="mb-3">
-                            <label for="subject" class="form-label fw-bold small text-dark">Subject <span class="text-danger">*</span></label>
-                            <select name="subject" id="subject" class="form-select py-2 <?= (isset($errors['subject']) || $validation->hasError('subject')) ? 'is-invalid' : '' ?>" required>
+                            <label for="subject" class="form-label fw-bold text-dark">Subject <span class="text-danger">*</span></label>
+                            <select name="subject" id="subject" class="form-select <?= (isset($errors['subject']) || $validation->hasError('subject')) ? 'is-invalid' : '' ?>" required>
                                 <option value="" disabled selected>Select an enquiry subject...</option>
                                 <option value="General Enquiry" <?= old('subject') === 'General Enquiry' ? 'selected' : '' ?>>General Enquiry</option>
                                 <option value="Appointment Booking" <?= old('subject') === 'Appointment Booking' ? 'selected' : '' ?>>Appointment Booking</option>
@@ -101,19 +101,19 @@ $errors = session()->getFlashdata('errors') ?? [];
                                 <option value="Feedback / Suggestions" <?= old('subject') === 'Feedback / Suggestions' ? 'selected' : '' ?>>Feedback / Suggestions</option>
                             </select>
                             <?php if (isset($errors['subject']) || $validation->hasError('subject')): ?>
-                                <div class="invalid-feedback small"><?= esc($errors['subject'] ?? $validation->getError('subject')) ?></div>
+                                <div class="invalid-feedback"><?= esc($errors['subject'] ?? $validation->getError('subject')) ?></div>
                             <?php endif; ?>
                         </div>
                         
                         <div class="mb-4">
-                            <label for="message" class="form-label fw-bold small text-dark">Your Message <span class="text-danger">*</span></label>
+                            <label for="message" class="form-label fw-bold text-dark">Your Message <span class="text-danger">*</span></label>
                             <textarea name="message" id="message" class="form-control <?= (isset($errors['message']) || $validation->hasError('message')) ? 'is-invalid' : '' ?>" rows="5" placeholder="Write details about your query here..." required><?= old('message') ?></textarea>
                             <?php if (isset($errors['message']) || $validation->hasError('message')): ?>
-                                <div class="invalid-feedback small"><?= esc($errors['message'] ?? $validation->getError('message')) ?></div>
+                                <div class="invalid-feedback"><?= esc($errors['message'] ?? $validation->getError('message')) ?></div>
                             <?php endif; ?>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-3">
+                        <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-pill">
                             <i class="fas fa-paper-plane me-2"></i> Send Message
                         </button>
                     </form>
@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let feedback = input.parentNode.querySelector('.invalid-feedback');
         if (!feedback) {
             feedback = document.createElement('div');
-            feedback.className = 'invalid-feedback small';
+            feedback.className = 'invalid-feedback';
             input.parentNode.appendChild(feedback);
         }
         feedback.textContent = message;

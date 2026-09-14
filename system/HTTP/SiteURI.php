@@ -33,7 +33,7 @@ class SiteURI extends URI
     /**
      * The path part of baseURL.
      *
-     * The baseURL "http://example.com/" → '/'
+     * The baseURL "https://insightcounselings.com/" → '/'
      * The baseURL "http://localhost:8888/ci431/public/" → '/ci431/public/'
      */
     private string $basePathWithoutIndexPage;

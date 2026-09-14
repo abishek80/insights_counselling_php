@@ -187,14 +187,14 @@
         }
 
         .page-header {
-            margin-bottom: 28px;
+            margin-bottom: 20px;
         }
 
         /* Form Overrides matching Slide 3 & Slide 4 */
         .form-label {
             font-weight: 600;
             color: var(--text-sidebar-active);
-            font-size: 0.85rem;
+            font-size: 1rem;
             margin-bottom: 8px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -262,7 +262,7 @@
             border-radius: 10px !important;
             padding: 12px 28px !important;
             font-weight: 600 !important;
-            font-size: 0.9rem !important;
+            font-size: 1rem !important;
             letter-spacing: 0.3px;
             box-shadow: 0 4px 15px rgba(82, 196, 26, 0.15) !important;
             transition: all 0.25s ease !important;
@@ -284,7 +284,7 @@
         .table thead th {
             background-color: var(--primary) !important;
             color: #ffffff !important;
-            font-size: 0.9rem !important;
+            font-size: 1rem !important;
             font-weight: 700 !important;
             border-bottom: 1px solid transparent !important;
             border-top: 1px solid transparent !important;
@@ -295,7 +295,7 @@
         }
 
         .table tbody td {
-            font-size: 0.9rem !important;
+            font-size: 1rem !important;
             color: #4b4563;
             padding: 16px 14px !important;
             border: 1px solid transparent !important;
@@ -349,7 +349,7 @@
             color: #52c41a !important; /* Green */
             font-weight: 600 !important;
             padding: 0 !important;
-            font-size: 0.9rem !important;
+            font-size: 1rem !important;
             text-decoration: none !important;
             pointer-events: auto !important;
             cursor: pointer !important;
@@ -376,7 +376,7 @@
             color: #ff4d4f !important; /* Red */
             font-weight: 600 !important;
             padding: 0 !important;
-            font-size: 0.9rem !important;
+            font-size: 1rem !important;
             text-decoration: none !important;
             pointer-events: auto !important;
             cursor: pointer !important;
@@ -485,7 +485,7 @@
             padding: 8px 24px !important;
             border-radius: 8px !important;
             font-weight: 600 !important;
-            font-size: 0.85rem !important;
+            font-size: 1rem !important;
             transition: all 0.25s ease !important;
             box-shadow: none !important;
         }
@@ -607,9 +607,6 @@
             <li class="sidebar-item <?= uri_string() === 'admin' ? 'active' : '' ?>">
                 <a href="<?= base_url('admin') ?>"><i class="fas fa-chart-line"></i> Dashboard</a>
             </li>
-            <li class="sidebar-item <?= strpos(uri_string(), 'admin/enquiries') !== false ? 'active' : '' ?>">
-                <a href="<?= base_url('admin/enquiries') ?>"><i class="fas fa-envelope-open-text"></i> Enquiries</a>
-            </li>
             <li class="sidebar-item <?= strpos(uri_string(), 'admin/team') !== false ? 'active' : '' ?>">
                 <a href="<?= base_url('admin/team') ?>"><i class="fas fa-users"></i> Team Management</a>
             </li>
@@ -646,13 +643,13 @@
                 <h5 class="fw-bold mb-0 text-primary-color">Insight Admin Control Panel</h5>
             </div>
             <div class="d-flex align-items-center">
-                <a href="<?= base_url() ?>" target="_blank" class="btn btn-outline-secondary btn-sm me-3 border-0 bg-light-hover rounded-3" style="font-weight: 500; font-size: 0.85rem; padding: 8px 14px;"><i class="fas fa-external-link-alt me-1"></i> View Site</a>
+                <a href="<?= base_url() ?>" target="_blank" class="btn btn-outline-secondary btn-sm me-3 border-0 bg-body-secondary-hover rounded-3" style="font-weight: 500; font-size: 1rem; padding: 8px 14px;"><i class="fas fa-external-link-alt me-1"></i> View Site</a>
                 <div class="avatar-container">
                     <div class="avatar-img-wrapper">
                         <img src="https://ui-avatars.com/api/?name=Admin&background=5a39a8&color=fff&bold=true" class="avatar-img" alt="Admin Avatar">
                         <span class="avatar-status"></span>
                     </div>
-                    <span class="fw-semibold text-dark" style="font-size: 0.85rem;">Admin</span>
+                    <span class="fw-semibold text-dark" style="font-size: 1rem;">Admin</span>
                 </div>
             </div>
         </div>
@@ -712,6 +709,24 @@
 
         // Intercept native confirm dialog calls on page load and convert to SweetAlert
         document.addEventListener('DOMContentLoaded', () => {
+            // Client-side form validation (prevents page refresh when required fields are empty)
+            const validationForms = document.querySelectorAll('.needs-validation, form[novalidate]');
+            Array.from(validationForms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        if (typeof Toast !== 'undefined') {
+                            Toast.fire({
+                                icon: 'warning',
+                                title: 'Please fill in all required fields.'
+                            });
+                        }
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+
             const confirmElements = document.querySelectorAll('[onclick*="confirm("]');
             
             confirmElements.forEach(el => {

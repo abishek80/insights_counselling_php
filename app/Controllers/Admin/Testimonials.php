@@ -27,9 +27,10 @@ class Testimonials extends BaseController
         $testimonialModel = new TestimonialModel();
 
         $rules = [
-            'client_name' => 'required',
-            'content' => 'required',
-            'meta_info' => 'required'
+            'client_name' => ['label' => 'Client Name', 'rules' => 'required'],
+            'content'     => ['label' => 'Review Content', 'rules' => 'required'],
+            'meta_info'   => ['label' => 'Location / Tagline', 'rules' => 'required'],
+            'rating'      => ['label' => 'Rating', 'rules' => 'permit_empty|integer|greater_than_equal_to[1]|less_than_equal_to[5]']
         ];
 
         if (!$this->validate($rules)) {
@@ -38,8 +39,9 @@ class Testimonials extends BaseController
 
         $testimonialModel->insert([
             'client_name' => $this->request->getPost('client_name'),
-            'content' => $this->request->getPost('content'),
-            'meta_info' => $this->request->getPost('meta_info')
+            'rating'      => (int)($this->request->getPost('rating') ?? 5),
+            'content'     => $this->request->getPost('content'),
+            'meta_info'   => $this->request->getPost('meta_info')
         ]);
 
         return redirect()->to(base_url('admin/testimonials'))->with('success', 'Testimonial created successfully.');
@@ -72,9 +74,10 @@ class Testimonials extends BaseController
         }
 
         $rules = [
-            'client_name' => 'required',
-            'content' => 'required',
-            'meta_info' => 'required'
+            'client_name' => ['label' => 'Client Name', 'rules' => 'required'],
+            'content'     => ['label' => 'Review Content', 'rules' => 'required'],
+            'meta_info'   => ['label' => 'Location / Tagline', 'rules' => 'required'],
+            'rating'      => ['label' => 'Rating', 'rules' => 'permit_empty|integer|greater_than_equal_to[1]|less_than_equal_to[5]']
         ];
 
         if (!$this->validate($rules)) {
@@ -83,8 +86,9 @@ class Testimonials extends BaseController
 
         $testimonialModel->update($id, [
             'client_name' => $this->request->getPost('client_name'),
-            'content' => $this->request->getPost('content'),
-            'meta_info' => $this->request->getPost('meta_info')
+            'rating'      => (int)($this->request->getPost('rating') ?? 5),
+            'content'     => $this->request->getPost('content'),
+            'meta_info'   => $this->request->getPost('meta_info')
         ]);
 
         return redirect()->to(base_url('admin/testimonials'))->with('success', 'Testimonial updated successfully.');

@@ -25,9 +25,9 @@ class Settings extends BaseController
         $settingModel = new SettingModel();
 
         $rules = [
-            'phone' => 'required',
-            'email' => 'required|valid_email',
-            'booking_url' => 'required'
+            'phone'       => ['label' => 'Contact Phone', 'rules' => 'required'],
+            'email'       => ['label' => 'Intake Email', 'rules' => 'required|valid_email'],
+            'booking_url' => ['label' => 'Booking URL', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {

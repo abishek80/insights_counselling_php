@@ -1,0 +1,12 @@
+Run Command :
+
+set PATH=C:\Users\VenPep\AppData\Local\Microsoft\WinGet\Packages\PHP.PHP.8.2_Microsoft.Winget.Source_8wekyb3d8bbwe;%PATH%
+php spark serve --port 8080
+
+
+
+
+payment conformtation
+invoice
+thankyou page
+email notification

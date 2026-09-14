@@ -19,15 +19,20 @@
 <!-- Services Grid -->
 <section class="section-padding bg-body-secondary" id="services">
     <div class="container">
-        <div class="row gx-4 gy-5">
+        <div class="row g-4">
             <?php if (!empty($services)): ?>
                 <?php foreach ($services as $service): ?>
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="service-card h-100">
-                            <img src="<?= base_url('assets/services/' . esc($service['image'])) ?>" class="card-img-top" alt="<?= esc($service['title']) ?>">
-                            <h5><?= esc($service['title']) ?></h5>
-                            <p><?= esc($service['short_description']) ?></p>
-                            <a href="<?= base_url('services/' . esc($service['slug'])) ?>" class="btn-read-more">READ MORE</a>
+                        <div class="service-card h-100 d-flex justify-content-between flex-column">
+                            <div>
+                                <img src="<?= base_url('assets/services/' . esc($service['image'])) ?>" class="card-img-top" alt="<?= esc($service['title']) ?>">
+                                <h5><?= esc($service['title']) ?></h5>
+                                <p><?= esc($service['short_description']) ?></p>
+                            </div>
+                            <div class="d-flex gap-3 flex-column justify-content-between mt-3">
+                                <a href="<?= base_url('services/' . esc($service['slug'])) ?>" class="btn-read-more">Read More</a>
+                                <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-book-now">Book Your Appointment</a>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>

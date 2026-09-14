@@ -17,7 +17,7 @@ use Config\App;
 
 class MockAppConfig extends App
 {
-    public string $baseURL         = 'http://example.com/';
+    public string $baseURL         = 'https://insightcounselings.com/';
     public string $uriProtocol     = 'REQUEST_URI';
     public array $proxyIPs         = [];
     public bool $CSPEnabled        = false;

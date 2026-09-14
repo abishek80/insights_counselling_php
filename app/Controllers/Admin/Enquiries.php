@@ -9,14 +9,7 @@ class Enquiries extends BaseController
 {
     public function index()
     {
-        $enquiryModel = new EnquiryModel();
-
-        $data = [
-            'title' => 'Enquiries List | Insight Admin',
-            'enquiries' => $enquiryModel->orderBy('id', 'DESC')->findAll()
-        ];
-
-        return view('admin/enquiries/index', $data);
+        return redirect()->to(base_url('admin'));
     }
 
     public function delete($id)
@@ -26,9 +19,9 @@ class Enquiries extends BaseController
 
         if ($enquiry) {
             $enquiryModel->delete($id);
-            return redirect()->to(base_url('admin/enquiries'))->with('success', 'Enquiry deleted successfully.');
+            return redirect()->to(base_url('admin'))->with('success', 'Enquiry deleted successfully.');
         }
 
-        return redirect()->to(base_url('admin/enquiries'))->with('error', 'Enquiry not found.');
+        return redirect()->to(base_url('admin'))->with('error', 'Enquiry not found.');
     }
 }

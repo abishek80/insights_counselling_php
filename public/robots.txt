@@ -1,2 +1,17 @@
 User-agent: *
-Disallow: 
+Allow: /
+Disallow: /admin/
+Disallow: /admin
+Disallow: /contact/submit
+
+# AI & LLM Search Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://insightcounselings.com/sitemap.xml

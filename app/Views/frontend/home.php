@@ -7,17 +7,17 @@
 <section class="hero-section" id="home">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-6">
-                <h1 class="hero-title fw-bold">Talk. Resolve. <br class="d-none d-lg-block"> <span>Heal.</span></h1>
+            <div class="col-lg-7">
+                <h1 class="hero-title fw-bold">Talk. Resolve. <span>Heal.</span></h1>
                 <p class="hero-subtext">Providing confidential, non-judgmental psychological support for individuals, teenagers, and couples seeking emotional wellbeing.</p>
                 <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn btn-secondary px-4 py-3 fw-bold d-inline-flex align-items-center">
                     Book Your Consultation <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
-            <div class="col-lg-6 mt-5 mt-lg-0">
+            <div class="col-lg-5 mt-5 mt-lg-0">
                 <div class="hero-img-container shadow-lg">
                     <img src="<?= base_url('assets/hero.png') ?>" alt="Counselor" class="hero-img d-none d-lg-block">
-                    <img src="<?= base_url('assets/about-img.png') ?>" alt="Lekha Edwin" class="img-fluid w-100 rounded-5 shadow-lg d-block d-lg-none">
+                    <img src="<?= base_url('assets/about-img.png') ?>" alt="Lekha Edwin" class="img-fluid w-100 rounded-5 shadow-lg border d-block d-lg-none">
                 </div>
             </div>
         </div>
@@ -30,11 +30,11 @@
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0">
                 <div class="position-relative">
-                    <img src="<?= base_url('assets/about-img.png') ?>" alt="Lekha Edwin" class="img-fluid w-100 rounded-5 shadow-lg d-none d-lg-block">
+                    <img src="<?= base_url('assets/about-img.png') ?>" alt="Lekha Edwin" class="img-fluid w-100 rounded-5 shadow-lg border d-none d-lg-block">
                 </div>
             </div>
             <div class="col-lg-7 ps-lg-5">
-                <h6 class="text-primary-color fw-bold text-uppercase mb-2 small" style="letter-spacing: 1px;">ABOUT FOUNDER</h6>
+                <h6 class="text-primary-color fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">ABOUT FOUNDER</h6>
                 <h2 class="about-founder-title">MRS. LEKHA EDWIN</h2>
                 <div class="title-underline"></div>
                 <div class="about-content">
@@ -71,7 +71,7 @@
 <section class="banner-section">
     <div class="container">
         <h2 class="fw-bold">Guiding you through life's challenges.</h2>
-        <p>"Our mission is to provide you with the professional support and tools needed to achieve emotional balance and mental well-being."</p>
+        <h5 class="mb-0 fw-medium">"Our mission is to provide you with the professional support and tools needed to <br> achieve emotional balance and mental well-being."</h5>
     </div>
 </section>
 
@@ -114,13 +114,13 @@
 <section class="section-padding pt-3" id="teams">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-bold display-4">Our Team</h2>
+            <h2 class="fw-bold display-5">Our Team</h2>
             <div class="mx-auto" style="width: 60px; height: 4px; background: var(--primary-color);"></div>
         </div>
         <div class="row g-4 justify-content-center">
             <?php if (!empty($team)): ?>
                 <?php foreach ($team as $member): ?>
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="team-card bg-body-secondary h-100 d-flex flex-column gap-2 justify-content-between mt-3">
                             <div>
                                 <div class="team-img-wrapper">
@@ -131,8 +131,9 @@
                                 <p class="team-desc"><?= esc($member['qualifications']) ?></p>
                                 <div class="team-langs"><?= esc($member['languages']) ?></div>
                             </div>
-                            <div class="d-flex gap-2 justify-content-center mt-3">
-                                <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">VIEW PROFILE</button>
+                            <div class="d-flex gap-3 justify-content-center flex-column">
+                                <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">View Profile</button>
+                                <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-book-now">Book Your Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -148,18 +149,23 @@
 <section class="section-padding bg-body-secondary" id="services">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-bold display-4">Our Services</h2>
+            <h2 class="fw-bold display-5">Our Services</h2>
             <div class="mx-auto" style="width: 60px; height: 4px; background: var(--primary-color);"></div>
         </div>
-        <div class="row gx-4 gy-5">
+        <div class="row g-4">
             <?php if (!empty($services)): ?>
                 <?php foreach ($services as $service): ?>
                     <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="service-card h-100">
-                            <img src="<?= base_url('assets/services/' . esc($service['image'])) ?>" class="card-img-top" alt="<?= esc($service['title']) ?>">
-                            <h5><?= esc($service['title']) ?></h5>
-                            <p><?= esc($service['short_description']) ?></p>
-                            <a href="<?= base_url('services/' . esc($service['slug'])) ?>" class="btn-read-more">READ MORE</a>
+                        <div class="service-card h-100 d-flex justify-content-between flex-column">
+                            <div>
+                                <img src="<?= base_url('assets/services/' . esc($service['image'])) ?>" class="card-img-top" alt="<?= esc($service['title']) ?>">
+                                <h5><?= esc($service['title']) ?></h5>
+                                <p><?= esc($service['short_description']) ?></p>
+                            </div>
+                            <div class="d-flex gap-3 flex-column justify-content-between mt-3">
+                                <a href="<?= base_url('services/' . esc($service['slug'])) ?>" class="btn-read-more">Read More</a>
+                                <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-book-now">Book Your Appointment</a>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -190,10 +196,10 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0">
-                <img src="<?= base_url('assets/service.png') ?>" alt="How we help you" class="img-fluid w-100 rounded-5 shadow-lg">
+                <img src="<?= base_url('assets/service.png') ?>" alt="How we help you" class="img-fluid w-100 rounded-5 shadow-lg border">
             </div>
             <div class="col-lg-7 ps-lg-5">
-                <h6 class="text-primary-color fw-bold text-uppercase mb-2 small" style="letter-spacing: 1px;">HOW WE HELP YOU</h6>
+                <h6 class="text-primary-color fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">HOW WE HELP YOU</h6>
                 <h2 class="how-we-help-title">Guiding you through life's challenges.</h2>
                 <p class="text-muted mb-5">Our team of experts is dedicated to providing you with the best possible support and guidance to help you navigate life's challenges. We combine clinical expertise with a deeply human approach.</p>
 
@@ -225,7 +231,7 @@
 <section class="section-padding bg-body-secondary" id="testimonial">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-bold display-4">Our Clients Loves Us</h2>
+            <h2 class="fw-bold display-5">Our Clients Loves Us</h2>
             <div class="mx-auto" style="width: 60px; height: 4px; background: var(--primary-color);"></div>
         </div>
         <div class="swiper testimonialSwiper pb-5">
@@ -234,14 +240,25 @@
                     <?php foreach ($testimonials as $testimonial): ?>
                         <div class="swiper-slide">
                             <div class="testimonial-card shadow-sm h-100 d-flex flex-column justify-content-between">
-                                <p class="text-muted mb-0 small">"<?= esc($testimonial['content']) ?>"</p>
+                                <p class="text-muted mb-0">"<?= esc($testimonial['content']) ?>"</p>
                                 <div>
-                                    <div class="testimonial-separator bg-dark-subtle"></div>
-                                    <div class="d-flex align-items-center">
-                                        <div class="avatar-initial"><?= strtoupper(substr($testimonial['client_name'], 0, 1)) ?></div>
-                                        <div>
-                                            <h6 class="mb-0 fw-bold small"><?= esc($testimonial['client_name']) ?></h6>
-                                            <p class="mb-0 text-muted extra-small"><?= esc($testimonial['meta_info']) ?></p>
+                                    <div class="mb-2 mt-4 text-warning" style="font-size: 1rem;">
+                                        <?php 
+                                        $ratingCount = (int)($testimonial['rating'] ?? 5);
+                                        if ($ratingCount < 1) $ratingCount = 5;
+                                        for ($i = 1; $i <= 5; $i++): 
+                                        ?>
+                                            <i class="<?= $i <= $ratingCount ? 'fas' : 'far' ?> fa-star"></i>
+                                        <?php endfor; ?>
+                                    </div>
+                                    <div class="testimonial-separator my-3 bg-dark-subtle"></div>
+                                    <div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-initial"><?= strtoupper(substr($testimonial['client_name'], 0, 1)) ?></div>
+                                            <div>
+                                                <h6 class="mb-0 fw-bold"><?= esc($testimonial['client_name']) ?></h6>
+                                                <p class="mb-0 text-muted small"><?= esc($testimonial['meta_info']) ?></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -261,7 +278,7 @@
 <section class="section-padding bg-white" id="contact">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-bold display-4">Get in Touch</h2>
+            <h2 class="fw-bold display-5">Get in Touch</h2>
             <p class="text-muted mx-auto" style="max-width: 600px;">Whether you have a question about our services or are ready to book a session, we are here to support you across multiple locations in Chennai.</p>
         </div>
 
@@ -275,17 +292,17 @@
                                 <i class="fas fa-location-dot"></i>
                             </div>
                             <h5 class="fw-bold mb-3"><?= esc($branch['name']) ?></h5>
-                            <p class="text-muted small mb-4"><?= esc($branch['address']) ?></p>
-                            <div class="mb-2 small">
+                            <p class="text-muted mb-4"><?= esc($branch['address']) ?></p>
+                            <div class="mb-2">
                                 <i class="fas fa-phone me-2 text-primary-color"></i>
                                 <a href="tel:<?= preg_replace('/\s+/', '', $branch['phone']) ?>" class="text-decoration-none text-reset"><?= esc($branch['phone']) ?></a>
                             </div>
-                            <div class="mb-3 small">
+                            <div class="mb-3">
                                 <i class="fas fa-envelope me-2 text-primary-color"></i>
                                 <a href="mailto:<?= esc($branch['email']) ?>" class="text-decoration-none text-reset"><?= esc($branch['email']) ?></a>
                             </div>
                             <?php if (!empty($branch['map_url'])): ?>
-                                <a href="<?= esc($branch['map_url']) ?>" target="_blank" class="text-primary-color fw-bold small text-decoration-none">GET DIRECTIONS <i class="fas fa-external-link-alt ms-1"></i></a>
+                                <a href="<?= esc($branch['map_url']) ?>" target="_blank" class="text-primary-color fw-bold text-decoration-none">GET DIRECTIONS <i class="fas fa-external-link-alt ms-1"></i></a>
                             <?php endif; ?>
                         </div>
                     </div>

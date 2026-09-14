@@ -65,7 +65,7 @@ $errors = session()->getFlashdata('errors') ?? [];
             </div>
 
             <div class="col-md-6 mb-3">
-                <label for="whatsapp" class="form-label fw-bold small text-dark">WhatsApp Number (e.g. 919445662922)</label>
+                <label for="whatsapp" class="form-label fw-bold small text-dark">WhatsApp Number</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fab fa-whatsapp"></i></span>
                     <input type="text" name="whatsapp" id="whatsapp" class="form-control <?= (isset($errors['whatsapp']) || $validation->hasError('whatsapp')) ? 'is-invalid' : '' ?>" value="<?= esc($settings['whatsapp'] ?? '') ?>">
@@ -83,33 +83,9 @@ $errors = session()->getFlashdata('errors') ?? [];
                 </div>
             </div>
 
-            <!-- Addresses -->
-            <div class="col-md-12 mb-3">
-                <label for="address_kovur" class="form-label fw-bold small text-dark">Kovur Center Address (Main)</label>
-                <textarea name="address_kovur" id="address_kovur" class="form-control <?= (isset($errors['address_kovur']) || $validation->hasError('address_kovur')) ? 'is-invalid' : '' ?>" rows="2" required><?= esc($settings['address_kovur'] ?? '') ?></textarea>
-                <?php if (isset($errors['address_kovur']) || $validation->hasError('address_kovur')): ?>
-                    <div class="invalid-feedback small"><?= esc($errors['address_kovur'] ?? $validation->getError('address_kovur')) ?></div>
-                <?php endif; ?>
-            </div>
-
-            <div class="col-md-12 mb-3">
-                <label for="address_porur" class="form-label fw-bold small text-dark">Porur Address (Family Clinic)</label>
-                <textarea name="address_porur" id="address_porur" class="form-control <?= (isset($errors['address_porur']) || $validation->hasError('address_porur')) ? 'is-invalid' : '' ?>" rows="2" required><?= esc($settings['address_porur'] ?? '') ?></textarea>
-                <?php if (isset($errors['address_porur']) || $validation->hasError('address_porur')): ?>
-                    <div class="invalid-feedback small"><?= esc($errors['address_porur'] ?? $validation->getError('address_porur')) ?></div>
-                <?php endif; ?>
-            </div>
-
-            <div class="col-md-12 mb-4">
-                <label for="address_ashok_nagar" class="form-label fw-bold small text-dark">Ashok Nagar Address (Magna Clinic)</label>
-                <textarea name="address_ashok_nagar" id="address_ashok_nagar" class="form-control <?= (isset($errors['address_ashok_nagar']) || $validation->hasError('address_ashok_nagar')) ? 'is-invalid' : '' ?>" rows="2" required><?= esc($settings['address_ashok_nagar'] ?? '') ?></textarea>
-                <?php if (isset($errors['address_ashok_nagar']) || $validation->hasError('address_ashok_nagar')): ?>
-                    <div class="invalid-feedback small"><?= esc($errors['address_ashok_nagar'] ?? $validation->getError('address_ashok_nagar')) ?></div>
-                <?php endif; ?>
-            </div>
         </div>
 
-        <button type="submit" class="btn btn-primary px-4 fw-bold"><i class="fas fa-save me-1"></i> Save Changes</button>
+        <button type="submit" class="btn btn-primary px-4 fw-bold mt-2"><i class="fas fa-save me-1"></i> Save Changes</button>
     </form>
 </div>
 

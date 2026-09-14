@@ -28,10 +28,10 @@ class Services extends BaseController
         helper('url');
 
         $rules = [
-            'title' => 'required',
-            'short_description' => 'required',
-            'long_description' => 'required',
-            'benefits' => 'required'
+            'title'             => ['label' => 'Service Title', 'rules' => 'required'],
+            'short_description' => ['label' => 'Short Description', 'rules' => 'required'],
+            'long_description'  => ['label' => 'Detailed Description', 'rules' => 'required'],
+            'benefits'          => ['label' => 'Key Benefits', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {
@@ -98,10 +98,10 @@ class Services extends BaseController
         }
 
         $rules = [
-            'title' => 'required',
-            'short_description' => 'required',
-            'long_description' => 'required',
-            'benefits' => 'required'
+            'title'             => ['label' => 'Service Title', 'rules' => 'required'],
+            'short_description' => ['label' => 'Short Description', 'rules' => 'required'],
+            'long_description'  => ['label' => 'Detailed Description', 'rules' => 'required'],
+            'benefits'          => ['label' => 'Key Benefits', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {

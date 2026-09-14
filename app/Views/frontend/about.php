@@ -21,10 +21,10 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0">
-                <img src="<?= base_url('assets/about-img.png') ?>" alt="Lekha Edwin" class="img-fluid w-100 rounded-5 shadow-lg">
+                <img src="<?= base_url('assets/about-img.png') ?>" alt="Lekha Edwin" class="img-fluid w-100 rounded-5 shadow-lg border">
             </div>
             <div class="col-lg-7 ps-lg-5">
-                <h6 class="text-primary-color fw-bold text-uppercase mb-2 small" style="letter-spacing: 1px;">ABOUT FOUNDER</h6>
+                <h6 class="text-primary-color fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">ABOUT FOUNDER</h6>
                 <h2 class="about-founder-title">MRS. LEKHA EDWIN</h2>
                 <div class="title-underline"></div>
                 <div class="about-content">
@@ -58,7 +58,7 @@
 </section>
 
 <!-- 3 Boxes -->
-<section class="section-padding bg-white border-top border-bottom">
+<section class="section-padding bg-white p-0">
     <div class="container">
         <div class="row g-4">
             <div class="col-md-4">
@@ -97,10 +97,10 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0">
-                <img src="<?= base_url('assets/service.png') ?>" alt="How we help you" class="img-fluid w-100 rounded-5 shadow-lg">
+                <img src="<?= base_url('assets/service.png') ?>" alt="How we help you" class="img-fluid w-100 rounded-5 shadow-lg border">
             </div>
             <div class="col-lg-7 ps-lg-5">
-                <h6 class="text-primary-color fw-bold text-uppercase mb-2 small" style="letter-spacing: 1px;">HOW WE HELP YOU</h6>
+                <h6 class="text-primary-color fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">HOW WE HELP YOU</h6>
                 <h2 class="how-we-help-title">Guiding you through life's challenges.</h2>
                 <p class="text-muted mb-5">Our team of experts is dedicated to providing you with the best possible support and guidance to help you navigate life's challenges. We combine clinical expertise with a deeply human approach.</p>
 

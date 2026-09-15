@@ -46,14 +46,33 @@ class Team extends BaseController
             $img->move(FCPATH . 'assets/team/', $imageName);
         }
 
+        $rawButtons = $this->request->getPost('buttons');
+        $formattedButtons = [];
+        if (is_array($rawButtons)) {
+            foreach ($rawButtons as $btn) {
+                $label = trim($btn['label'] ?? '');
+                $url = trim($btn['url'] ?? '');
+                if ($label !== '' && $url !== '') {
+                    $formattedButtons[] = [
+                        'label'  => $label,
+                        'url'    => $url,
+                        'target' => !empty($btn['target']) ? trim($btn['target']) : '_blank',
+                        'style'  => !empty($btn['style']) ? trim($btn['style']) : 'btn-primary'
+                    ];
+                }
+            }
+        }
+        $customButtonsJson = !empty($formattedButtons) ? json_encode($formattedButtons, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) : null;
+
         $teamModel->insert([
-            'name' => $this->request->getPost('name'),
-            'role' => $this->request->getPost('role'),
+            'name'           => $this->request->getPost('name'),
+            'role'           => $this->request->getPost('role'),
             'qualifications' => $this->request->getPost('qualifications'),
-            'languages' => $this->request->getPost('languages'),
-            'specialties' => $this->request->getPost('specialties'),
-            'about' => $this->request->getPost('about'),
-            'image' => $imageName
+            'languages'      => $this->request->getPost('languages'),
+            'specialties'    => $this->request->getPost('specialties'),
+            'about'          => $this->request->getPost('about'),
+            'image'          => $imageName,
+            'custom_buttons' => $customButtonsJson
         ]);
 
         return redirect()->to(base_url('admin/team'))->with('success', 'Team member registered successfully.');
@@ -69,7 +88,7 @@ class Team extends BaseController
         }
 
         $data = [
-            'title' => 'Edit Team Member | Insight Admin',
+            'title'  => 'Edit Team Member | Insight Admin',
             'member' => $member
         ];
 
@@ -110,14 +129,33 @@ class Team extends BaseController
             $img->move(FCPATH . 'assets/team/', $imageName);
         }
 
+        $rawButtons = $this->request->getPost('buttons');
+        $formattedButtons = [];
+        if (is_array($rawButtons)) {
+            foreach ($rawButtons as $btn) {
+                $label = trim($btn['label'] ?? '');
+                $url = trim($btn['url'] ?? '');
+                if ($label !== '' && $url !== '') {
+                    $formattedButtons[] = [
+                        'label'  => $label,
+                        'url'    => $url,
+                        'target' => !empty($btn['target']) ? trim($btn['target']) : '_blank',
+                        'style'  => !empty($btn['style']) ? trim($btn['style']) : 'btn-primary'
+                    ];
+                }
+            }
+        }
+        $customButtonsJson = !empty($formattedButtons) ? json_encode($formattedButtons, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) : null;
+
         $teamModel->update($id, [
-            'name' => $this->request->getPost('name'),
-            'role' => $this->request->getPost('role'),
+            'name'           => $this->request->getPost('name'),
+            'role'           => $this->request->getPost('role'),
             'qualifications' => $this->request->getPost('qualifications'),
-            'languages' => $this->request->getPost('languages'),
-            'specialties' => $this->request->getPost('specialties'),
-            'about' => $this->request->getPost('about'),
-            'image' => $imageName
+            'languages'      => $this->request->getPost('languages'),
+            'specialties'    => $this->request->getPost('specialties'),
+            'about'          => $this->request->getPost('about'),
+            'image'          => $imageName,
+            'custom_buttons' => $customButtonsJson
         ]);
 
         return redirect()->to(base_url('admin/team'))->with('success', 'Team member details updated successfully.');

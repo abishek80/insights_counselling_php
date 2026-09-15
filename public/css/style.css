@@ -39,6 +39,26 @@ h6 {
     transition: var(--transition);
 }
 
+.btn-outline-primary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    transition: var(--transition);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #ffffff !important;
+}
+
+.bg-primary-subtle {
+    background-color: #e8e7f5 !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
 .btn-secondary {
     background-color: var(--secondary-color);
     border-color: var(--primary-color);
@@ -274,6 +294,11 @@ h6 {
 .icon-box i {
     font-size: 24px;
     color: white;
+}
+
+.icon-box.bg-danger-subtle i,
+.icon-box.text-danger i {
+    color: #dc3545 !important;
 }
 
 /* Our Team Section */
@@ -1166,6 +1191,7 @@ footer {
 }
 
 .page-header h1 {
+    color: #ffffff !important;
     font-size: 2.75rem;
     font-weight: 800;
     letter-spacing: -0.5px;
@@ -1174,6 +1200,7 @@ footer {
 }
 
 .page-header p {
+    color: rgba(255, 255, 255, 0.9) !important;
     font-size: 1.1rem;
     font-weight: 300;
     max-width: 700px;

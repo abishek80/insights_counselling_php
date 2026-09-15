@@ -20,6 +20,7 @@ class TeamModel extends Model
         'specialties',
         'about',
         'image',
+        'custom_buttons',
         'status'
     ];
 

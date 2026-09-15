@@ -34,9 +34,20 @@
                                 <p class="team-desc"><?= esc($member['qualifications']) ?></p>
                                 <div class="team-langs"><?= esc($member['languages']) ?></div>
                             </div>
-                            <div class="d-flex gap-3 justify-content-center flex-column">
+                            <div class="d-flex gap-2 justify-content-center flex-column">
                                 <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">View Profile</button>
-                                <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-book-now">Book Your Appointment</a>
+                                <?php 
+                                    $customBtns = !empty($member['custom_buttons']) ? json_decode($member['custom_buttons'], true) : [];
+                                ?>
+                                <?php if (!empty($customBtns) && is_array($customBtns)): ?>
+                                    <?php foreach ($customBtns as $b): ?>
+                                        <a href="<?= esc($b['url']) ?>" target="<?= esc($b['target'] ?? '_blank') ?>" class="btn <?= esc($b['style'] ?? 'btn-primary') ?> btn-sm fw-bold shadow-sm py-2 rounded-3 text-center" style="font-size: 0.9rem;">
+                                            <?= esc($b['label']) ?>
+                                        </a>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <a href="<?= esc($settings['booking_url'] ?? 'https://insightcounselings.com/bookings/') ?>" target="_blank" class="btn-book-now">Book Your Appointment</a>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -97,9 +108,11 @@
                         <div class="profile-about-label">ABOUT</div>
                         <p class="profile-about-text" id="modal-about"></p>
 
-                        <button class="btn-book-profile" onclick="window.open('<?= esc($settings['booking_url']) ?>', '_blank')">
-                            <i class="fas fa-comment-dots"></i> Book Appointment
-                        </button>
+                        <div id="modal-buttons" class="d-flex flex-column gap-2 mt-3">
+                            <button class="btn-book-profile" onclick="window.open('<?= esc($settings['booking_url']) ?>', '_blank')">
+                                <i class="fas fa-comment-dots"></i> Book Appointment
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -133,13 +146,46 @@
                     
                     const specialtiesContainer = document.getElementById('modal-specialties');
                     specialtiesContainer.innerHTML = '';
-                    const specialties = member.specialties.split(',');
+                    const specialties = (member.specialties || '').split(',');
                     specialties.forEach(spec => {
-                        const tag = document.createElement('span');
-                        tag.className = 'specialty-tag';
-                        tag.textContent = spec.trim();
-                        specialtiesContainer.appendChild(tag);
+                        if (spec.trim()) {
+                            const tag = document.createElement('span');
+                            tag.className = 'specialty-tag';
+                            tag.textContent = spec.trim();
+                            specialtiesContainer.appendChild(tag);
+                        }
                     });
+
+                    // Render dynamic custom buttons in modal
+                    const modalButtonsContainer = document.getElementById('modal-buttons');
+                    if (modalButtonsContainer) {
+                        modalButtonsContainer.innerHTML = '';
+                        let customBtns = [];
+                        if (member.custom_buttons) {
+                            try {
+                                customBtns = typeof member.custom_buttons === 'string' ? JSON.parse(member.custom_buttons) : member.custom_buttons;
+                            } catch(e) {}
+                        }
+
+                        if (Array.isArray(customBtns) && customBtns.length > 0) {
+                            customBtns.forEach(btn => {
+                                const a = document.createElement('a');
+                                a.href = btn.url || '#';
+                                a.target = btn.target || '_blank';
+                                a.className = `btn ${btn.style || 'btn-primary'} fw-bold py-2.5 px-4 rounded-3 text-center d-block shadow-sm`;
+                                a.textContent = btn.label || 'Action';
+                                modalButtonsContainer.appendChild(a);
+                            });
+                        } else {
+                            const defaultBtn = document.createElement('button');
+                            defaultBtn.className = 'btn-book-profile';
+                            defaultBtn.innerHTML = '<i class="fas fa-comment-dots me-1"></i> Book Appointment';
+                            defaultBtn.onclick = function() {
+                                window.open('<?= esc($settings["booking_url"]) ?>', '_blank');
+                            };
+                            modalButtonsContainer.appendChild(defaultBtn);
+                        }
+                    }
                 }
             });
         }

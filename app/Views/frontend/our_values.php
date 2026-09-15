@@ -6,7 +6,7 @@
 <section class="page-header text-center">
     <div class="container">
         <h1 class="fw-bold">Our Values</h1>
-        <p class="lead text-white-50 max-w-75 mx-auto">
+        <p class="lead text-white max-w-75 mx-auto">
             The core principles that guide our practice, our counselors, and our commitment to your mental health and emotional well-being.
         </p>
         <nav aria-label="breadcrumb">
@@ -21,10 +21,10 @@
 <!-- Values Section Body -->
 <section class="section-padding bg-light position-relative">
     <div class="container">
-        
-        <!-- Intro Hero Card -->
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-10">
+
+        <!-- 11 Core Values Grid -->
+        <div class="row g-4">
+            <div class="col-lg-12">
                 <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 text-center bg-white">
                     <span class="badge bg-primary-subtle text-primary-color px-3 py-2 rounded-pill fw-semibold mx-auto mb-3" style="width: fit-content;">
                         <i class="fas fa-heart me-1"></i> Our Core Philosophy
@@ -35,17 +35,12 @@
                     </p>
                 </div>
             </div>
-        </div>
-
-        <!-- 11 Core Values Grid -->
-        <div class="row g-4">
-            
             <!-- Value 1: Respect and Dignity -->
             <div class="col-md-6 col-lg-6">
                 <div class="card border-0 shadow-sm rounded-4 h-100 p-4 transition-all hover-lift bg-white">
                     <div class="d-flex align-items-start">
                         <div class="icon-box rounded-3 bg-primary-color text-white p-3 me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 54px; height: 54px;">
-                            <i class="fas fa-hands-holding-heart fs-4"></i>
+                            <i class="fas fa-hand-holding-heart fs-4"></i>
                         </div>
                         <div>
                             <h4 class="h5 fw-bold text-primary-color mb-2">Respect and Dignity</h4>
@@ -234,7 +229,7 @@
             <div class="col-lg-10">
                 <div class="p-4 p-md-5 rounded-4 text-white text-center shadow-lg" style="background-color: var(--primary-color, #2D2A70);">
                     <h3 class="fw-bold mb-3 text-white">Our Promise to You</h3>
-                    <p class="lead text-white-50 mb-4 max-w-75 mx-auto" style="line-height: 1.8;">
+                    <p class="lead text-white mb-4 max-w-75 mx-auto" style="line-height: 1.8;">
                         At Insight Counseling Services, these values are more than guiding principles—they are the foundation of our practice and the commitment we make to every individual who seeks our support.
                     </p>
                     <div class="d-flex flex-wrap justify-content-center gap-3">

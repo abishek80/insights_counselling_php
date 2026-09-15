@@ -204,7 +204,7 @@
 
     <!-- Custom inline styles for premium design tweaks -->
     <style>
-        .text-primary-color {
+        .text-primary-color, .text-primary {
             color: #2D2A70 !important;
         }
         .btn-primary {
@@ -215,8 +215,31 @@
             background-color: #1a184c !important;
             border-color: #1a184c !important;
         }
+        .btn-secondary {
+            background-color: #fce28a !important;
+            border-color: #2D2A70 !important;
+            color: #2D2A70 !important;
+            font-weight: 600 !important;
+        }
+        .btn-secondary:hover {
+            background-color: #e5b04a !important;
+            border-color: #2D2A70 !important;
+            color: #2D2A70 !important;
+        }
+        .btn-outline-primary {
+            color: #2D2A70 !important;
+            border-color: #2D2A70 !important;
+        }
+        .btn-outline-primary:hover {
+            background-color: #2D2A70 !important;
+            border-color: #2D2A70 !important;
+            color: #ffffff !important;
+        }
         .bg-primary-color {
             background-color: #2D2A70 !important;
+        }
+        .bg-primary-subtle {
+            background-color: #e8e7f5 !important;
         }
         /* Style fixes for footer social circles */
         .footer-social-circles a {
@@ -297,7 +320,6 @@
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url() ?>">Home</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('about') ?>">About</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('our-values') ?>">Our Values</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('services') ?>">Services</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('team') ?>">Team</a></li>
                         <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('faq') ?>">FAQ</a></li>
@@ -323,14 +345,14 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <img src="<?= base_url('assets/logo-light.png') ?>" alt="Insight Counseling Services" class="footer-logo-main mb-3" style="max-height: 70px;">
-                    <p class="text-white-50 pe-0 pe-md-4">
+                    <p class="text-white pe-0 pe-md-4">
                         Insight Counseling Services (ICS), Chennai established in the year 2014.
                         Providing compassionate, confidential, and evidence-based psychological support for all.
                     </p>
                 </div>
                 <div class="col-lg-2 col-md-4">
                     <h5 class="text-white fw-bold mb-3">Quick Links</h5>
-                    <ul class="list-unstyled text-white-50 ms-3">
+                    <ul class="list-unstyled text-white ms-3">
                         <li class="mb-2"><a href="<?= base_url() ?>" class="text-reset text-decoration-none">Home</a></li>
                         <li class="mb-2"><a href="<?= base_url('about') ?>" class="text-reset text-decoration-none">About Us</a></li>
                         <li class="mb-2"><a href="<?= base_url('services') ?>" class="text-reset text-decoration-none">Our Services</a></li>
@@ -340,7 +362,7 @@
                 </div>
                 <div class="col-lg-3 col-md-4">
                     <h5 class="text-white fw-bold mb-3">Policy & Legal</h5>
-                    <ul class="list-unstyled text-white-50 ms-3">
+                    <ul class="list-unstyled text-white ms-3">
                         <li class="mb-2"><a href="<?= base_url('privacy-policy') ?>" class="text-reset text-decoration-none">Privacy Policy</a></li>
                         <li class="mb-2"><a href="<?= base_url('refund-policy') ?>" class="text-reset text-decoration-none">Refund Policy</a></li>
                         <li class="mb-2"><a href="<?= base_url('our-values') ?>" class="text-reset text-decoration-none">Our Values</a></li>
@@ -350,8 +372,8 @@
                 </div>
                 <div class="col-lg-3 col-md-4">
                     <h5 class="text-white fw-bold mb-3">Connect With Us</h5>
-                    <p class="ms-3 text-white-50 mb-2"><i class="fas fa-phone me-2"></i> <?= esc($settings['phone']) ?></p>
-                    <p class="ms-3 text-white-50 mb-3"><i class="fas fa-envelope me-2"></i> <?= esc($settings['email']) ?></p>
+                    <p class="ms-3 text-white mb-2"><i class="fas fa-phone me-2"></i> <?= esc($settings['phone']) ?></p>
+                    <p class="ms-3 text-white mb-3"><i class="fas fa-envelope me-2"></i> <?= esc($settings['email']) ?></p>
                     <div class="ms-3 footer-social-circles gap-1">
                         <?php if (!empty($settings['facebook'])): ?>
                             <a href="<?= esc($settings['facebook']) ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -366,7 +388,7 @@
                 </div>
             </div>
             <hr class="border-secondary my-4">
-            <div class="text-center text-white-50">
+            <div class="text-center text-white">
                 &copy; <?= date('Y') ?> Insight Counseling Services. All Rights Reserved.
             </div>
         </div>

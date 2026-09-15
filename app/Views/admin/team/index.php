@@ -19,6 +19,7 @@
                     <th>Name</th>
                     <th>Role</th>
                     <th>Languages</th>
+                    <th>Custom Buttons</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
@@ -26,6 +27,9 @@
             <tbody>
                 <?php if (!empty($team)): ?>
                     <?php foreach ($team as $member): ?>
+                        <?php 
+                            $memberBtns = !empty($member['custom_buttons']) ? json_decode($member['custom_buttons'], true) : [];
+                        ?>
                         <tr>
                             <td>
                                 <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" alt="<?= esc($member['name']) ?>" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #2D2A70;">
@@ -33,6 +37,19 @@
                             <td><strong><?= esc($member['name']) ?></strong></td>
                             <td><span class="badge bg-body-secondary text-primary border"><?= esc($member['role']) ?></span></td>
                             <td><?= esc($member['languages']) ?></td>
+                            <td>
+                                <?php if (!empty($memberBtns) && is_array($memberBtns)): ?>
+                                    <div class="d-flex flex-wrap gap-1">
+                                        <?php foreach ($memberBtns as $b): ?>
+                                            <span class="badge bg-primary-subtle text-primary border" style="font-size: 0.75rem;">
+                                                <i class="fas fa-link me-1"></i><?= esc($b['label']) ?>
+                                            </span>
+                                        <?php endforeach; ?>
+                                    </div>
+                                <?php else: ?>
+                                    <span class="text-muted small">Default (1)</span>
+                                <?php endif; ?>
+                            </td>
                             <td>
                                 <?php if ($member['status'] == 1): ?>
                                     <a href="<?= base_url('admin/team/toggle-status/' . $member['id']) ?>" class="btn btn-sm btn-success fw-bold py-1 px-3 shadow-sm rounded-pill" style="font-size: 0.75rem;"><i class="fas fa-check-circle me-1"></i> Active</a>
@@ -50,7 +67,7 @@
                     <?php endforeach; ?>
                 <?php else: ?>
                     <tr>
-                        <td colspan="6" class="text-center text-muted py-4">No team members registered yet.</td>
+                        <td colspan="7" class="text-center text-muted py-4">No team members registered yet.</td>
                     </tr>
                 <?php endif; ?>
             </tbody>

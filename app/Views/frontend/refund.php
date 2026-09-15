@@ -100,7 +100,7 @@
                     <div class="p-4 p-md-5 rounded-4 text-white position-relative overflow-hidden h-100 d-flex flex-column justify-content-between" style="background-color: var(--primary-color, #2e2a70);">
                         <div>
                             <h4 class="fw-bold mb-3 text-white" style="font-size: 1.5rem;">Need a Quick Response?</h4>
-                            <p class="text-white-50 mb-4" style="line-height: 1.6;">
+                            <p class="text-white mb-4" style="line-height: 1.6;">
                                 WhatsApp is the fastest way to get in touch with our intake team and request a reschedule before your session.
                             </p>
                         </div>
@@ -123,7 +123,7 @@
                                 <i class="fas fa-envelope text-white fs-5"></i>
                             </div>
                             <div>
-                                <div class="text-white-50 text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">EMAIL US</div>
+                                <div class="text-white text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">EMAIL US</div>
                                 <a href="mailto:lekhapsy@gmail.com" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;">lekhapsy@gmail.com</a>
                             </div>
                         </div>
@@ -131,10 +131,10 @@
                         <!-- Phone item -->
                         <div class="d-flex align-items-center">
                             <div class="d-flex align-items-center justify-content-center rounded-3 me-3 flex-shrink-0" style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.12);">
-                                <i class="fas fa-phone-alt text-white fs-5"></i>
+                                <i class="fas fa-phone text-white fs-5"></i>
                             </div>
                             <div>
-                                <div class="text-white-50 text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">CALL US</div>
+                                <div class="text-white text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">CALL US</div>
                                 <a href="tel:+919445662922" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;">+91 94456 62922</a>
                             </div>
                         </div>

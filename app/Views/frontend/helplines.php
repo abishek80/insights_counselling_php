@@ -3,10 +3,10 @@
 <?= $this->section('content') ?>
 
 <!-- Page Title / Hero Header -->
-<section class="page-header text-center bg-danger-subtle">
+<section class="page-header text-center">
     <div class="container">
-        <h1 class="fw-bold text-dark">Mental Health Helplines</h1>
-        <p class="lead text-dark-50 max-w-75 mx-auto">
+        <h1 class="fw-bold">Mental Health Helplines</h1>
+        <p class="lead max-w-75 mx-auto">
             Emergency crisis support, 24/7 tele-mental health assistance, and confidential helpline resources for Chennai, Tamil Nadu & across India.
         </p>
         <nav aria-label="breadcrumb">
@@ -25,8 +25,8 @@
         <!-- Intro Callout -->
         <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 mb-5 bg-white">
             <div class="d-flex align-items-start">
-                <div class="icon-box rounded-circle bg-danger-subtle text-danger p-3 me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
-                    <i class="fas fa-hand-holding-medical fs-3"></i>
+                <div class="icon-box rounded-circle bg-danger-subtle p-3 me-3 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
+                    <i class="fas fa-hand-holding-medical fs-3" style="color: #dc3545 !important;"></i>
                 </div>
                 <div>
                     <h2 class="h4 fw-bold text-dark mb-2">Mental Health Helplines – Chennai & Tamil Nadu</h2>
@@ -60,10 +60,10 @@
                         </p>
                         <div class="d-flex flex-wrap gap-2 mt-auto">
                             <a href="tel:14416" class="btn btn-primary rounded-3 px-3 py-2 fw-bold me-2">
-                                <i class="fas fa-phone-alt me-2"></i>Call 14416
+                                <i class="fas fa-phone me-2"></i>Call 14416
                             </a>
-                            <a href="tel:18008914416" class="btn btn-outline-primary rounded-3 px-3 py-2 fw-semibold">
-                                <i class="fas fa-phone-alt me-2"></i>1-800-891-4416
+                            <a href="tel:18008914416" class="btn btn-secondary rounded-3 px-3 py-2 fw-semibold">
+                                <i class="fas fa-phone me-2"></i>1-800-891-4416
                             </a>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                         </p>
                         <div class="mt-auto">
                             <a href="tel:104" class="btn btn-primary rounded-3 px-4 py-2 fw-bold">
-                                <i class="fas fa-phone-alt me-2"></i>Call 104
+                                <i class="fas fa-phone me-2"></i>Call 104
                             </a>
                         </div>
                     </div>
@@ -109,10 +109,10 @@
                         </p>
                         <div class="d-flex flex-wrap gap-2 mt-auto">
                             <a href="tel:04424640050" class="btn btn-outline-danger rounded-3 px-3 py-2 fw-bold">
-                                <i class="fas fa-phone-alt me-2"></i>044-24640050
+                                <i class="fas fa-phone me-2"></i>044-24640050
                             </a>
                             <a href="tel:04424640060" class="btn btn-outline-danger rounded-3 px-3 py-2 fw-bold">
-                                <i class="fas fa-phone-alt me-2"></i>044-24640060
+                                <i class="fas fa-phone me-2"></i>044-24640060
                             </a>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                         </p>
                         <div class="mt-auto">
                             <a href="tel:04426564444" class="btn btn-outline-danger rounded-3 px-4 py-2 fw-bold">
-                                <i class="fas fa-phone-alt me-2"></i>044-2656 4444
+                                <i class="fas fa-phone me-2"></i>044-2656 4444
                             </a>
                         </div>
                     </div>
@@ -151,8 +151,8 @@
                             Provides emotional support and crisis intervention for individuals experiencing distress or suicidal thoughts.
                         </p>
                         <div class="mt-auto">
-                            <a href="tel:+919820466726" class="btn btn-outline-primary rounded-3 px-3 py-2 fw-bold w-100 text-center">
-                                <i class="fas fa-phone-alt me-2"></i>+91 9820466726
+                            <a href="tel:+919820466726" class="btn btn-secondary rounded-3 px-3 py-2 fw-bold w-100 text-center">
+                                <i class="fas fa-phone me-2"></i>+91 9820466726
                             </a>
                         </div>
                     </div>
@@ -166,8 +166,8 @@
                             Mental health support provided by the National Institute of Mental Health and Neurosciences.
                         </p>
                         <div class="mt-auto">
-                            <a href="tel:08046110007" class="btn btn-outline-primary rounded-3 px-3 py-2 fw-bold w-100 text-center">
-                                <i class="fas fa-phone-alt me-2"></i>080-46110007
+                            <a href="tel:08046110007" class="btn btn-secondary rounded-3 px-3 py-2 fw-bold w-100 text-center">
+                                <i class="fas fa-phone me-2"></i>080-46110007
                             </a>
                         </div>
                     </div>
@@ -181,8 +181,8 @@
                             24/7 emotional support and mental health assistance across India.
                         </p>
                         <div class="mt-auto">
-                            <a href="tel:+919999666655" class="btn btn-outline-primary rounded-3 px-3 py-2 fw-bold w-100 text-center">
-                                <i class="fas fa-phone-alt me-2"></i>+91 99996 66655
+                            <a href="tel:+919999666655" class="btn btn-secondary rounded-3 px-3 py-2 fw-bold w-100 text-center">
+                                <i class="fas fa-phone me-2"></i>+91 99996 66655
                             </a>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                         </p>
                         <div class="mt-auto">
                             <a href="tel:181" class="btn btn-primary rounded-3 px-4 py-2 fw-bold">
-                                <i class="fas fa-phone-alt me-2"></i>Call 181
+                                <i class="fas fa-phone me-2"></i>Call 181
                             </a>
                         </div>
                     </div>
@@ -228,7 +228,7 @@
                         </p>
                         <div class="mt-auto">
                             <a href="tel:1098" class="btn btn-primary rounded-3 px-4 py-2 fw-bold">
-                                <i class="fas fa-phone-alt me-2"></i>Call 1098
+                                <i class="fas fa-phone me-2"></i>Call 1098
                             </a>
                         </div>
                     </div>
@@ -241,18 +241,18 @@
             <div class="row align-items-center">
                 <div class="col-lg-8">
                     <h3 class="fw-bold text-white mb-2"><i class="fas fa-exclamation-triangle me-2"></i>Emergency Assistance</h3>
-                    <p class="lead text-white-50 mb-3" style="line-height: 1.6;">
+                    <p class="lead text-white mb-3" style="line-height: 1.6;">
                         If you believe you are at immediate risk of harming yourself or someone else:
                     </p>
-                    <div class="d-flex flex-wrap gap-3 mb-2">
+                    <div class="d-flex flex-wrap gap-3 mt-3 mb-4">
                         <a href="tel:112" class="btn btn-light text-danger fw-bold rounded-3 px-4 py-2">
-                            <i class="fas fa-phone-alt me-2"></i>Emergency Response: 112
+                            <i class="fas fa-phone me-2"></i>Emergency Response: 112
                         </a>
                         <a href="tel:108" class="btn btn-outline-light fw-bold rounded-3 px-4 py-2">
                             <i class="fas fa-ambulance me-2"></i>Ambulance: 108
                         </a>
                     </div>
-                    <p class="text-white-50 mb-0 small">
+                    <p class="text-white mb-0 small">
                         Or visit the nearest hospital emergency department immediately.
                     </p>
                 </div>

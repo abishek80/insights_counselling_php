@@ -71,6 +71,25 @@ $errors = session()->getFlashdata('errors') ?? [];
                     <div class="invalid-feedback small"><?= esc($errors['about'] ?? $validation->getError('about')) ?></div>
                 <?php endif; ?>
             </div>
+
+            <!-- Dynamic Custom Buttons Section -->
+            <div class="col-md-12 mb-4">
+                <div class="card p-3 bg-light border">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <h6 class="fw-bold text-primary mb-0"><i class="fas fa-link me-2"></i>Dynamic Custom Action Buttons</h6>
+                            <small class="text-muted">Add or modify custom action buttons for <?= esc($member['name']) ?> (e.g., "Book Consultation", "WhatsApp Chat", "View CV"). Multiple buttons can be configured per member.</small>
+                        </div>
+                        <button type="button" id="add-btn-row" class="btn btn-sm btn-outline-primary fw-bold">
+                            <i class="fas fa-plus me-1"></i> Add Custom Button
+                        </button>
+                    </div>
+
+                    <div id="buttons-container">
+                        <!-- Dynamic button rows inserted via JavaScript -->
+                    </div>
+                </div>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary px-4 fw-bold"><i class="fas fa-save me-1"></i> Save Changes</button>
@@ -79,3 +98,78 @@ $errors = session()->getFlashdata('errors') ?? [];
 </div>
 
 <?= $this->endSection() ?>
+
+<?= $this->section('scripts') ?>
+<script>
+    (function() {
+        const container = document.getElementById('buttons-container');
+        const addBtn = document.getElementById('add-btn-row');
+        let buttonIndex = 0;
+
+        const existingButtons = <?= json_encode(!empty($member['custom_buttons']) ? json_decode($member['custom_buttons'], true) : []) ?>;
+
+        function createButtonRow(data = {}) {
+            const index = buttonIndex++;
+            const row = document.createElement('div');
+            row.className = 'row g-2 align-items-center mb-2 button-row p-2 bg-white rounded border';
+            
+            const labelVal = data.label || '';
+            const urlVal = data.url || '';
+            const styleVal = data.style || 'btn-primary';
+            const targetVal = data.target || '_blank';
+
+            row.innerHTML = `
+                <div class="col-md-4">
+                    <label class="form-label small mb-1">Button Text / Label</label>
+                    <input type="text" name="buttons[${index}][label]" class="form-control form-control-sm" placeholder="e.g. Book Session, WhatsApp" value="${labelVal}">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label small mb-1">Link / URL</label>
+                    <input type="text" name="buttons[${index}][url]" class="form-control form-control-sm" placeholder="e.g. https://... or tel:..." value="${urlVal}">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label small mb-1">Style / Theme</label>
+                    <select name="buttons[${index}][style]" class="form-select form-select-sm">
+                        <option value="btn-primary" ${styleVal === 'btn-primary' ? 'selected' : ''}>Primary (Purple)</option>
+                        <option value="btn-secondary" ${styleVal === 'btn-secondary' ? 'selected' : ''}>Secondary</option>
+                        <option value="btn-dark" ${styleVal === 'btn-dark' ? 'selected' : ''}>Dark</option>
+                        <option value="btn-success" ${styleVal === 'btn-success' ? 'selected' : ''}>Success (Green)</option>
+                        <option value="btn-info" ${styleVal === 'btn-info' ? 'selected' : ''}>Info (Blue)</option>
+                        <option value="btn-outline-primary" ${styleVal === 'btn-outline-primary' ? 'selected' : ''}>Outline Primary</option>
+                        <option value="btn-outline-dark" ${styleVal === 'btn-outline-dark' ? 'selected' : ''}>Outline Dark</option>
+                    </select>
+                </div>
+                <div class="col-md-1">
+                    <label class="form-label small mb-1">Target</label>
+                    <select name="buttons[${index}][target]" class="form-select form-select-sm">
+                        <option value="_blank" ${targetVal === '_blank' ? 'selected' : ''}>New Tab</option>
+                        <option value="_self" ${targetVal === '_self' ? 'selected' : ''}>Same Tab</option>
+                    </select>
+                </div>
+                <div class="col-md-1 text-end">
+                    <label class="form-label small mb-1 opacity-0 d-block">Action</label>
+                    <button type="button" class="btn btn-sm btn-outline-danger w-100 remove-btn-row" title="Remove Button"><i class="fas fa-trash"></i></button>
+                </div>
+            `;
+
+            row.querySelector('.remove-btn-row').addEventListener('click', function() {
+                row.remove();
+            });
+
+            container.appendChild(row);
+        }
+
+        addBtn.addEventListener('click', function() {
+            createButtonRow();
+        });
+
+        // Pre-populate existing buttons if available, otherwise add 1 empty row
+        if (Array.isArray(existingButtons) && existingButtons.length > 0) {
+            existingButtons.forEach(btn => createButtonRow(btn));
+        } else {
+            createButtonRow();
+        }
+    })();
+</script>
+<?= $this->endSection() ?>
+

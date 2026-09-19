@@ -30,12 +30,11 @@ class Services extends BaseController
         $rules = [
             'title'             => ['label' => 'Service Title', 'rules' => 'required'],
             'short_description' => ['label' => 'Short Description', 'rules' => 'required'],
-            'long_description'  => ['label' => 'Detailed Description', 'rules' => 'required'],
-            'benefits'          => ['label' => 'Key Benefits', 'rules' => 'required']
+            'long_description'  => ['label' => 'Detailed Description', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please verify that all fields are filled.')->with('errors', $this->validator->getErrors());
+            return redirect()->back()->withInput()->with('error', 'Please verify that all required fields are filled.')->with('errors', $this->validator->getErrors());
         }
 
         $title = $this->request->getPost('title');
@@ -54,18 +53,31 @@ class Services extends BaseController
             $img->move(FCPATH . 'assets/services/', $imageName);
         }
 
-        // Parse benefits from textarea lines to a JSON array
-        $benefitsInput = $this->request->getPost('benefits');
-        $benefitsArray = array_filter(array_map('trim', explode("\n", $benefitsInput)));
-        $benefitsJson = json_encode(array_values($benefitsArray));
+        $secondaryImageName = '';
+        $secImg = $this->request->getFile('secondary_image');
+        if ($secImg && $secImg->isValid() && !$secImg->hasMoved()) {
+            $secondaryImageName = $secImg->getRandomName();
+            $secImg->move(FCPATH . 'assets/services/', $secondaryImageName);
+        }
 
         $serviceModel->insert([
-            'title' => $title,
-            'slug' => $slug,
+            'title'             => $title,
+            'sub_title'         => $this->request->getPost('sub_title'),
+            'slug'              => $slug,
+            'meta_title'        => $this->request->getPost('meta_title'),
+            'meta_description'  => $this->request->getPost('meta_description'),
             'short_description' => $this->request->getPost('short_description'),
-            'long_description' => $this->request->getPost('long_description'),
-            'benefits' => $benefitsJson,
-            'image' => $imageName
+            'long_description'  => $this->request->getPost('long_description'),
+            'what_is_section'   => $this->request->getPost('what_is_section'),
+            'benefits'          => $this->request->getPost('benefits'),
+            'symptoms'          => $this->request->getPost('symptoms'),
+            'types_help'        => $this->request->getPost('types_help'),
+            'approach'          => $this->request->getPost('approach'),
+            'why_choose'        => $this->request->getPost('why_choose'),
+            'when_seek_help'    => $this->request->getPost('when_seek_help'),
+            'cta'               => $this->request->getPost('cta'),
+            'image'             => $imageName,
+            'secondary_image'   => $secondaryImageName
         ]);
 
         return redirect()->to(base_url('admin/services'))->with('success', 'Service category created successfully.');
@@ -100,19 +112,17 @@ class Services extends BaseController
         $rules = [
             'title'             => ['label' => 'Service Title', 'rules' => 'required'],
             'short_description' => ['label' => 'Short Description', 'rules' => 'required'],
-            'long_description'  => ['label' => 'Detailed Description', 'rules' => 'required'],
-            'benefits'          => ['label' => 'Key Benefits', 'rules' => 'required']
+            'long_description'  => ['label' => 'Detailed Description', 'rules' => 'required']
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('error', 'Please verify that all fields are filled.')->with('errors', $this->validator->getErrors());
+            return redirect()->back()->withInput()->with('error', 'Please verify that all required fields are filled.')->with('errors', $this->validator->getErrors());
         }
 
         $imageName = $service['image'];
         $img = $this->request->getFile('image');
         if ($img && $img->isValid() && !$img->hasMoved()) {
-            // Delete old file if it isn't a pre-existing asset image or default placeholder
-            $builtInImages = ['placeholder.png', 'depression.png', 'stress.png', 'anger.png', 'grief.png', 'adolescent.png', 'couple.png', 'relationship.png', 'bullying.png'];
+            $builtInImages = ['placeholder.png', 'depression.png', 'stress.png', 'anger.png', 'grief.png', 'adolescent.png', 'couple.png', 'relationship.png', 'bullying.png', 'anxiety_counselling.jpg'];
             if (!in_array($imageName, $builtInImages) && file_exists(FCPATH . 'assets/services/' . $imageName)) {
                 @unlink(FCPATH . 'assets/services/' . $imageName);
             }
@@ -120,16 +130,34 @@ class Services extends BaseController
             $img->move(FCPATH . 'assets/services/', $imageName);
         }
 
-        $benefitsInput = $this->request->getPost('benefits');
-        $benefitsArray = array_filter(array_map('trim', explode("\n", $benefitsInput)));
-        $benefitsJson = json_encode(array_values($benefitsArray));
+        $secondaryImageName = $service['secondary_image'] ?? '';
+        $secImg = $this->request->getFile('secondary_image');
+        if ($secImg && $secImg->isValid() && !$secImg->hasMoved()) {
+            $builtInImages = ['placeholder.png', 'anxiety_mindfulness.jpg'];
+            if (!empty($secondaryImageName) && !in_array($secondaryImageName, $builtInImages) && file_exists(FCPATH . 'assets/services/' . $secondaryImageName)) {
+                @unlink(FCPATH . 'assets/services/' . $secondaryImageName);
+            }
+            $secondaryImageName = $secImg->getRandomName();
+            $secImg->move(FCPATH . 'assets/services/', $secondaryImageName);
+        }
 
         $serviceModel->update($id, [
-            'title' => $this->request->getPost('title'),
+            'title'             => $this->request->getPost('title'),
+            'sub_title'         => $this->request->getPost('sub_title'),
+            'meta_title'        => $this->request->getPost('meta_title'),
+            'meta_description'  => $this->request->getPost('meta_description'),
             'short_description' => $this->request->getPost('short_description'),
-            'long_description' => $this->request->getPost('long_description'),
-            'benefits' => $benefitsJson,
-            'image' => $imageName
+            'long_description'  => $this->request->getPost('long_description'),
+            'what_is_section'   => $this->request->getPost('what_is_section'),
+            'benefits'          => $this->request->getPost('benefits'),
+            'symptoms'          => $this->request->getPost('symptoms'),
+            'types_help'        => $this->request->getPost('types_help'),
+            'approach'          => $this->request->getPost('approach'),
+            'why_choose'        => $this->request->getPost('why_choose'),
+            'when_seek_help'    => $this->request->getPost('when_seek_help'),
+            'cta'               => $this->request->getPost('cta'),
+            'image'             => $imageName,
+            'secondary_image'   => $secondaryImageName
         ]);
 
         return redirect()->to(base_url('admin/services'))->with('success', 'Service category updated successfully.');

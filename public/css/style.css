@@ -110,11 +110,11 @@ h6 {
 }
 
 .hero-title {
-    font-size: 5rem;
+    font-size: clamp(2.5rem, 4.5vw, 3.8rem);
     font-weight: 800;
     line-height: 1.15;
-    margin-bottom: 40px;
-    letter-spacing: -2px;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
 }
 
 .hero-title span {

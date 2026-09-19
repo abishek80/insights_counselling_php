@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-7">
-                <h1 class="hero-title fw-bold">Talk. Resolve. <span>Heal.</span></h1>
+                <h1 class="hero-title fw-bold">Best Psychologist in <span>Chennai</span></h1>
                 <p class="hero-subtext">Providing confidential, non-judgmental psychological support for individuals, teenagers, and couples seeking emotional wellbeing.</p>
                 <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn btn-secondary px-4 py-3 fw-bold d-inline-flex align-items-center">
                     Book Your Consultation <i class="fas fa-arrow-right ms-2"></i>

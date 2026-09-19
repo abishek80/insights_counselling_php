@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- PRIMARY SEO META TAGS -->
-    <title><?= esc($title ?? 'Best Counseling Psychologist in Chennai | Insight Counseling Services') ?></title>
-    <meta name="description" content="<?= esc($meta_desc ?? 'Insight Counseling Services (ICS) – Chennai\'s trusted counseling psychologist. Expert support for anxiety, depression, stress, relationship issues, teen counseling & more. Online & in-person sessions. Call +91 94456 62922.') ?>">
+    <title><?= esc($title ?? 'Best Psychologist in Chennai | Insight Counseling Services') ?></title>
+    <meta name="description" content="<?= esc($meta_desc ?? 'Best Psychologist in Chennai for Anxiety, Depression, Stress Management, Couple Counselling, Teen Counselling, Family Counselling, and Relationship Issues. Online & In-Person Sessions. Call 9445662922.') ?>">
     <meta name="keywords" content="<?= esc($keywords ?? 'counseling psychologist Chennai, mental health Chennai, anxiety counseling Chennai, depression therapy Chennai, couple counseling Chennai, teen counseling Chennai, online counseling India, Lekha Edwin psychologist, stress management Chennai, relationship counseling, Insight Counseling Services') ?>">
     <meta name="author" content="Insight Counseling Services">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">

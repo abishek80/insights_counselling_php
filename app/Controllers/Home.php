@@ -18,8 +18,8 @@ class Home extends BaseController
         $branchModel = new BranchModel();
 
         $data = [
-            'title' => 'Best Counseling Psychologist in Chennai | Insight Counseling Services',
-            'meta_desc' => 'Insight Counseling Services (ICS) – Top-rated Counseling Psychologist in Chennai led by Mrs. Lekha Edwin. Expert therapy for anxiety, depression, relationship issues, academic stress & teen counseling.',
+            'title' => 'Best Psychologist in Chennai | Insight Counseling Services',
+            'meta_desc' => 'Best Psychologist in Chennai for Anxiety, Depression, Stress Management, Couple Counselling, Teen Counselling, Family Counselling, and Relationship Issues. Online & In-Person Sessions. Call 9445662922.',
             'services' => $serviceModel->where('status', 1)->findAll(),
             'team' => $teamModel->where('status', 1)->findAll(),
             'testimonials' => $testimonialModel->where('status', 1)->findAll(),
@@ -73,10 +73,13 @@ class Home extends BaseController
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Service with slug '{$slug}' not found.");
         }
 
+        $metaTitle = !empty($service['meta_title']) ? $service['meta_title'] : (esc($service['title']) . ' | Insight Counseling Services Chennai');
+        $metaDesc = !empty($service['meta_description']) ? $service['meta_description'] : esc(strip_tags(mb_substr($service['short_description'] ?? 'Professional counseling service at Insight Counseling Services Chennai.', 0, 160)));
+
         $data = [
-            'title' => esc($service['title']) . ' | Insight Counseling Services Chennai',
-            'meta_desc' => esc(strip_tags(mb_substr($service['description'] ?? $service['short_description'] ?? 'Professional counseling service at Insight Counseling Services Chennai.', 0, 160))),
-            'service' => $service
+            'title'     => $metaTitle,
+            'meta_desc' => $metaDesc,
+            'service'   => $service
         ];
 
         return view('frontend/service_detail', $data);

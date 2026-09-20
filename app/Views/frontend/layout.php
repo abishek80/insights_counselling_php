@@ -415,12 +415,10 @@
 
     <!-- Fixed Action Buttons -->
     <div class="fixed-actions-container">
-        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone'] ?? '9445662922') ?>" class="btn-call-fixed"
-           onclick="if(typeof gtag_report_phone_conversion === 'function'){ gtag_report_phone_conversion('tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone'] ?? '9445662922') ?>'); }">
+        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone'] ?? '9445662922') ?>" class="btn-call-fixed">
             <i class="fas fa-phone fs-4"></i>
         </a>
-        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp'] ?? '9445662922') ?>/" target="_blank" rel="noopener" class="btn-whatsapp-fixed"
-           onclick="if(typeof gtag_report_whatsapp_conversion === 'function'){ gtag_report_whatsapp_conversion('https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp'] ?? '9445662922') ?>/'); }">
+        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp'] ?? '919445662922') ?>/" target="_blank" rel="noopener" class="btn-whatsapp-fixed">
             <i class="fab fa-whatsapp fs-4"></i>
             <span class="d-none d-md-block">Chat with us</span>
         </a>

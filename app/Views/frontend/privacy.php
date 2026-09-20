@@ -37,8 +37,8 @@
                             </p>
                         </div>
                         <div>
-                            <a href="https://wa.me/919445662922/" target="_blank" class="btn btn-light rounded-4 px-4 py-3 fw-bold d-inline-flex align-items-center shadow-sm" style="color: var(--primary-color, #2e2a70); background-color: #ffffff; border: none;">
-                                <i class="fab fa-whatsapp me-2 fs-5" style="color: #2e2a70;"></i> Chat on WhatsApp
+                            <a href="https://wa.me/9445662922/" target="_blank" class="btn btn-light rounded-4 px-4 py-3 fw-bold d-inline-flex align-items-center shadow-sm" style="color: var(--primary-color, #2e2a70); background-color: #ffffff; border: none;">
+                                <i class="fab fa-whatsapp me-2 fs-6" style="color: #2e2a70;"></i> Chat on WhatsApp
                             </a>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <!-- Email item -->
                         <div class="d-flex align-items-center mb-4">
                             <div class="d-flex align-items-center justify-content-center rounded-3 me-3 flex-shrink-0" style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.12);">
-                                <i class="fas fa-envelope text-white fs-5"></i>
+                                <i class="fas fa-envelope text-white fs-6"></i>
                             </div>
                             <div>
                                 <div class="text-white text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">EMAIL US</div>
@@ -63,11 +63,11 @@
                         <!-- Phone item -->
                         <div class="d-flex align-items-center">
                             <div class="d-flex align-items-center justify-content-center rounded-3 me-3 flex-shrink-0" style="width: 48px; height: 48px; background: rgba(255, 255, 255, 0.12);">
-                                <i class="fas fa-phone text-white fs-5"></i>
+                                <i class="fas fa-phone text-white fs-6"></i>
                             </div>
                             <div>
                                 <div class="text-white text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">CALL US</div>
-                                <a href="tel:+919445662922" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;">+91 94456 62922</a>
+                                <a href="tel:+9445662922" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;">+91 94456 62922</a>
                             </div>
                         </div>
                     </div>

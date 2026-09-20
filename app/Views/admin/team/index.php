@@ -35,13 +35,13 @@
                                 <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" alt="<?= esc($member['name']) ?>" class="rounded-circle" style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #2D2A70;">
                             </td>
                             <td><strong><?= esc($member['name']) ?></strong></td>
-                            <td><span class="badge bg-body-secondary text-primary border"><?= esc($member['role']) ?></span></td>
+                            <td><span class="badge bg-light text-primary border"><?= esc($member['role']) ?></span></td>
                             <td><?= esc($member['languages']) ?></td>
                             <td>
                                 <?php if (!empty($memberBtns) && is_array($memberBtns)): ?>
                                     <div class="d-flex flex-wrap gap-1">
                                         <?php foreach ($memberBtns as $b): ?>
-                                            <span class="badge bg-primary-subtle text-primary border" style="font-size: 0.75rem;">
+                                            <span class="badge bg-light text-primary border" style="font-size: 0.75rem;">
                                                 <i class="fas fa-link me-1"></i><?= esc($b['label']) ?>
                                             </span>
                                         <?php endforeach; ?>

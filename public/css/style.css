@@ -353,7 +353,7 @@ h6 {
     color: white;
     border-radius: 50px;
     padding: 12px 15px;
-    font-size: 12px;
+    font-size: 12px !important;
     font-weight: 800;
     text-transform: uppercase;
     border: none;
@@ -431,7 +431,7 @@ h6 {
     border: 1px solid var(--primary-color);
     padding: 13px 20px;
     border-radius: 50px;
-    font-size: 0.75rem;
+    font-size: 12px !important;
     font-weight: 800;
     text-transform: uppercase;
     text-decoration: none;
@@ -565,6 +565,41 @@ h6 {
 
 .testimonialSwiper {
     padding-bottom: 50px !important;
+}
+
+/* Team Carousel Styling */
+.teamSwiper .swiper-wrapper {
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+.teamSwiper .swiper-slide {
+    height: auto !important;
+    display: flex !important;
+}
+
+.teamSwiper .team-card {
+    width: 100%;
+}
+
+.team-button-next,
+.team-button-prev {
+    color: var(--primary-color) !important;
+}
+
+/* Service Carousel Styling */
+.serviceSwiper .swiper-wrapper {
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+.serviceSwiper .swiper-slide {
+    height: auto !important;
+    display: flex !important;
+}
+
+.serviceSwiper .service-card {
+    width: 100%;
 }
 
 /* Footer Styling */
@@ -884,8 +919,8 @@ footer {
 }
 
 .form-label {
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
     color: #444;
 }
 
@@ -1345,6 +1380,7 @@ footer {
     align-items: center;
     justify-content: center;
     font-size: 0.95rem;
+    font-weight: 700;
     transition: all 0.3s ease;
 }
 
@@ -1359,4 +1395,8 @@ footer {
     font-size: 1rem;
     line-height: 1.8;
     background-color: #ffffff;
+}
+
+.border-primary {
+    border-color: var(--primary-color) !important;
 }

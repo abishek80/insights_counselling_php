@@ -115,15 +115,12 @@ $errors = session()->getFlashdata('errors') ?? [];
 
             row.innerHTML = `
                 <div class="col-md-4">
-                    <label class="form-label small mb-1">Button Text / Label</label>
                     <input type="text" name="buttons[${index}][label]" class="form-control form-control-sm" placeholder="e.g. Book Session, WhatsApp" value="${labelVal}">
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label small mb-1">Link / URL</label>
                     <input type="text" name="buttons[${index}][url]" class="form-control form-control-sm" placeholder="e.g. https://... or tel:..." value="${urlVal}">
                 </div>
                 <div class="col-md-2">
-                    <label class="form-label small mb-1">Style / Theme</label>
                     <select name="buttons[${index}][style]" class="form-select form-select-sm">
                         <option value="btn-primary" ${styleVal === 'btn-primary' ? 'selected' : ''}>Primary (Purple)</option>
                         <option value="btn-secondary" ${styleVal === 'btn-secondary' ? 'selected' : ''}>Secondary</option>
@@ -135,14 +132,12 @@ $errors = session()->getFlashdata('errors') ?? [];
                     </select>
                 </div>
                 <div class="col-md-1">
-                    <label class="form-label small mb-1">Target</label>
                     <select name="buttons[${index}][target]" class="form-select form-select-sm">
                         <option value="_blank" ${targetVal === '_blank' ? 'selected' : ''}>New Tab</option>
                         <option value="_self" ${targetVal === '_self' ? 'selected' : ''}>Same Tab</option>
                     </select>
                 </div>
                 <div class="col-md-1 text-end">
-                    <label class="form-label small mb-1 opacity-0 d-block">Action</label>
                     <button type="button" class="btn btn-sm btn-outline-danger w-100 remove-btn-row" title="Remove Button"><i class="fas fa-trash"></i></button>
                 </div>
             `;

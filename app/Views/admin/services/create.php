@@ -75,33 +75,39 @@ $errors = session()->getFlashdata('errors') ?? [];
             </div>
 
             <div class="col-md-6 mb-3">
-                <label for="symptoms" class="form-label fw-bold small text-dark">Common Symptoms (Enter 1 symptom per line)</label>
-                <textarea name="symptoms" id="symptoms" class="form-control" rows="5" placeholder="Excessive worrying&#10;Difficulty winding down&#10;Sleep disturbances"><?= old('symptoms') ?></textarea>
+                <label for="symptoms" class="form-label fw-bold small text-dark">Common Symptoms (1 per line)</label>
+                <input type="text" name="symptoms_intro" class="form-control form-control-sm mb-2" placeholder="Symptoms section intro (e.g. Anxiety impacts both the mind and the body. Common signs include:)" value="<?= old('symptoms_intro') ?>">
+                <textarea name="symptoms" id="symptoms" class="form-control" rows="4" placeholder="Excessive worrying...&#10;Difficulty relaxing..."><?= old('symptoms') ?></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
-                <label for="types_help" class="form-label fw-bold small text-dark">Types of Concern We Help With (1 per line, e.g. "Type Name: Description")</label>
-                <textarea name="types_help" id="types_help" class="form-control" rows="5" placeholder="Generalized Anxiety: Heavy worry about daily life...&#10;Social Anxiety: Fear of judgment..."><?= old('types_help') ?></textarea>
+                <label for="types_help" class="form-label fw-bold small text-dark">Types We Help With (1 per line, e.g. "Type Name: Description")</label>
+                <input type="text" name="types_intro" class="form-control form-control-sm mb-2" placeholder="Types section intro (e.g. At Insight Counseling Services, we provide tailored support...)" value="<?= old('types_intro') ?>">
+                <textarea name="types_help" id="types_help" class="form-control" rows="4" placeholder="Generalized Anxiety: Heavy worry about daily life..."><?= old('types_help') ?></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
-                <label for="benefits" class="form-label fw-bold small text-dark">How Counselling Can Help / Key Benefits (1 per line)</label>
-                <textarea name="benefits" id="benefits" class="form-control" rows="5" placeholder="Reduce spiraling worries&#10;Manage panic symptoms&#10;Build self-confidence"><?= old('benefits') ?></textarea>
+                <label for="benefits" class="form-label fw-bold small text-dark">How Counselling Can Help / Benefits (1 per line)</label>
+                <input type="text" name="benefits_intro" class="form-control form-control-sm mb-2" placeholder="Benefits section intro (e.g. Professional therapy helps you untangle...)" value="<?= old('benefits_intro') ?>">
+                <textarea name="benefits" id="benefits" class="form-control" rows="4" placeholder="Reduce spiraling worries&#10;Manage panic symptoms"><?= old('benefits') ?></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="approach" class="form-label fw-bold small text-dark">Our Approach / Methodology (1 per line)</label>
-                <textarea name="approach" id="approach" class="form-control" rows="5" placeholder="Recognize unhelpful thought patterns&#10;Gently challenge irrational fears"><?= old('approach') ?></textarea>
+                <input type="text" name="approach_intro" class="form-control form-control-sm mb-2" placeholder="Approach section intro (e.g. We rely on evidence-based therapeutic approaches...)" value="<?= old('approach_intro') ?>">
+                <textarea name="approach" id="approach" class="form-control" rows="4" placeholder="Recognize unhelpful thought patterns..."><?= old('approach') ?></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="why_choose" class="form-label fw-bold small text-dark">Why Choose Us Points (1 per line)</label>
-                <textarea name="why_choose" id="why_choose" class="form-control" rows="5" placeholder="Experienced empathetic psychologists&#10;Flexible online and in-person sessions"><?= old('why_choose') ?></textarea>
+                <input type="text" name="why_choose_intro" class="form-control form-control-sm mb-2" placeholder="Why choose intro (e.g. Our practice is rooted in providing professional...)" value="<?= old('why_choose_intro') ?>">
+                <textarea name="why_choose" id="why_choose" class="form-control" rows="4" placeholder="Experienced empathetic psychologists..."><?= old('why_choose') ?></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="when_seek_help" class="form-label fw-bold small text-dark">When Should You Seek Help? Triggers (1 per line)</label>
-                <textarea name="when_seek_help" id="when_seek_help" class="form-control" rows="5" placeholder="Anxiety is actively disrupting daily life&#10;You experience unexpected panic attacks"><?= old('when_seek_help') ?></textarea>
+                <input type="text" name="when_seek_outro" class="form-control form-control-sm mb-2" placeholder="When seek help closing statement (e.g. Taking that step early on can prevent...)" value="<?= old('when_seek_outro') ?>">
+                <textarea name="when_seek_help" id="when_seek_help" class="form-control" rows="4" placeholder="Anxiety is actively disrupting daily life..."><?= old('when_seek_help') ?></textarea>
             </div>
 
             <div class="col-md-12 mb-4">

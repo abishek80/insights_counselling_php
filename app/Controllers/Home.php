@@ -31,9 +31,13 @@ class Home extends BaseController
 
     public function about()
     {
+        $teamModel = new TeamModel();
+        $serviceModel = new ServiceModel();
         $data = [
             'title' => 'About Mrs. Lekha Edwin & Insight Counseling Services | Chennai',
-            'meta_desc' => 'Learn about Mrs. Lekha Edwin, leading Counseling Psychologist in Chennai, and the mission of Insight Counseling Services since 2014 in Kovur, Porur & Ashok Nagar.'
+            'meta_desc' => 'Learn about Mrs. Lekha Edwin, leading Counseling Psychologist in Chennai, and the mission of Insight Counseling Services since 2014 in Kovur, Porur & Vadapalani.',
+            'team' => $teamModel->where('status', 1)->findAll(),
+            'services' => $serviceModel->where('status', 1)->findAll()
         ];
 
         return view('frontend/about', $data);
@@ -43,8 +47,8 @@ class Home extends BaseController
     {
         $branchModel = new BranchModel();
         $data = [
-            'title' => 'Contact Us | Clinic Locations in Kovur, Porur & Ashok Nagar | Chennai',
-            'meta_desc' => 'Contact Insight Counseling Services. Book an in-person or online consultation with expert psychologists in Kovur, Porur, and Ashok Nagar, Chennai.',
+            'title' => 'Contact Us | Clinic Locations in Kovur, Porur & Vadapalani | Chennai',
+            'meta_desc' => 'Contact Insight Counseling Services. Book an in-person or online consultation with expert psychologists in Kovur, Porur, and Vadapalani, Chennai.',
             'branches' => $branchModel->where('status', 1)->findAll()
         ];
 
@@ -199,9 +203,10 @@ class Home extends BaseController
             ],
             'phone' => [
                 'label'  => 'Phone Number',
-                'rules'  => 'required',
+                'rules'  => 'required|regex_match[/^[0-9+\s\-]{7,15}$/]',
                 'errors' => [
-                    'required' => 'Please enter your phone number.'
+                    'required'    => 'Please enter your phone number.',
+                    'regex_match' => 'Phone number must contain only numbers.'
                 ]
             ],
             'subject' => [

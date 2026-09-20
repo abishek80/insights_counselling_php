@@ -194,9 +194,8 @@
         .form-label {
             font-weight: 600;
             color: var(--text-sidebar-active);
-            font-size: 1rem;
+            font-size: 14px;
             margin-bottom: 8px;
-            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         
@@ -643,7 +642,7 @@
                 <h5 class="fw-bold mb-0 text-primary-color">Insight Admin Control Panel</h5>
             </div>
             <div class="d-flex align-items-center">
-                <a href="<?= base_url() ?>" target="_blank" class="btn btn-outline-secondary btn-sm me-3 border-0 bg-body-secondary-hover rounded-3" style="font-weight: 500; font-size: 1rem; padding: 8px 14px;"><i class="fas fa-external-link-alt me-1"></i> View Site</a>
+                <a href="<?= base_url() ?>" target="_blank" class="btn btn-outline-secondary btn-sm me-3 border-0 bg-light-hover rounded-3" style="font-weight: 500; font-size: 1rem; padding: 8px 14px;"><i class="fas fa-external-link-alt me-1"></i> View Site</a>
                 <div class="avatar-container">
                     <div class="avatar-img-wrapper">
                         <img src="https://ui-avatars.com/api/?name=Admin&background=5a39a8&color=fff&bold=true" class="avatar-img" alt="Admin Avatar">

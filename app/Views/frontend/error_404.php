@@ -22,7 +22,7 @@
     <div class="container text-center">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
-                <div class="p-5 border-0 rounded-4 shadow-sm bg-body-secondary">
+                <div class="p-5 border-0 rounded-4 shadow-sm bg-primary-subtle">
                     <div class="mb-4 text-primary-color" style="font-size: 6rem; font-weight: 800; line-height: 1; letter-spacing: -2px; opacity: 0.9;">
                         404
                     </div>

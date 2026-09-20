@@ -12,7 +12,7 @@ class BranchModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['name', 'address', 'phone', 'email', 'map_url', 'status'];
+    protected $allowedFields    = ['name', 'address', 'serving_areas', 'phone', 'email', 'map_url', 'status'];
 
     // Dates
     protected $useTimestamps = true;

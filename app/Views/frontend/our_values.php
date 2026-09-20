@@ -1,3 +1,4 @@
+<?php helper('settings'); $settings = get_settings(); ?>
 <?= $this->extend('frontend/layout') ?>
 
 <?= $this->section('content') ?>
@@ -19,7 +20,7 @@
 </section>
 
 <!-- Values Section Body -->
-<section class="section-padding bg-light position-relative">
+<section class="section-padding bg-primary-subtle position-relative">
     <div class="container">
 
         <!-- 11 Core Values Grid -->
@@ -236,7 +237,7 @@
                         <a href="<?= esc($settings['booking_url'] ?? base_url('contact')) ?>" target="_blank" rel="noopener" class="btn btn-light rounded-4 px-4 py-3 fw-bold text-primary-color shadow-sm">
                             <i class="fas fa-calendar-check me-2 text-primary-color"></i> Book Your Consultation
                         </a>
-                        <a href="https://wa.me/<?= esc($settings['whatsapp'] ?? '919445662922') ?>/" target="_blank" class="btn btn-outline-light rounded-4 px-4 py-3 fw-bold">
+                        <a href="https://wa.me/<?= esc($settings['whatsapp'] ?? '9445662922') ?>/" target="_blank" class="btn btn-outline-light rounded-4 px-4 py-3 fw-bold">
                             <i class="fab fa-whatsapp me-2"></i> Chat with Us on WhatsApp
                         </a>
                     </div>

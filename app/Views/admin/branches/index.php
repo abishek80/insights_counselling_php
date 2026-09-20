@@ -17,6 +17,7 @@
                 <tr>
                     <th>Branch Name</th>
                     <th>Address</th>
+                    <th>Serving Areas</th>
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Map Location</th>
@@ -29,8 +30,11 @@
                     <?php foreach ($branches as $branch): ?>
                         <tr>
                             <td><strong><?= esc($branch['name']) ?></strong></td>
-                            <td class="small text-muted" style="max-width: 250px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="<?= esc($branch['address']) ?>">
+                            <td class="small text-muted" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="<?= esc($branch['address']) ?>">
                                 <?= esc($branch['address']) ?>
+                            </td>
+                            <td class="small text-muted" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="<?= esc($branch['serving_areas'] ?? '') ?>">
+                                <?= esc($branch['serving_areas'] ?? '-') ?>
                             </td>
                             <td><?= esc($branch['phone']) ?></td>
                             <td><?= esc($branch['email']) ?></td>

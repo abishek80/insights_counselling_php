@@ -19,7 +19,7 @@
 </section>
 
 <!-- Main Content -->
-<section class="section-padding bg-light">
+<section class="section-padding bg-primary-subtle">
     <div class="container">
 
         <!-- Intro Callout -->
@@ -29,7 +29,7 @@
                     <i class="fas fa-hand-holding-medical fs-3" style="color: #dc3545 !important;"></i>
                 </div>
                 <div>
-                    <h2 class="h4 fw-bold text-dark mb-2">Mental Health Helplines – Chennai & Tamil Nadu</h2>
+                    <h2 class="h4 fw-bold text-dark mb-2">Mental Health Helplines - Chennai & Tamil Nadu</h2>
                     <p class="text-secondary lead fs-6 mb-0" style="line-height: 1.8;">
                         If you are experiencing emotional distress, anxiety, depression, suicidal thoughts, or a mental health crisis, please reach out for immediate support. The following organizations provide confidential assistance and crisis support.
                     </p>

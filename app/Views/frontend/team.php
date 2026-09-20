@@ -19,45 +19,47 @@
 
 <!-- Team Members Grid -->
 <section class="section-padding bg-white" id="teams">
-    <div class="container">
-        <div class="row g-4 justify-content-center">
-            <?php if (!empty($team)): ?>
+    <div class="container text-center">
+        <?php if (!empty($team)): ?>
+            <div class="row g-4 justify-content-center">
                 <?php foreach ($team as $member): ?>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="team-card bg-body-secondary h-100 d-flex flex-column gap-2 justify-content-between mt-3">
+                        <div class="team-card bg-primary-subtle h-100 d-flex flex-column justify-content-between p-4 rounded-4 shadow-sm border text-start mt-2">
                             <div>
-                                <div class="team-img-wrapper">
-                                    <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" class="team-img" alt="<?= esc($member['name']) ?>">
+                                <div class="team-img-wrapper mb-3 text-center">
+                                    <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" class="team-img" alt="<?= esc($member['name']) ?> - Expert Counseling Psychologist & Therapist in Chennai">
                                 </div>
-                                <h5><?= esc($member['name']) ?></h5>
-                                <div class="team-role"><?= esc($member['role']) ?></div>
-                                <p class="team-desc"><?= esc($member['qualifications']) ?></p>
-                                <div class="team-langs"><?= esc($member['languages']) ?></div>
+                                <h5 class="fw-bold text-dark mb-1 text-center"><?= esc($member['name']) ?></h5>
+                                <div class="team-role text-center mb-2"><?= esc($member['role']) ?></div>
+                                <p class="team-desc text-muted small mb-2 text-center"><?= esc($member['qualifications']) ?></p>
+                                <?php if (!empty($member['languages'])): ?>
+                                    <div class="team-langs text-muted small mb-3 text-center"><?= esc($member['languages']) ?></div>
+                                <?php endif; ?>
                             </div>
-                            <div class="d-flex gap-2 justify-content-center flex-column">
+                            <div class="d-flex gap-2 justify-content-center flex-column mt-3">
                                 <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">View Profile</button>
                                 <?php 
                                     $customBtns = !empty($member['custom_buttons']) ? json_decode($member['custom_buttons'], true) : [];
                                 ?>
                                 <?php if (!empty($customBtns) && is_array($customBtns)): ?>
                                     <?php foreach ($customBtns as $b): ?>
-                                        <a href="<?= esc($b['url']) ?>" target="<?= esc($b['target'] ?? '_blank') ?>" class="btn <?= esc($b['style'] ?? 'btn-primary') ?> btn-sm fw-bold shadow-sm py-2 rounded-3 text-center" style="font-size: 0.9rem;">
+                                        <a href="<?= esc($b['url']) ?>" target="<?= esc($b['target'] ?? '_blank') ?>" class="btn <?= esc($b['style'] ?? 'btn-primary') ?> btn-sm fw-bold shadow-sm py-2 rounded-pill text-center text-decoration-none" style="font-size: 0.88rem;">
                                             <?= esc($b['label']) ?>
                                         </a>
                                     <?php endforeach; ?>
                                 <?php else: ?>
-                                    <a href="<?= esc($settings['booking_url'] ?? 'https://insightcounselings.com/bookings/') ?>" target="_blank" class="btn-book-now">Book Your Appointment</a>
+                                    <a href="<?= esc($settings['booking_url'] ?? 'https://insightcounselings.com/bookings/') ?>" target="_blank" class="btn-book-now text-center">Book Your Appointment</a>
                                 <?php endif; ?>
                             </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
-            <?php else: ?>
-                <div class="col-12 text-center py-5">
-                    <p class="text-muted">No team members found.</p>
-                </div>
-            <?php endif; ?>
-        </div>
+            </div>
+        <?php else: ?>
+            <div class="py-5">
+                <p class="text-muted mb-0">No team members found.</p>
+            </div>
+        <?php endif; ?>
     </div>
 </section>
 

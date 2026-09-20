@@ -92,13 +92,15 @@ $errors = session()->getFlashdata('errors') ?? [];
             </div>
 
             <div class="col-md-6 mb-3">
-                <label for="symptoms" class="form-label fw-bold small text-dark">Common Symptoms (Enter 1 per line)</label>
-                <textarea name="symptoms" id="symptoms" class="form-control" rows="5"><?= esc(old('symptoms', $service['symptoms'] ?? '')) ?></textarea>
+                <label for="symptoms" class="form-label fw-bold small text-dark">Common Symptoms (1 per line)</label>
+                <input type="text" name="symptoms_intro" class="form-control form-control-sm mb-2" placeholder="Symptoms section intro..." value="<?= esc(old('symptoms_intro', $service['symptoms_intro'] ?? '')) ?>">
+                <textarea name="symptoms" id="symptoms" class="form-control" rows="4"><?= esc(old('symptoms', $service['symptoms'] ?? '')) ?></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="types_help" class="form-label fw-bold small text-dark">Types We Help With (1 per line, e.g. "Type Name: Description")</label>
-                <textarea name="types_help" id="types_help" class="form-control" rows="5"><?= esc(old('types_help', $service['types_help'] ?? '')) ?></textarea>
+                <input type="text" name="types_intro" class="form-control form-control-sm mb-2" placeholder="Types section intro..." value="<?= esc(old('types_intro', $service['types_intro'] ?? '')) ?>">
+                <textarea name="types_help" id="types_help" class="form-control" rows="4"><?= esc(old('types_help', $service['types_help'] ?? '')) ?></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
@@ -110,22 +112,26 @@ $errors = session()->getFlashdata('errors') ?? [];
                     $bVal = implode("\n", $bDec);
                 }
                 ?>
-                <textarea name="benefits" id="benefits" class="form-control" rows="5"><?= esc(old('benefits', $bVal)) ?></textarea>
+                <input type="text" name="benefits_intro" class="form-control form-control-sm mb-2" placeholder="Benefits section intro..." value="<?= esc(old('benefits_intro', $service['benefits_intro'] ?? '')) ?>">
+                <textarea name="benefits" id="benefits" class="form-control" rows="4"><?= esc(old('benefits', $bVal)) ?></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="approach" class="form-label fw-bold small text-dark">Our Approach / Methodology (1 per line)</label>
-                <textarea name="approach" id="approach" class="form-control" rows="5"><?= esc(old('approach', $service['approach'] ?? '')) ?></textarea>
+                <input type="text" name="approach_intro" class="form-control form-control-sm mb-2" placeholder="Approach section intro..." value="<?= esc(old('approach_intro', $service['approach_intro'] ?? '')) ?>">
+                <textarea name="approach" id="approach" class="form-control" rows="4"><?= esc(old('approach', $service['approach'] ?? '')) ?></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="why_choose" class="form-label fw-bold small text-dark">Why Choose Us Points (1 per line)</label>
-                <textarea name="why_choose" id="why_choose" class="form-control" rows="5"><?= esc(old('why_choose', $service['why_choose'] ?? '')) ?></textarea>
+                <input type="text" name="why_choose_intro" class="form-control form-control-sm mb-2" placeholder="Why choose intro..." value="<?= esc(old('why_choose_intro', $service['why_choose_intro'] ?? '')) ?>">
+                <textarea name="why_choose" id="why_choose" class="form-control" rows="4"><?= esc(old('why_choose', $service['why_choose'] ?? '')) ?></textarea>
             </div>
 
             <div class="col-md-6 mb-3">
                 <label for="when_seek_help" class="form-label fw-bold small text-dark">When Should You Seek Help? Triggers (1 per line)</label>
-                <textarea name="when_seek_help" id="when_seek_help" class="form-control" rows="5"><?= esc(old('when_seek_help', $service['when_seek_help'] ?? '')) ?></textarea>
+                <input type="text" name="when_seek_outro" class="form-control form-control-sm mb-2" placeholder="When seek help closing statement..." value="<?= esc(old('when_seek_outro', $service['when_seek_outro'] ?? '')) ?>">
+                <textarea name="when_seek_help" id="when_seek_help" class="form-control" rows="4"><?= esc(old('when_seek_help', $service['when_seek_help'] ?? '')) ?></textarea>
             </div>
 
             <div class="col-md-12 mb-4">

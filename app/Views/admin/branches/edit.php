@@ -48,11 +48,19 @@ $errors = session()->getFlashdata('errors') ?? [];
                 <?php endif; ?>
             </div>
 
-            <div class="col-md-12 mb-4">
+            <div class="col-md-12 mb-3">
                 <label for="address" class="form-label fw-bold small text-dark">Clinic Address</label>
-                <textarea name="address" id="address" class="form-control <?= (isset($errors['address']) || $validation->hasError('address')) ? 'is-invalid' : '' ?>" rows="4" required><?= esc($branch['address']) ?></textarea>
+                <textarea name="address" id="address" class="form-control <?= (isset($errors['address']) || $validation->hasError('address')) ? 'is-invalid' : '' ?>" rows="3" required><?= esc($branch['address']) ?></textarea>
                 <?php if (isset($errors['address']) || $validation->hasError('address')): ?>
                     <div class="invalid-feedback small"><?= esc($errors['address'] ?? $validation->getError('address')) ?></div>
+                <?php endif; ?>
+            </div>
+
+            <div class="col-md-12 mb-4">
+                <label for="serving_areas" class="form-label fw-bold small text-dark">Serving Areas / Locations</label>
+                <textarea name="serving_areas" id="serving_areas" class="form-control <?= (isset($errors['serving_areas']) || $validation->hasError('serving_areas')) ? 'is-invalid' : '' ?>" rows="3" placeholder="e.g. Serving clients from Saligramam, Virugambakkam..."><?= esc($branch['serving_areas'] ?? '') ?></textarea>
+                <?php if (isset($errors['serving_areas']) || $validation->hasError('serving_areas')): ?>
+                    <div class="invalid-feedback small"><?= esc($errors['serving_areas'] ?? $validation->getError('serving_areas')) ?></div>
                 <?php endif; ?>
             </div>
         </div>

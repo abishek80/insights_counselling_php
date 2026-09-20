@@ -39,7 +39,7 @@
                                 </span>
                             </td>
                             <td><span class="text-muted small"><?= esc(strlen($testimonial['content']) > 80 ? substr($testimonial['content'], 0, 80) . '...' : $testimonial['content']) ?></span></td>
-                            <td><span class="badge bg-body-secondary text-secondary border"><?= esc($testimonial['meta_info']) ?></span></td>
+                            <td><span class="badge bg-light text-secondary border"><?= esc($testimonial['meta_info']) ?></span></td>
                             <td>
                                 <?php if ($testimonial['status'] == 1): ?>
                                     <a href="<?= base_url('admin/testimonials/toggle-status/' . $testimonial['id']) ?>" class="btn btn-sm btn-success fw-bold py-1 px-3 shadow-sm rounded-pill" style="font-size: 0.75rem;"><i class="fas fa-check-circle me-1"></i> Active</a>

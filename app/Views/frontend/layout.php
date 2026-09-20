@@ -9,7 +9,7 @@
     <!-- PRIMARY SEO META TAGS -->
     <title><?= esc($title ?? 'Best Psychologist in Chennai | Insight Counseling Services') ?></title>
     <meta name="description" content="<?= esc($meta_desc ?? 'Best Psychologist in Chennai for Anxiety, Depression, Stress Management, Couple Counselling, Teen Counselling, Family Counselling, and Relationship Issues. Online & In-Person Sessions. Call 9445662922.') ?>">
-    <meta name="keywords" content="<?= esc($keywords ?? 'counseling psychologist Chennai, mental health Chennai, anxiety counseling Chennai, depression therapy Chennai, couple counseling Chennai, teen counseling Chennai, online counseling India, Lekha Edwin psychologist, stress management Chennai, relationship counseling, Insight Counseling Services') ?>">
+    <meta name="keywords" content="<?= esc($keywords ?? 'best relationship counselling in chennai, best marriage counseling in chennai, marriage counselor near me, psychologist chennai, good psychologist near me, counseling center near me, psychologist in chennai, psychologist near me, therapist near me, best psychologist in chennai, psychology doctor near me, therapist in chennai, marriage counseling chennai, family counselling near me, child psychologist chennai, counselling psychologist near me, best psychologist chennai, therapist chennai, counselling near me, Lekha Edwin, Insight Counseling Services, psychologist Kovur, psychologist Porur, psychologist Vadapalani, psychologist Vadapalani') ?>">
     <meta name="author" content="Insight Counseling Services">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="revisit-after" content="7 days">
@@ -34,7 +34,7 @@
     <meta property="og:image" content="<?= esc($og_image ?? base_url('assets/og-image.png')) ?>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Insight Counseling Services – Talk. Resolve. Heal.">
+    <meta property="og:image:alt" content="Insight Counseling Services - Talk. Resolve. Heal.">
     <meta property="og:locale" content="en_IN">
 
     <!-- TWITTER CARD -->
@@ -86,6 +86,25 @@
           "email": "<?= esc($settings['email'] ?? 'contact@insightcounselings.com') ?>",
           "priceRange": "₹₹",
           "medicalSpecialty": "Psychiatric",
+          "knowsAbout": [
+            "Best Relationship Counselling in Chennai",
+            "Best Marriage Counseling in Chennai",
+            "Marriage Counselor Near Me",
+            "Psychologist Chennai",
+            "Good Psychologist Near Me",
+            "Counseling Center Near Me",
+            "Psychologist in Chennai",
+            "Therapist Near Me",
+            "Best Psychologist in Chennai",
+            "Psychology Doctor Near Me",
+            "Therapist in Chennai",
+            "Marriage Counseling Chennai",
+            "Family Counselling Near Me",
+            "Child Psychologist Chennai",
+            "Counselling Psychologist Near Me",
+            "Best Psychologist Chennai",
+            "Therapist Chennai"
+          ],
           "founder": {
             "@type": "Person",
             "name": "Mrs. Lekha Edwin",
@@ -311,7 +330,7 @@
         <nav class="navbar navbar-expand-lg bg-white py-3 sticky-top shadow-sm" aria-label="Main Navigation">
             <div class="container">
                 <a class="navbar-brand" href="<?= base_url() ?>">
-                    <img src="<?= base_url('assets/logo-dark.png') ?>" alt="Insight Counseling Services Logo" style="height: 60px;">
+                    <img src="<?= base_url('assets/logo-dark.png') ?>" alt="Insight Counseling Services - Best Psychologist in Chennai" style="height: 60px;">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -341,10 +360,10 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container py-5">
+        <div class="container pb-5">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <img src="<?= base_url('assets/logo-light.png') ?>" alt="Insight Counseling Services" class="footer-logo-main mb-3" style="max-height: 70px;">
+                    <img src="<?= base_url('assets/logo-light.png') ?>" alt="Insight Counseling Services - Best Therapist & Counseling Center in Chennai" class="footer-logo-main mb-3" style="max-height: 70px;">
                     <p class="text-white pe-0 pe-md-4">
                         Insight Counseling Services (ICS), Chennai established in the year 2014.
                         Providing compassionate, confidential, and evidence-based psychological support for all.
@@ -396,12 +415,12 @@
 
     <!-- Fixed Action Buttons -->
     <div class="fixed-actions-container">
-        <a href="tel:<?= preg_replace('/\s+/', '', $settings['phone']) ?>" class="btn-call-fixed"
-           onclick="return gtag_report_phone_conversion('tel:<?= preg_replace('/\s+/', '', $settings['phone']) ?>');">
+        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone'] ?? '9445662922') ?>" class="btn-call-fixed"
+           onclick="if(typeof gtag_report_phone_conversion === 'function'){ gtag_report_phone_conversion('tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone'] ?? '9445662922') ?>'); }">
             <i class="fas fa-phone fs-4"></i>
         </a>
-        <a href="https://wa.me/<?= esc($settings['whatsapp']) ?>/" target="_blank" class="btn-whatsapp-fixed"
-           onclick="return gtag_report_whatsapp_conversion('https://wa.me/<?= esc($settings['whatsapp']) ?>/');">
+        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp'] ?? '9445662922') ?>/" target="_blank" rel="noopener" class="btn-whatsapp-fixed"
+           onclick="if(typeof gtag_report_whatsapp_conversion === 'function'){ gtag_report_whatsapp_conversion('https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp'] ?? '9445662922') ?>/'); }">
             <i class="fab fa-whatsapp fs-4"></i>
             <span class="d-none d-md-block">Chat with us</span>
         </a>

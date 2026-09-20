@@ -30,23 +30,30 @@ $errors = session()->getFlashdata('errors') ?? [];
             <?php if (!empty($branches)): ?>
                 <?php foreach ($branches as $branch): ?>
                     <div class="col-lg-4 col-md-6">
-                        <div class="contact-card bg-body-secondary">
-                            <div class="location-icon-box">
-                                <i class="fas fa-location-dot"></i>
+                        <div class="contact-card bg-primary-subtle h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="location-icon-box">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <h5 class="fw-bold mb-2"><?= esc($branch['name']) ?></h5>
+                                <?php if (!empty($branch['serving_areas'])): ?>
+                                    <p class="text-muted small mb-3 opacity-75"><?= esc($branch['serving_areas']) ?></p>
+                                <?php endif; ?>
+                                <p class="text-primary-color mb-3"><i class="fas fa-map-marker-alt me-2 text-primary-color"></i> <?= esc($branch['address']) ?></p>
                             </div>
-                            <h5 class="fw-bold mb-3"><?= esc($branch['name']) ?></h5>
-                            <p class="text-muted mb-4"><?= esc($branch['address']) ?></p>
-                            <div class="mb-2">
-                                <i class="fas fa-phone me-2 text-primary-color"></i>
-                                <a href="tel:<?= preg_replace('/\s+/', '', $branch['phone']) ?>" class="text-decoration-none text-reset"><?= esc($branch['phone']) ?></a>
+                            <div>
+                                <div class="mb-2">
+                                    <i class="fas fa-phone me-2 text-primary-color"></i>
+                                    <a href="tel:<?= preg_replace('/\s+/', '', $branch['phone']) ?>" class="text-decoration-none text-reset"><?= esc($branch['phone']) ?></a>
+                                </div>
+                                <div class="mb-3">
+                                    <i class="fas fa-envelope me-2 text-primary-color"></i>
+                                    <a href="mailto:<?= esc($branch['email']) ?>" class="text-decoration-none text-reset"><?= esc($branch['email']) ?></a>
+                                </div>
+                                <?php if (!empty($branch['map_url'])): ?>
+                                    <a href="<?= esc($branch['map_url']) ?>" target="_blank" class="text-primary-color fw-bold text-decoration-none">GET DIRECTIONS <i class="fas fa-external-link-alt ms-1"></i></a>
+                                <?php endif; ?>
                             </div>
-                            <div class="mb-3">
-                                <i class="fas fa-envelope me-2 text-primary-color"></i>
-                                <a href="mailto:<?= esc($branch['email']) ?>" class="text-decoration-none text-reset"><?= esc($branch['email']) ?></a>
-                            </div>
-                            <?php if (!empty($branch['map_url'])): ?>
-                                <a href="<?= esc($branch['map_url']) ?>" target="_blank" class="text-primary-color fw-bold text-decoration-none">GET DIRECTIONS <i class="fas fa-external-link-alt ms-1"></i></a>
-                            <?php endif; ?>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -59,7 +66,7 @@ $errors = session()->getFlashdata('errors') ?? [];
         <div class="row g-5">
             <!-- Enquiry Form -->
             <div class="col-lg-7">
-                <div class="card p-4 border-0 shadow-sm rounded-4 bg-body-secondary">
+                <div class="card p-4 border-0 shadow-sm rounded-4 bg-primary-subtle">
                     <h3 class="fw-bold text-primary-color mb-2">Send an Enquiry</h3>
                     <p class="text-muted mb-4">Fill out the form below and our counseling support team will respond to you within 24 hours.</p>
                     
@@ -84,7 +91,7 @@ $errors = session()->getFlashdata('errors') ?? [];
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="phone" class="form-label fw-bold text-dark">Phone Number <span class="text-danger">*</span></label>
-                                <input type="tel" name="phone" id="phone" class="form-control <?= (isset($errors['phone']) || $validation->hasError('phone')) ? 'is-invalid' : '' ?>" placeholder="e.g. +91 98765 43210" value="<?= old('phone') ?>" required>
+                                <input type="tel" name="phone" id="phone" class="form-control <?= (isset($errors['phone']) || $validation->hasError('phone')) ? 'is-invalid' : '' ?>" placeholder="e.g. +91 98765 43210" value="<?= old('phone') ?>" oninput="this.value = this.value.replace(/[^0-9+\s\-]/g, '')" maxlength="15" required>
                                 <?php if (isset($errors['phone']) || $validation->hasError('phone')): ?>
                                     <div class="invalid-feedback"><?= esc($errors['phone'] ?? $validation->getError('phone')) ?></div>
                                 <?php endif; ?>
@@ -125,7 +132,7 @@ $errors = session()->getFlashdata('errors') ?? [];
                 <div class="whatsapp-box h-auto mb-4">
                     <h3 class="fw-bold mb-3 text-white">Need a Quick Response?</h3>
                     <p class="mb-4 opacity-75 text-white">WhatsApp is the fastest way to get in touch with our intake team and book your session immediately.</p>
-                    <a href="https://wa.me/<?= esc($settings['whatsapp']) ?>/" target="_blank" class="btn-whatsapp-light">
+                    <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp'] ?? '9445662922') ?>/" target="_blank" rel="noopener" class="btn-whatsapp-light">
                         <i class="fab fa-whatsapp fs-4"></i> Chat on WhatsApp
                     </a>
                 </div>

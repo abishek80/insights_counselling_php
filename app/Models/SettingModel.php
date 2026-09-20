@@ -17,7 +17,7 @@ class SettingModel extends Model
         'email',
         'address_kovur',
         'address_porur',
-        'address_ashok_nagar',
+        'address_vadapalani',
         'facebook',
         'instagram',
         'youtube',

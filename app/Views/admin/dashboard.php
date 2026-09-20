@@ -91,7 +91,7 @@
                             <td><strong><?= esc($enquiry['name']) ?></strong></td>
                             <td><a href="mailto:<?= esc($enquiry['email']) ?>" class="text-decoration-none"><?= esc($enquiry['email']) ?></a></td>
                             <td><a href="tel:<?= esc($enquiry['phone']) ?>" class="text-decoration-none text-reset"><?= esc($enquiry['phone']) ?></a></td>
-                            <td><span class="badge bg-body-secondary text-primary border"><?= esc($enquiry['subject']) ?></span></td>
+                            <td><span class="badge bg-light text-primary border"><?= esc($enquiry['subject']) ?></span></td>
                             <td class="small text-muted"><?= date('d M Y, h:i A', strtotime($enquiry['created_at'])) ?></td>
                             <td>
                                 <button type="button" class="btn btn-sm btn-outline-primary btn-action me-1" 
@@ -108,9 +108,9 @@
 
                         <!-- View Message Modal -->
                         <div class="modal fade" id="enquiryModal<?= $enquiry['id'] ?>" tabindex="-1" aria-labelledby="enquiryModalLabel<?= $enquiry['id'] ?>" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-dialog modal-lg modal-dialog-centered">
                                 <div class="modal-content border-0 shadow-lg rounded-4">
-                                    <div class="modal-header border-0 bg-body-secondary rounded-top-4">
+                                    <div class="modal-header border-0 bg-light rounded-top-4">
                                         <h5 class="modal-title fw-bold text-primary-color" id="enquiryModalLabel<?= $enquiry['id'] ?>">
                                             <i class="fas fa-envelope-open-text me-2"></i> Enquiry Details
                                         </h5>
@@ -119,7 +119,7 @@
                                     <div class="modal-body p-4">
                                         <div class="mb-3">
                                             <span class="small fw-bold text-muted d-block">SENDER</span>
-                                            <span class="fs-5 fw-bold text-dark"><?= esc($enquiry['name']) ?></span>
+                                            <span class="fs-6 fw-bold text-dark"><?= esc($enquiry['name']) ?></span>
                                         </div>
                                         <div class="row g-2 mb-3">
                                             <div class="col-6">
@@ -133,14 +133,12 @@
                                         </div>
                                         <div class="mb-3">
                                             <span class="small fw-bold text-muted d-block">SUBJECT</span>
-                                            <span class="badge bg-body-secondary text-primary border"><?= esc($enquiry['subject']) ?></span>
+                                            <span class="badge bg-light text-primary border"><?= esc($enquiry['subject']) ?></span>
                                         </div>
                                         <hr class="my-3">
                                         <div class="mb-0">
                                             <span class="small fw-bold text-muted d-block mb-1">MESSAGE</span>
-                                            <div class="p-3 bg-body-secondary rounded-3 text-muted small" style="white-space: pre-line; line-height: 1.6;">
-                                                <?= esc($enquiry['message']) ?>
-                                            </div>
+                                            <?= esc($enquiry['message']) ?>
                                         </div>
                                     </div>
                                     <div class="modal-footer border-0">

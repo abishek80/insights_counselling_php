@@ -41,6 +41,7 @@ class Branches extends BaseController
         $branchModel->insert([
             'name' => $this->request->getPost('name'),
             'address' => $this->request->getPost('address'),
+            'serving_areas' => $this->request->getPost('serving_areas'),
             'phone' => $this->request->getPost('phone'),
             'email' => $this->request->getPost('email'),
             'map_url' => $this->request->getPost('map_url'),
@@ -91,6 +92,7 @@ class Branches extends BaseController
         $branchModel->update($id, [
             'name' => $this->request->getPost('name'),
             'address' => $this->request->getPost('address'),
+            'serving_areas' => $this->request->getPost('serving_areas'),
             'phone' => $this->request->getPost('phone'),
             'email' => $this->request->getPost('email'),
             'map_url' => $this->request->getPost('map_url')

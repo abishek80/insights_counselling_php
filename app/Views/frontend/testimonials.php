@@ -17,7 +17,7 @@
 </section>
 
 <!-- Testimonials Grid -->
-<section class="section-padding bg-body-secondary" id="testimonial">
+<section class="section-padding bg-primary-subtle" id="testimonial">
     <div class="container">
         <div class="row g-4">
             <?php if (!empty($testimonials)): ?>

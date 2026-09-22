@@ -64,7 +64,7 @@ const teamData = {
         qual: 'M. Sc Counseling Psychology., M.A., B.Ed PG Diploma in Life Coaching and Counselling',
         langs: 'Tamil, English',
         specialties: ['Anxiety & Depression', 'Relationship Counseling', 'Teen Support', 'Personal Growth'],
-        about: 'Lekha Edwin brings a thoughtful blend of academic training and hands-on counseling experience to her work as a Counseling Psychologist. With a strong foundation in psychology and continuous advanced training, she is committed to offering evidence-based, compassionate mental health support. Her clinical focus includes helping individuals manage anxiety, navigate depressive symptoms, and work through relationship and emotional challenges. Known for her empathetic and non-judgmental approach, Lekha creates a safe therapeutic space where clients feel heard, understood, and supported. Her work emphasizes practical coping strategies, emotional insight, and long-term wellbeing, making her a trusted support for individuals, couples, and adolescents seeking clarity, balance, and personal growth.',
+        about: 'Lekha Edwin\'s qualifications and specialties make her well-equipped to provide support for a range of psychological challenges. With her master\'s degree from the University of Madras and her Diploma from CCS Academy, she likely has a solid theoretical foundation and practical skills in counseling and psychotherapy. Her focus on anxiety, depression, and relationship issues suggests she has honed her expertise in areas that are commonly encountered in counseling practice. Overall, her educational background and specialization make her a valuable resource for those seeking support in navigating mental health concerns.',
         image: './assets/team/lekha-edwin.jpg'
     },
     'praveen': {
@@ -73,7 +73,7 @@ const teamData = {
         qual: 'BSc in Psychology, MSc in Clinical Psychology, PhD (Psychology) – Pursuing',
         langs: 'Tamil, English',
         specialties: ['Psychological Assessment', 'Psychotherapy', 'Behavioral Science', 'LGBTQIA+ Support'],
-        about: 'Praveen is a dedicated psychologist with a strong foundation in clinical practice and mental health research. He holds a BSc in Psychology from PSG College, an MSc in Clinical Psychology from Christ (Deemed to be) University, Delhi, and is currently pursuing a PhD at Sri Ramachandra Institute of Higher Education and Research. With expertise in psychological assessment, psychotherapy, and behavioral science, he is committed to understanding human emotions, cognition, and well-being. His work focuses on conducting psychological assessments and providing evidence-based interventions to support mental health and enhance quality of life. Maintaining high ethical standards in practice, he works with vulnerable groups, including children, teenagers, adults, geriatrics, and the LGBTQIA+ community.',
+        about: 'Praveen is a dedicated psychologist with a strong foundation in clinical practice and mental health research. He holds a BSc in Psychology from PSG College, an MSc in Clinical Psychology from Christ (Deemed to be) University, Delhi, and is currently pursuing a PhD at Sri Ramachandra Institute of Higher Education and Research. With expertise in psychological assessment, psychotherapy, and behavioral science, he is committed to understanding human emotions, cognition, and well-being. His work focuses on conducting psychological assessments and providing evidence-based interventions to support mental health and enhance quality of life. Through continuous learning and research, he strives to contribute to the evolving field of psychology and improve therapeutic approaches. Maintaining high ethical standards in practice, he works with vulnerable groups, including children, teenagers, adults, geriatrics, and the LGBTQIA+ community.',
         image: './assets/team/praveen.jpg'
     },
     'bala': {
@@ -82,7 +82,7 @@ const teamData = {
         qual: 'M.Sc. in Psychology, PG diploma in Life Skills and Counselling, Career Guidance',
         langs: 'English, Telugu, Tamil, Hindi',
         specialties: ['Depression & Anxiety', 'Stress Management', 'Couple/Marital Counselling', 'SFBT & NLP'],
-        about: 'I am a counselling practitioner with specialization in Depression, Anxiety & Stress Management, Child & Adolescent Counselling and Couple/Marital/Premarital Counselling. He holds M.Sc. in Psychology from Singhania University. He also holds a PG diploma in Life Skills and Counselling, Career Guidance and Counselling with CBT from CCS Academy; and certifications in various areas of counselling from various institutions. He has counselled 600 plus clients, including few international clients. with expertise in techniques, such as Gestalt Therapy, CBT, RECBT, Transaction Analysis, SFBT and NLP. Krishna served as volunteer counselor to support Covid-19 Impacted families to recover from the tragic incidents as part of Banyan Academy of Leadership in Mental Health group in Tamil Nadu.',
+        about: 'Bala Krishna is a counselling practitioner with specialization in Depression, Anxiety & Stress Management, Child & Adolescent Counselling and Couple/Marital/Premarital Counselling. He holds M.Sc. in Psychology from Singhania University. He also holds a PG diploma in Life Skills and Counselling, Career Guidance and Counselling with CBT from CCS Academy; and certifications in various areas of counselling from various institutions. He has counselled 600 plus clients, including few international clients with expertise in techniques, such as Gestalt Therapy, CBT, RECBT, Transaction Analysis, SFBT and NLP. Krishna served as volunteer counselor to support Covid-19 impacted families to recover from the tragic incidents as part of Banyan Academy of Leadership in Mental Health group in Tamil Nadu. He is proficient in English & Telugu apart from understanding Tamil & Hindi. Bala Krishna also conducted various webinars, seminars and trainings on life skills and psychology. He did a program on leadership skills in Etv Life (Telugu) Channel. He is passionate about contributing for the betterment of human lives through counselling, coaching and training.',
         image: './assets/team/placeholder.png'
     },
     'banupriya': {
@@ -91,7 +91,7 @@ const teamData = {
         qual: 'Master\'s in Psychology, Diploma in Clinical Hypnotherapy, Diploma in Counselling',
         langs: 'English, Tamil',
         specialties: ['Clinical Hypnotherapy', 'Phobia Treatment', 'Couple Conflicts', 'Life Skills Coaching'],
-        about: 'I am a compassionate psychologist with a Master\'s in Psychology, a Diploma in Clinical Hypnotherapy, and a Diploma in Counselling and Psychotherapy. Her 2 years\' experience spans counselling children, adults, and the elderly, covering Issues like stress, anxiety, depression, child development, couple and family conflicts. She also specialize in hypnotherapy, using it for anxiety, phobias, trauma, habit control like bed wetting, temper tantrum, sibling rivalry and academic improvement, integrating it with other therapeutic methods for deeper behavioural change. Her practice incorporates evidence-based therapies such as CBT, RECBT, Gestalt therapy, PCT, SFBT and Transactional Analysis (Client Centred) creating safe, empathetic space.',
+        about: '<p class="mb-3">She is a compassionate psychologist with a Master\'s in Psychology, a Diploma in Clinical Hypnotherapy, and a Diploma in Counselling and Psychotherapy. Her 2 years\' experience spans counselling children, adults, and the elderly, covering issues like stress, anxiety, depression, child development, couple and family conflicts.</p><p class="mb-3">She also specialize in hypnotherapy, using it for anxiety, phobias, trauma, habit control like bed wetting, temper tantrum, sibling rivalry and academic improvement, integrating it with other therapeutic methods for deeper behavioural change. She is a Certified Past Life Regression Therapist helping clients to explore subconscious memories to promote healing, clarity and personal growth.</p><p class="mb-0">Her practice incorporates evidence-based therapies such as CBT, RECBT, Gestalt therapy, PCT, SFBT and Transactional Analysis (Client Centred) creating safe, empathetic space. She offers life skills coaching, focusing on personal growth and resilience and lasting change through hypnotherapy and can communicate in English and Tamil.</p>',
         image: './assets/team/banupriya.jpg'
     },
     'gayathri': {
@@ -100,7 +100,7 @@ const teamData = {
         qual: 'B.Sc. Nursing, M.Sc. Counselling Psychology, PG Diploma in Life Coaching',
         langs: 'English, Tamil, Malayalam',
         specialties: ['Student Counselling', 'Marital Counselling', 'Stress & Anxiety', 'Easy Integration Model'],
-        about: 'I\'m a practicing Counselling Psychologist specialised in Student Counselling and marital counselling. She completed her B.Sc. Nursing in MGR University and M.Sc. Counselling psychology in university of madras. She also completed her pg diploma In life coaching and counselling in CCS academy. She is highly empathetic and professional in developing personalised models for the clients. She works great with young minds. She provides guidance to clients regarding stress, anxiety, depression by using Easy Integration Model',
+        about: '<p class="mb-3">Gayathri Parthiban is a practicing Counselling Psychologist specialised in Student Counselling and marital counselling.</p><p class="mb-3">She completed her B.Sc. Nursing in MGR University and M.Sc. Counselling psychology in university of madras. She also completed her pg diploma in life coaching and counselling in CCS academy.</p><p class="mb-0">She is highly empathetic and professional in developing personalised models for the clients. She works great with young minds. She provides guidance to clients regarding stress, anxiety, depression, addiction by using Easy Integration Model</p>',
         image: './assets/team/gayathri.jpg'
     },
     'kavya': {
@@ -136,7 +136,7 @@ if (teamModal) {
             document.getElementById('modal-role').innerText = data.role;
             document.getElementById('modal-qual').innerText = data.qual;
             document.getElementById('modal-langs').innerText = data.langs;
-            document.getElementById('modal-about').innerText = data.about;
+            document.getElementById('modal-about').innerHTML = data.about;
             
             const imgCol = document.querySelector('.profile-img-col');
             if (imgCol) {
@@ -195,27 +195,4 @@ window.addEventListener('scroll', function() {
             navbar.classList.remove('scrolled');
         }
     }
-});
-
-// Initialize Swiper (Testimonials)
-const swiper = new Swiper('.testimonialSwiper', {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    loop: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    breakpoints: {
-        768: {
-            slidesPerView: 2,
-        },
-        1024: {
-            slidesPerView: 3,
-        },
-    },
 });

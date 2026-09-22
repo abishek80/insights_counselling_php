@@ -435,7 +435,7 @@
                         </div>
 
                         <div class="profile-about-label">ABOUT</div>
-                        <p class="profile-about-text" id="modal-about"></p>
+                        <div class="profile-about-text" id="modal-about"></div>
 
                         <div id="modal-buttons" class="d-flex flex-column gap-2 mt-3">
                             <button class="btn-book-profile" onclick="window.open('<?= esc($settings['booking_url'] ?? 'https://insightcounselings.com/bookings/') ?>', '_blank')">
@@ -500,7 +500,7 @@
                     document.getElementById('modal-role').textContent = member.role;
                     document.getElementById('modal-qual').textContent = member.qualifications;
                     document.getElementById('modal-langs').textContent = member.languages;
-                    document.getElementById('modal-about').textContent = member.about;
+                    document.getElementById('modal-about').innerHTML = member.about;
                     
                     const imgCol = document.getElementById('modal-img-col');
                     imgCol.style.backgroundImage = `url('<?= base_url("assets/team/") ?>${member.image}')`;

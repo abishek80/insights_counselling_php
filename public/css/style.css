@@ -563,8 +563,11 @@ h6 {
     border-radius: 10px;
 }
 
-.testimonialSwiper {
-    padding-bottom: 50px !important;
+.testimonialSwiper,
+.teamSwiper,
+.serviceSwiper {
+    padding: 12px 10px 50px 10px !important;
+    margin: -12px -10px 0 -10px !important;
 }
 
 /* Team Carousel Styling */

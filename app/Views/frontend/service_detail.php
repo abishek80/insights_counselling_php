@@ -5,7 +5,7 @@
 
 <!-- Hero / Page Header -->
 <section class="page-header text-center bg-primary-subtle py-5">
-    <div class="container py-3">
+    <div class="container">
         <h1 class="fw-bold text-primary mb-2"><?= esc($service['title']) ?></h1>
         <?php if (!empty($service['sub_title'])): ?>
             <p class="lead text-muted mb-3 mx-auto" style="max-width: 800px;"><?= esc($service['sub_title']) ?></p>
@@ -25,7 +25,7 @@
 <!-- Main Overview Section -->
 <section class="section-padding bg-white">
     <div class="container">
-        <div class="row g-5 align-items-center">
+        <div class="row align-items-center g-4">
             <?php if (!empty($service['image'])): ?>
                 <div class="col-lg-6">
                     <img src="<?= base_url('assets/services/' . esc($service['image'])) ?>" class="img-fluid w-100 rounded-4 shadow-sm border" alt="<?= esc($service['title']) ?>">
@@ -38,6 +38,11 @@
                 <div class="text-secondary fs-6 mb-4" style="line-height: 1.8;">
                     <?= nl2br(esc($service['long_description'])) ?>
                 </div>
+                <?php if (!empty($settings['booking_url'])): ?>
+                    <a href="<?= esc($settings['booking_url']) ?>" target="_blank" rel="noopener" class="btn btn-primary px-4 py-3 rounded-pill">
+                        Book Your Consultation
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
@@ -52,6 +57,11 @@
             <div class="text-secondary fs-6" style="line-height: 1.8;">
                 <?= nl2br(esc($service['what_is_section'])) ?>
             </div>
+            <?php if (!empty($settings['booking_url'])): ?>
+                <a href="<?= esc($settings['booking_url']) ?>" target="_blank" rel="noopener" class="btn btn-primary px-4 py-3 mt-3 rounded-pill">
+                    Book Your Consultation
+                </a>
+            <?php endif; ?>
         </div>
     </div>
 </section>
@@ -64,7 +74,7 @@ if (!empty($symptomsList)):
 ?>
 <section class="section-padding bg-white">
     <div class="container">
-        <div class="text-center mb-5">
+        <div class="text-center mb-3">
             <span class="badge bg-primary-subtle text-primary mb-2 px-3 py-2 rounded-pill fw-medium text-uppercase" style="letter-spacing: 0.5px;">Identifying the Signs</span>
             <h2 class="fw-bold text-dark">Common Symptoms & Indicators</h2>
             <?php if (!empty($service['symptoms_intro'])): ?>
@@ -93,7 +103,7 @@ if (!empty($typesList)):
 ?>
 <section class="section-padding bg-primary-subtle border-top border-bottom">
     <div class="container">
-        <div class="text-center mb-5">
+        <div class="text-center mb-3">
             <span class="badge bg-primary-subtle text-primary mb-2 px-3 py-2 rounded-pill fw-medium text-uppercase" style="letter-spacing: 0.5px;">Tailored Therapeutic Care</span>
             <h2 class="fw-bold text-dark">Types of Concerns We Help With</h2>
             <?php if (!empty($service['types_intro'])): ?>
@@ -124,7 +134,7 @@ if (!empty($typesList)):
 <!-- How Counselling Can Help Section -->
 <section class="section-padding bg-white">
     <div class="container">
-        <div class="row g-5 align-items-center">
+        <div class="row align-items-center g-4">
             <?php if (!empty($service['secondary_image'])): ?>
                 <div class="col-lg-5 mb-4 mb-lg-0">
                     <img src="<?= base_url('assets/services/' . esc($service['secondary_image'])) ?>" class="img-fluid w-100 rounded-4 shadow-sm border" alt="<?= esc($service['title']) ?> Benefits">
@@ -152,7 +162,7 @@ if (!empty($typesList)):
                 ?>
 
                 <?php if (!empty($benefitsList)): ?>
-                    <div class="row g-3">
+                    <div class="row">
                         <?php foreach ($benefitsList as $benefit): ?>
                             <div class="col-md-6">
                                 <div class="d-flex align-items-start py-2">
@@ -162,6 +172,11 @@ if (!empty($typesList)):
                             </div>
                         <?php endforeach; ?>
                     </div>
+                <?php endif; ?>
+                <?php if (!empty($settings['booking_url'])): ?>
+                    <a href="<?= esc($settings['booking_url']) ?>" target="_blank" rel="noopener" class="btn btn-primary px-4 py-3 mt-3 rounded-pill">
+                        Book Your Consultation
+                    </a>
                 <?php endif; ?>
             </div>
         </div>
@@ -176,7 +191,7 @@ if (!empty($approachList) || !empty($whyChooseList)):
 ?>
 <section class="section-padding bg-primary-subtle border-top border-bottom">
     <div class="container">
-        <div class="row g-5">
+        <div class="row g-4">
             <?php if (!empty($approachList)): ?>
                 <div class="col-lg-6">
                     <div class="pe-lg-3">
@@ -230,11 +245,11 @@ if (!empty($approachList) || !empty($whyChooseList)):
                 </p>
 
                 <div class="d-flex flex-wrap justify-content-center gap-3 align-items-center">
-                    <a href="tel:<?= preg_replace('/\s+/', '', $settings['phone'] ?? '9445662922') ?>" class="btn btn-secondary px-4 py-3 rounded-pill">
-                        <i class="fas fa-phone me-2"></i> <?= esc($settings['phone'] ?? '9445662922') ?>
+                    <a href="tel:<?= preg_replace('/\s+/', '', $settings['phone']) ?>" class="btn btn-secondary px-4 py-3 rounded-pill">
+                        <i class="fas fa-phone me-2"></i> <?= esc($settings['phone']) ?>
                     </a>
-                    <a href="mailto:<?= esc($settings['email'] ?? 'lekhapsy@gmail.com') ?>" class="btn btn-outline-light px-4 py-3 rounded-pill">
-                        <i class="fas fa-envelope me-2"></i> <?= esc($settings['email'] ?? 'lekhapsy@gmail.com') ?>
+                    <a href="mailto:<?= esc($settings['email']) ?>" class="btn btn-outline-light px-4 py-3 rounded-pill">
+                        <i class="fas fa-envelope me-2"></i> <?= esc($settings['email']) ?>
                     </a>
                     <?php if (!empty($settings['booking_url'])): ?>
                         <a href="<?= esc($settings['booking_url']) ?>" target="_blank" rel="noopener" class="btn btn-secondary px-4 py-3 rounded-pill">

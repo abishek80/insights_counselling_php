@@ -6,18 +6,18 @@
 <!-- Hero -->
 <section class="hero-section" id="home">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center g-4">
             <div class="col-lg-7">
                 <h1 class="hero-title fw-bold">Best Psychologist in <span>Chennai</span></h1>
                 <p class="hero-subtext">Providing confidential, non-judgmental psychological support for individuals, teenagers, and couples seeking emotional wellbeing.</p>
-                <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn btn-secondary px-4 py-3 fw-bold d-inline-flex align-items-center">
+                <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn btn-secondary px-4 py-2 px-lg-4 py-lg-3 fw-bold d-inline-flex align-items-center">
                     Book Your Consultation <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
-            <div class="col-lg-5 mt-5 mt-lg-0">
+            <div class="col-lg-5 mt-4 mt-lg-0">
                 <div class="hero-img-container shadow-lg">
-                    <img src="<?= base_url('assets/hero.png') ?>" alt="Mrs. Lekha Edwin - Best Psychologist in Chennai, Insight Counseling Services" class="hero-img d-none d-lg-block">
-                    <img src="<?= base_url('assets/about-img.png') ?>" alt="Mrs. Lekha Edwin - Best Female Psychologist in Chennai" class="img-fluid w-100 rounded-5 shadow-lg border d-block d-lg-none">
+                    <img src="<?= base_url('assets/hero.jpg') ?>" alt="Mrs. Lekha Edwin - Best Psychologist in Chennai, Insight Counseling Services" class="hero-img d-none d-lg-block">
+                    <img src="<?= base_url('assets/about-img.jpg') ?>" alt="Mrs. Lekha Edwin - Best Female Psychologist in Chennai" class="img-fluid w-100 rounded-5 shadow-lg border d-block d-lg-none">
                 </div>
             </div>
         </div>
@@ -27,10 +27,10 @@
 <!-- About Founder -->
 <section class="section-padding" id="about">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-5 mb-5 mb-lg-0">
+        <div class="row align-items-center g-4">
+            <div class="col-lg-5">
                 <div class="position-relative">
-                    <img src="<?= base_url('assets/about-img.png') ?>" alt="Mrs. Lekha Edwin - Best Female Psychologist in Chennai at Insight Counseling Services" class="img-fluid w-100 rounded-5 shadow-lg border d-none d-lg-block">
+                    <img src="<?= base_url('assets/about-img.jpg') ?>" alt="Mrs. Lekha Edwin - Best Female Psychologist in Chennai at Insight Counseling Services" class="img-fluid w-100 rounded-5 shadow-lg border d-none d-lg-block">
                 </div>
             </div>
             <div class="col-lg-7 ps-lg-5">
@@ -41,24 +41,24 @@
                     <p class="text-muted mb-3" style="font-size: 1rem;">Mrs. Lekha Edwin is a Counseling Psychologist in Chennai, providing professional mental health support for clients in India and abroad. She offers online therapy for international clients and in-person counseling sessions in Chennai for individuals, teenagers, and couples.</p>
                     <p class="text-muted mb-4" style="font-size: 1rem;">She helps clients understand their emotions, thoughts, and behaviors, supporting them in building healthier coping strategies and emotional balance.</p>
 
-                    <h6 class="fw-bold mb-3 text-dark">She works with:</h6>
+                    <h6 class="fw-bold mb-4 mb-lg-2 text-dark">She works with:</h6>
                     <div class="row g-2 mb-4">
-                        <div class="col-md-6">
-                            <ul class="feature-list">
+                        <div class="col-md-6 m-0">
+                            <ul class="feature-list my-0 my-lg-3">
                                 <li>Stress, Anxiety & Emotional Overwhelm</li>
                                 <li>Relationship & Couple Counseling</li>
                                 <li>Teen Emotional & Academic Support</li>
                             </ul>
                         </div>
-                        <div class="col-md-6">
-                            <ul class="feature-list">
+                        <div class="col-md-6 m-0">
+                            <ul class="feature-list my-0 my-lg-3">
                                 <li>Self-Confidence</li>
                                 <li>Self-Esteem & Personal Growth</li>
                             </ul>
                         </div>
                     </div>
 
-                    <p class="text-muted italic" style="font-size: 1rem; border-left: 4px solid var(--primary-color); padding-left: 20px;">
+                    <p class="text-muted mb-0 italic" style="font-size: 1rem; border-left: 4px solid var(--primary-color); padding-left: 20px;">
                         "Her therapeutic approach is warm, confidential, and non-judgmental, creating a safe and supportive space where clients feel heard and understood."
                     </p>
                 </div>
@@ -71,7 +71,7 @@
 <section class="banner-section">
     <div class="container">
         <h2 class="fw-bold">Guiding you through life's challenges.</h2>
-        <h5 class="mb-0 fw-medium">"Our mission is to provide you with the professional support and tools needed to <br> achieve emotional balance and mental well-being."</h5>
+        <h5 class="mb-0 fw-medium">"Our mission is to provide you with the professional support and tools needed to <br class="d-none d-lg-black"> achieve emotional balance and mental well-being."</h5>
     </div>
 </section>
 
@@ -81,29 +81,29 @@
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="info-card">
-                    <div class="icon-box">
+                    <div class="icon-box d-none d-lg-flex">
                         <i class="fas fa-eye"></i>
                     </div>
                     <h4 class="fw-bold">Our Vision</h4>
-                    <p>To impart essential skills to take care of mental health of individuals belonging to all the age group.</p>
+                    <p class="mb-0">To impart essential skills to take care of mental health of individuals belonging to all the age group.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="info-card">
-                    <div class="icon-box">
+                    <div class="icon-box d-none d-lg-flex">
                         <i class="fas fa-globe-asia"></i>
                     </div>
                     <h4 class="fw-bold">Our Mission</h4>
-                    <p>Aspiring to serve the Indians all over the world to come forward in taking care of their mental health.</p>
+                    <p class="mb-0">Aspiring to serve the Indians all over the world to come forward in taking care of their mental health.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="info-card">
-                    <div class="icon-box">
+                    <div class="icon-box d-none d-lg-flex">
                         <i class="fas fa-award"></i>
                     </div>
                     <h4 class="fw-bold">Our Motto</h4>
-                    <p>Empowering lives through personalized support, healing, and transformational guidance.</p>
+                    <p class="mb-0">Empowering lives through personalized support, healing, and transformational guidance.</p>
                 </div>
             </div>
         </div>
@@ -111,59 +111,47 @@
 </section>
 
 <!-- Our Team -->
-<section class="section-padding pt-3" id="teams">
+<section class="section-padding pt-0" id="teams">
     <div class="container text-center">
-        <div class="text-center mb-5">
+        <div class="text-center mb-3">
             <h2 class="fw-bold display-5">Our Team</h2>
             <div class="mx-auto" style="width: 60px; height: 4px; background: var(--primary-color);"></div>
         </div>
 
         <?php if (!empty($team)): ?>
-            <!-- Swiper Slider Container -->
-            <div class="position-relative px-md-4 mt-4">
-                <div class="swiper teamSwiper pb-5">
-                    <div class="swiper-wrapper">
-                        <?php foreach ($team as $member): ?>
-                            <div class="swiper-slide h-auto">
-                                <div class="team-card bg-primary-subtle h-100 d-flex flex-column justify-content-between p-4 rounded-4 shadow-sm border text-start mt-2">
-                                    <div>
-                                        <div class="team-img-wrapper mb-3 text-center">
-                                            <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" class="team-img" alt="<?= esc($member['name']) ?> - Expert Counseling Psychologist & Therapist in Chennai">
-                                        </div>
-                                        <h5 class="fw-bold text-dark mb-1 text-center"><?= esc($member['name']) ?></h5>
-                                        <div class="team-role text-center mb-2"><?= esc($member['role']) ?></div>
-                                        <p class="team-desc text-muted small mb-2 text-center"><?= esc($member['qualifications']) ?></p>
-                                        <?php if (!empty($member['languages'])): ?>
-                                            <div class="team-langs text-muted small mb-3 text-center"><?= esc($member['languages']) ?></div>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="d-flex gap-2 justify-content-center flex-column mt-3">
-                                        <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">View Profile</button>
-                                        <?php 
-                                            $customBtns = !empty($member['custom_buttons']) ? json_decode($member['custom_buttons'], true) : [];
-                                        ?>
-                                        <?php if (!empty($customBtns) && is_array($customBtns)): ?>
-                                            <?php foreach ($customBtns as $b): ?>
-                                                <a href="<?= esc($b['url']) ?>" target="<?= esc($b['target'] ?? '_blank') ?>" class="btn <?= esc($b['style'] ?? 'btn-primary') ?> btn-sm fw-bold shadow-sm py-2 rounded-pill text-center text-decoration-none" style="font-size: 0.88rem;">
-                                                    <?= esc($b['label']) ?>
-                                                </a>
-                                            <?php endforeach; ?>
-                                        <?php else: ?>
-                                            <a href="<?= esc($settings['booking_url'] ?? 'https://insightcounselings.com/bookings/') ?>" target="_blank" class="btn-book-now text-center">Book Your Appointment</a>
-                                        <?php endif; ?>
-                                    </div>
+            <div class="row g-4 justify-content-center mt-2 text-start">
+                <?php foreach ($team as $member): ?>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                        <div class="team-card bg-primary-subtle w-100 d-flex flex-column justify-content-between rounded-4 shadow-sm border text-start">
+                            <div>
+                                <div class="team-img-wrapper mb-3 text-center">
+                                    <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" class="team-img" alt="<?= esc($member['name']) ?> - Expert Counseling Psychologist & Therapist in Chennai">
                                 </div>
+                                <h5 class="fw-bold text-dark mb-1 text-center"><?= esc($member['name']) ?></h5>
+                                <div class="team-role text-center mb-2"><?= esc($member['role']) ?></div>
+                                <p class="team-desc text-muted small mb-2 text-center"><?= esc($member['qualifications']) ?></p>
+                                <?php if (!empty($member['languages'])): ?>
+                                    <div class="team-langs text-muted small text-center"><?= esc($member['languages']) ?></div>
+                                <?php endif; ?>
                             </div>
-                        <?php endforeach; ?>
+                            <div class="d-flex gap-2 justify-content-center flex-column mt-4">
+                                <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">View Profile</button>
+                                <?php 
+                                    $customBtns = !empty($member['custom_buttons']) ? json_decode($member['custom_buttons'], true) : [];
+                                ?>
+                                <?php if (!empty($customBtns) && is_array($customBtns)): ?>
+                                    <?php foreach ($customBtns as $b): ?>
+                                        <a href="<?= esc($b['url']) ?>" target="<?= esc($b['target'] ?? '_blank') ?>" class="btn <?= esc($b['style'] ?? 'btn-primary') ?> btn-sm fw-bold shadow-sm py-2 rounded-pill text-center text-decoration-none" style="font-size: 0.88rem;">
+                                            <?= esc($b['label']) ?>
+                                        </a>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                    <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn-book-now text-center">Book Your Appointment</a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Swiper Pagination -->
-                    <div class="swiper-pagination team-pagination"></div>
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <a href="<?= base_url('team') ?>" class="btn btn-primary px-4 py-2.5 rounded-pill fw-bold shadow-sm">
-                    View All Our Team <i class="fas fa-arrow-right ms-2"></i>
-                </a>
+                <?php endforeach; ?>
             </div>
         <?php else: ?>
             <p class="text-center text-muted">No team members registered yet.</p>
@@ -174,7 +162,7 @@
 <!-- Our Services -->
 <section class="section-padding bg-primary-subtle" id="services">
     <div class="container text-center">
-        <div class="text-center mb-5">
+        <div class="text-center mb-3">
             <h2 class="fw-bold display-5">Our Services</h2>
             <div class="mx-auto" style="width: 60px; height: 4px; background: var(--primary-color);"></div>
         </div>
@@ -189,11 +177,11 @@
                                     <div>
                                         <img src="<?= base_url('assets/services/' . esc($service['image'])) ?>" class="card-img-top" alt="<?= esc($service['title']) ?>">
                                         <h5><?= esc($service['title']) ?></h5>
-                                        <p><?= esc($service['short_description']) ?></p>
+                                        <p class="mb-0"><?= esc($service['short_description']) ?></p>
                                     </div>
-                                    <div class="d-flex gap-3 flex-column text-center justify-content-between mt-3">
+                                    <div class="d-flex gap-3 flex-column text-center justify-content-between mt-2">
                                         <a href="<?= base_url('services/' . esc($service['slug'])) ?>" class="btn-read-more">Read More</a>
-                                        <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-book-now">Book Your Appointment</a>
+                                        <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn-book-now">Book Your Appointment</a>
                                     </div>
                                 </div>
                             </div>
@@ -217,7 +205,7 @@
 <!-- Need Counseling & Quick Find Specializations -->
 <section class="cta-banner border-bottom" id="popular-searches">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center g-4">
             <div class="col-lg-8 text-center text-lg-start">
                 <h6 class="text-white opacity-75 fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">QUICK FIND & SPECIALIZATIONS</h6>
                 <h2 class="fw-bold mb-3 display-5 text-white">Need Counseling?</h2>
@@ -232,25 +220,25 @@
         <div class="position-relative">
             <div class="swiper tagSwiper p-0">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Best Relationship Counselling in Chennai</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Best Marriage Counseling in Chennai</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Marriage Counselor Near Me</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Psychologist Chennai</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Good Psychologist Near Me</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Counseling Center Near Me</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Psychologist in Chennai</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Psychologist Near Me</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Therapist Near Me</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Best Psychologist in Chennai</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Psychology Doctor Near Me</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Therapist in Chennai</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Marriage Counseling Chennai</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Family Counselling Near Me</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Child Psychologist Chennai</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Counselling Psychologist Near Me</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Best Psychologist Chennai</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Therapist Chennai</span></div>
-                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: transparent;">Counselling Near Me</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Best Relationship Counselling in Chennai</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Best Marriage Counseling in Chennai</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Marriage Counselor Near Me</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Psychologist Chennai</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Good Psychologist Near Me</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Counseling Center Near Me</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Psychologist in Chennai</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Psychologist Near Me</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Therapist Near Me</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Best Psychologist in Chennai</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Psychology Doctor Near Me</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Therapist in Chennai</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Marriage Counseling Chennai</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Family Counselling Near Me</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Child Psychologist Chennai</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Counselling Psychologist Near Me</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Best Psychologist Chennai</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Therapist Chennai</span></div>
+                    <div class="swiper-slide w-auto"><span style="font-size: 1px; color: #2e2a70;">Counselling Near Me</span></div>
                 </div>
             </div>
         </div>
@@ -260,17 +248,17 @@
 <!-- How we help you -->
 <section class="section-padding bg-white">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center g-4">
             <div class="col-lg-5 mb-5 mb-lg-0">
-                <img src="<?= base_url('assets/service.png') ?>" alt="Psychotherapy session with Best Therapist in Chennai - Insight Counseling Services" class="img-fluid w-100 rounded-5 shadow-lg border">
+                <img src="<?= base_url('assets/service.jpg') ?>" alt="Psychotherapy session with Best Therapist in Chennai - Insight Counseling Services" class="img-fluid w-100 rounded-5 shadow-lg border">
             </div>
             <div class="col-lg-7 ps-lg-5">
                 <h6 class="text-primary-color fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">HOW WE HELP YOU</h6>
                 <h2 class="how-we-help-title">Guiding you through life's challenges.</h2>
-                <p class="text-muted mb-5">Our team of experts is dedicated to providing you with the best possible support and guidance to help you navigate life's challenges. We combine clinical expertise with a deeply human approach.</p>
+                <p class="text-muted mb-4">Our team of experts is dedicated to providing you with the best possible support and guidance to help you navigate life's challenges. We combine clinical expertise with a deeply human approach.</p>
 
-                <div class="d-flex align-items-start mb-4">
-                    <div class="help-icon-box bg-primary-subtle">
+                <div class="d-flex align-items-start mb-3 mb-lg-0">
+                    <div class="help-icon-box bg-primary-subtle d-none d-lg-flex">
                         <i class="fas fa-shield-halved"></i>
                     </div>
                     <div>
@@ -279,8 +267,8 @@
                     </div>
                 </div>
 
-                <div class="d-flex align-items-start">
-                    <div class="help-icon-box bg-primary-subtle">
+                <div class="d-flex align-items-start mb-0">
+                    <div class="help-icon-box bg-primary-subtle d-none d-lg-flex">
                         <i class="fas fa-users"></i>
                     </div>
                     <div>
@@ -296,7 +284,7 @@
 <!-- Testimonials -->
 <section class="section-padding bg-primary-subtle" id="testimonial">
     <div class="container">
-        <div class="text-center mb-5">
+        <div class="text-center mb-4 mb-lg-5">
             <h2 class="fw-bold display-5">Our Clients Loves Us</h2>
             <div class="mx-auto" style="width: 60px; height: 4px; background: var(--primary-color);"></div>
         </div>
@@ -308,7 +296,7 @@
                             <div class="testimonial-card shadow-sm h-100 d-flex flex-column justify-content-between">
                                 <p class="text-muted mb-0">"<?= esc($testimonial['content']) ?>"</p>
                                 <div>
-                                    <div class="mb-2 mt-4 text-warning" style="font-size: 1rem;">
+                                    <div class="mb-2 mt-2 text-warning" style="font-size: 1rem;">
                                         <?php 
                                         $ratingCount = (int)($testimonial['rating'] ?? 5);
                                         if ($ratingCount < 1) $ratingCount = 5;
@@ -348,9 +336,9 @@
 <!-- Get in Touch -->
 <section class="section-padding bg-white" id="contact">
     <div class="container">
-        <div class="text-center mb-5">
+        <div class="text-center mb-3">
             <h2 class="fw-bold display-5">Get in Touch</h2>
-            <p class="text-muted mx-auto" style="max-width: 600px;">Whether you have a question about our services or are ready to book a session, we are here to support you across multiple locations in Chennai.</p>
+            <p class="text-muted mb-4 mx-auto" style="max-width: 600px;">Whether you have a question about our services or are ready to book a session, we are here to support you across multiple locations in Chennai.</p>
         </div>
 
         <!-- Location Cards -->
@@ -360,9 +348,6 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="contact-card bg-primary-subtle h-100 d-flex flex-column justify-content-between">
                             <div>
-                                <div class="location-icon-box">
-                                    <i class="fas fa-location-dot"></i>
-                                </div>
                                 <h5 class="fw-bold mb-2"><?= esc($branch['name']) ?></h5>
                                 <?php if (!empty($branch['serving_areas'])): ?>
                                     <p class="text-muted small mb-3 opacity-75"><?= esc($branch['serving_areas']) ?></p>
@@ -393,7 +378,7 @@
         <!-- Form and Sidebar -->
         <div class="row g-4">
             <div class="col-lg-6">
-                <div class="whatsapp-box h-auto">
+                <div class="whatsapp-box mb-0 h-auto">
                     <h3 class="fw-bold mb-3">Need a Quick Response?</h3>
                     <p class="mb-4 opacity-75">WhatsApp is the fastest way to get in touch with our intake team and book your session immediately.</p>
                     <a href="https://wa.me/<?= esc($settings['whatsapp']) ?>/" target="_blank" class="btn-whatsapp-light">
@@ -402,7 +387,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="direct-channels-box">
+                <div class="direct-channels-box mb-0">
                     <h5 class="fw-bold mb-4">Direct Channels</h5>
                     <div class="channel-item">
                         <div class="channel-icon-box">
@@ -443,7 +428,7 @@
                         <div class="profile-role" id="modal-role"></div>
 
                         <div class="profile-detail-item">
-                            <div class="profile-detail-icon">
+                            <div class="profile-detail-icon d-none d-lg-flex">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
                             <div class="profile-detail-content">
@@ -453,7 +438,7 @@
                         </div>
 
                         <div class="profile-detail-item">
-                            <div class="profile-detail-icon">
+                            <div class="profile-detail-icon d-none d-lg-flex">
                                 <i class="fas fa-globe"></i>
                             </div>
                             <div class="profile-detail-content">
@@ -463,7 +448,7 @@
                         </div>
 
                         <div class="profile-detail-item">
-                            <div class="profile-detail-icon">
+                            <div class="profile-detail-icon d-none d-lg-flex">
                                 <i class="fas fa-medal"></i>
                             </div>
                             <div class="profile-detail-content">
@@ -503,33 +488,6 @@
             },
             pagination: {
                 el: '.testimonial-pagination',
-                clickable: true,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-                992: {
-                    slidesPerView: 3,
-                    spaceBetween: 24,
-                }
-            }
-        });
-    }
-
-    // Initialize Swiper for team members
-    if (document.querySelector('.teamSwiper')) {
-        new Swiper('.teamSwiper', {
-            slidesPerView: 1,
-            spaceBetween: 24,
-            loop: false,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.team-pagination',
                 clickable: true,
             },
             breakpoints: {

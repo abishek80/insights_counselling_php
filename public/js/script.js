@@ -83,7 +83,7 @@ const teamData = {
         langs: 'English, Telugu, Tamil, Hindi',
         specialties: ['Depression & Anxiety', 'Stress Management', 'Couple/Marital Counselling', 'SFBT & NLP'],
         about: 'Bala Krishna is a counselling practitioner with specialization in Depression, Anxiety & Stress Management, Child & Adolescent Counselling and Couple/Marital/Premarital Counselling. He holds M.Sc. in Psychology from Singhania University. He also holds a PG diploma in Life Skills and Counselling, Career Guidance and Counselling with CBT from CCS Academy; and certifications in various areas of counselling from various institutions. He has counselled 600 plus clients, including few international clients with expertise in techniques, such as Gestalt Therapy, CBT, RECBT, Transaction Analysis, SFBT and NLP. Krishna served as volunteer counselor to support Covid-19 impacted families to recover from the tragic incidents as part of Banyan Academy of Leadership in Mental Health group in Tamil Nadu. He is proficient in English & Telugu apart from understanding Tamil & Hindi. Bala Krishna also conducted various webinars, seminars and trainings on life skills and psychology. He did a program on leadership skills in Etv Life (Telugu) Channel. He is passionate about contributing for the betterment of human lives through counselling, coaching and training.',
-        image: './assets/team/placeholder.png'
+        image: './assets/team/placeholder.jpg'
     },
     'banupriya': {
         name: 'Banupriya G Subash',
@@ -119,7 +119,7 @@ const teamData = {
         langs: 'English, Tamil, Telugu, Kannada, Malayalam',
         specialties: ['Psychopathology', 'Productivity Counseling', 'Psychometric Testing', 'Psychotherapy'],
         about: 'Krishna Moorthy is an accomplished clinical psychologist recognized for excellence in productivity counseling, receiving the Tamil Nadu Government Award for Best Productivity Counseling in 2014-2015. His expertise lies in adult and adolescent psychopathology, where he works extensively with various psychological conditions, providing psychometric testing and psychotherapy. Passionate about teaching, he actively shares his knowledge and experience to educate and inspire others in the field of psychology.',
-        image: './assets/team/placeholder.png'
+        image: './assets/team/placeholder.jpg'
     }
 };
 

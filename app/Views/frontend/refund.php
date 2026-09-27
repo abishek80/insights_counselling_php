@@ -1,3 +1,4 @@
+<?php helper('settings'); $settings = get_settings(); ?>
 <?= $this->extend('frontend/layout') ?>
 
 <?= $this->section('content') ?>
@@ -105,7 +106,7 @@
                             </p>
                         </div>
                         <div>
-                            <a href="https://wa.me/9445662922/" target="_blank" class="btn btn-light rounded-4 px-4 py-3 fw-bold d-inline-flex align-items-center shadow-sm" style="color: var(--primary-color, #2e2a70); background-color: #ffffff; border: none;">
+                            <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" target="_blank" class="btn btn-light rounded-4 px-4 py-3 fw-bold d-inline-flex align-items-center shadow-sm" style="color: var(--primary-color, #2e2a70); background-color: #ffffff; border: none;">
                                 <i class="fab fa-whatsapp me-2 fs-6" style="color: #2e2a70;"></i> Chat on WhatsApp
                             </a>
                         </div>
@@ -124,7 +125,7 @@
                             </div>
                             <div>
                                 <div class="text-white text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">EMAIL US</div>
-                                <a href="mailto:lekhapsy@gmail.com" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;">lekhapsy@gmail.com</a>
+                                <a href="mailto:<?= esc($settings['email']) ?>" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;"><?= esc($settings['email']) ?></a>
                             </div>
                         </div>
 
@@ -135,7 +136,7 @@
                             </div>
                             <div>
                                 <div class="text-white text-uppercase fw-bold mb-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">CALL US</div>
-                                <a href="tel:+9445662922" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;">+91 94456 62922</a>
+                                <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone']) ?>" class="text-white fw-bold text-decoration-none" style="font-size: 1.05rem;"><?= esc($settings['phone']) ?></a>
                             </div>
                         </div>
                     </div>

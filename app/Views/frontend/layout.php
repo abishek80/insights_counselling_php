@@ -9,12 +9,39 @@
     <!-- PRIMARY SEO META TAGS -->
     <title><?= esc($title ?? 'Best Psychologist in Chennai | Insight Counseling Services') ?></title>
     <meta name="description" content="<?= esc($meta_desc ?? 'Best Psychologist in Chennai for Anxiety, Depression, Stress Management, Couple Counselling, Teen Counselling, Family Counselling, and Relationship Issues. Online & In-Person Sessions. Call 9445662922.') ?>">
-    <meta name="keywords" content="<?= esc($keywords ?? 'best relationship counselling in chennai, best marriage counseling in chennai, marriage counselor near me, psychologist chennai, good psychologist near me, counseling center near me, psychologist in chennai, psychologist near me, therapist near me, best psychologist in chennai, psychology doctor near me, therapist in chennai, marriage counseling chennai, family counselling near me, child psychologist chennai, counselling psychologist near me, best psychologist chennai, therapist chennai, counselling near me, Lekha Edwin, Insight Counseling Services, psychologist Kovur, psychologist Porur, psychologist Vadapalani, psychologist Vadapalani') ?>">
+    <meta name="keywords" content="<?= esc($keywords ?? 'best relationship counselling in chennai, best marriage counseling in chennai, marriage counselor near me, psychologist chennai, good psychologist near me, counseling center near me, psychologist in chennai, psychologist near me, therapist near me, best psychologist in chennai, psychology doctor near me, therapist in chennai, marriage counseling chennai, family counselling near me, child psychologist chennai, counselling psychologist near me, best psychologist chennai, therapist chennai, counselling near me, Lekha Edwin, Insight Counseling Services, psychologist Kovur, psychologist Porur, psychologist Vadapalani') ?>">
     <meta name="author" content="Insight Counseling Services">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="robots" content="<?= (!empty($noindex) && $noindex === true) ? 'noindex, nofollow' : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' ?>">
     <meta name="revisit-after" content="7 days">
     <meta name="language" content="English">
     <meta name="rating" content="general">
+
+    <!-- GOOGLE SEARCH CONSOLE & ANALYTICS -->
+    <?php if (!empty($settings['google_site_verification'])): ?>
+    <meta name="google-site-verification" content="<?= esc($settings['google_site_verification']) ?>">
+    <?php endif; ?>
+
+    <?php if (!empty($settings['gtm_id'])): ?>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','<?= esc($settings['gtm_id']) ?>');</script>
+    <!-- End Google Tag Manager -->
+    <?php endif; ?>
+
+    <!-- GOOGLE ADS & ANALYTICS (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11346428021"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-11346428021');
+      <?php if (!empty($settings['google_analytics_id'])): ?>
+      gtag('config', '<?= esc($settings['google_analytics_id']) ?>');
+      <?php endif; ?>
+    </script>
 
     <!-- CANONICAL URL -->
     <link rel="canonical" href="<?= current_url() ?>">
@@ -31,7 +58,7 @@
     <meta property="og:title" content="<?= esc($title ?? 'Best Counseling Psychologist in Chennai | Insight Counseling Services') ?>">
     <meta property="og:description" content="<?= esc($meta_desc ?? 'Professional mental health support in Chennai. Individual, couple & teen counseling by expert psychologists. Online & in-person. Book your session today.') ?>">
     <meta property="og:url" content="<?= current_url() ?>">
-    <meta property="og:image" content="<?= esc($og_image ?? base_url('assets/og-image.png')) ?>">
+    <meta property="og:image" content="<?= esc($og_image ?? base_url('assets/og-image.jpg')) ?>">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Insight Counseling Services - Talk. Resolve. Heal.">
@@ -41,11 +68,15 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?= esc($title ?? 'Best Counseling Psychologist in Chennai | Insight Counseling Services') ?>">
     <meta name="twitter:description" content="<?= esc($meta_desc ?? 'Professional mental health support in Chennai. Individual, couple & teen counseling. Online & in-person sessions available.') ?>">
-    <meta name="twitter:image" content="<?= esc($og_image ?? base_url('assets/og-image.png')) ?>">
+    <meta name="twitter:image" content="<?= esc($og_image ?? base_url('assets/og-image.jpg')) ?>">
     <meta name="twitter:image:alt" content="Insight Counseling Services Chennai">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="<?= base_url('assets/favicon.png') ?>">
+    <link rel="icon" type="image/png" sizes="192x192" href="<?= base_url('assets/favicon.png') ?>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets/favicon.png') ?>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets/favicon.png') ?>">
+    <link rel="shortcut icon" href="<?= base_url('favicon.ico') ?>">
     <link rel="apple-touch-icon" href="<?= base_url('assets/favicon.png') ?>">
 
     <!-- Meta Pixel Code -->
@@ -82,8 +113,8 @@
           "logo": "<?= base_url('assets/logo-dark.png') ?>",
           "image": "<?= base_url('assets/logo-dark.png') ?>",
           "description": "Insight Counseling Services (ICS) provides compassionate, confidential, and evidence-based psychological counseling and therapy in Chennai since 2014.",
-          "telephone": "<?= esc($settings['phone'] ?? '+91-9000000000') ?>",
-          "email": "<?= esc($settings['email'] ?? 'contact@insightcounselings.com') ?>",
+          "telephone": "<?= esc($settings['phone'] ?? '+91-9445662922') ?>",
+          "email": "<?= esc($settings['email'] ?? 'lekhaedwin@gmail.com') ?>",
           "priceRange": "₹₹",
           "medicalSpecialty": "Psychiatric",
           "knowsAbout": [
@@ -281,14 +312,6 @@
         }
     </style>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11346428021"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'AW-11346428021');
-    </script>
 
     <!-- Google Ads Conversion: Phone Call Click -->
     <script>
@@ -324,13 +347,19 @@
 </head>
 
 <body>
+    <?php if (!empty($settings['gtm_id'])): ?>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?= esc($settings['gtm_id']) ?>"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <?php endif; ?>
 
     <!-- Header / Navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg bg-white py-3 sticky-top shadow-sm" aria-label="Main Navigation">
+        <nav class="navbar navbar-expand-lg bg-white py-2 sticky-top shadow-sm" aria-label="Main Navigation">
             <div class="container">
                 <a class="navbar-brand" href="<?= base_url() ?>">
-                    <img src="<?= base_url('assets/logo-dark.png') ?>" alt="Insight Counseling Services - Best Psychologist in Chennai" style="height: 60px;">
+                    <img src="<?= base_url('assets/logo-dark.png') ?>" alt="Insight Counseling Services - Best Psychologist in Chennai">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -360,7 +389,7 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container pb-5">
+        <div class="container pb-4">
             <div class="row g-4">
                 <div class="col-lg-4">
                     <img src="<?= base_url('assets/logo-light.png') ?>" alt="Insight Counseling Services - Best Therapist & Counseling Center in Chennai" class="footer-logo-main mb-3" style="max-height: 70px;">
@@ -408,17 +437,17 @@
             </div>
             <hr class="border-secondary my-4">
             <div class="text-center text-white">
-                &copy; <?= date('Y') ?> Insight Counseling Services. All Rights Reserved.
+                &copy; <?= date('Y') ?> Insight Counseling Services. All Rights Reserved. Developed By <a href="https://abishek80.github.io/portfolio.github.io/" target="_blank" class="text-white fw-bold text-decoration-none"> Antony Abishek</a>.
             </div>
         </div>
     </footer>
 
     <!-- Fixed Action Buttons -->
     <div class="fixed-actions-container">
-        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone'] ?? '9445662922') ?>" class="btn-call-fixed">
+        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone']) ?>" class="btn-call-fixed">
             <i class="fas fa-phone fs-4"></i>
         </a>
-        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp'] ?? '919445662922') ?>/" target="_blank" rel="noopener" class="btn-whatsapp-fixed">
+        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" target="_blank" rel="noopener" class="btn-whatsapp-fixed">
             <i class="fab fa-whatsapp fs-4"></i>
             <span class="d-none d-md-block">Chat with us</span>
         </a>

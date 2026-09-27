@@ -24,7 +24,7 @@
             <div class="row g-4 justify-content-center">
                 <?php foreach ($team as $member): ?>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="team-card bg-primary-subtle h-100 d-flex flex-column justify-content-between p-4 rounded-4 shadow-sm border text-start mt-2">
+                        <div class="team-card bg-primary-subtle h-100 d-flex flex-column justify-content-between rounded-4 shadow-sm border text-start mt-2">
                             <div>
                                 <div class="team-img-wrapper mb-3 text-center">
                                     <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" class="team-img" alt="<?= esc($member['name']) ?> - Expert Counseling Psychologist & Therapist in Chennai">
@@ -33,10 +33,10 @@
                                 <div class="team-role text-center mb-2"><?= esc($member['role']) ?></div>
                                 <p class="team-desc text-muted small mb-2 text-center"><?= esc($member['qualifications']) ?></p>
                                 <?php if (!empty($member['languages'])): ?>
-                                    <div class="team-langs text-muted small mb-3 text-center"><?= esc($member['languages']) ?></div>
+                                    <div class="team-langs text-muted small text-center"><?= esc($member['languages']) ?></div>
                                 <?php endif; ?>
                             </div>
-                            <div class="d-flex gap-2 justify-content-center flex-column mt-3">
+                            <div class="d-flex gap-2 justify-content-center flex-column mt-4">
                                 <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">View Profile</button>
                                 <?php 
                                     $customBtns = !empty($member['custom_buttons']) ? json_decode($member['custom_buttons'], true) : [];
@@ -48,7 +48,7 @@
                                         </a>
                                     <?php endforeach; ?>
                                 <?php else: ?>
-                                    <a href="<?= esc($settings['booking_url'] ?? 'https://insightcounselings.com/bookings/') ?>" target="_blank" class="btn-book-now text-center">Book Your Appointment</a>
+                                    <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn-book-now text-center">Book Your Appointment</a>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                         <div class="profile-role" id="modal-role"></div>
 
                         <div class="profile-detail-item">
-                            <div class="profile-detail-icon">
+                            <div class="profile-detail-icon d-none d-lg-flex">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
                             <div class="profile-detail-content">
@@ -88,7 +88,7 @@
                         </div>
 
                         <div class="profile-detail-item">
-                            <div class="profile-detail-icon">
+                            <div class="profile-detail-icon d-none d-lg-flex">
                                 <i class="fas fa-globe"></i>
                             </div>
                             <div class="profile-detail-content">
@@ -98,7 +98,7 @@
                         </div>
 
                         <div class="profile-detail-item">
-                            <div class="profile-detail-icon">
+                            <div class="profile-detail-icon d-none d-lg-flex">
                                 <i class="fas fa-medal"></i>
                             </div>
                             <div class="profile-detail-content">

@@ -1,3 +1,4 @@
+<?php helper('settings'); $settings = get_settings(); ?>
 <?= $this->extend('frontend/layout') ?>
 
 <?= $this->section('content') ?>
@@ -27,11 +28,11 @@
                             <div>
                                 <img src="<?= base_url('assets/services/' . esc($service['image'])) ?>" class="card-img-top" alt="<?= esc($service['title']) ?>">
                                 <h5><?= esc($service['title']) ?></h5>
-                                <p><?= esc($service['short_description']) ?></p>
+                                <p class="mb-0"><?= esc($service['short_description']) ?></p>
                             </div>
-                            <div class="d-flex gap-3 flex-column justify-content-between mt-3">
+                            <div class="d-flex gap-3 flex-column justify-content-between mt-4">
                                 <a href="<?= base_url('services/' . esc($service['slug'])) ?>" class="btn-read-more">Read More</a>
-                                <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-book-now">Book Your Appointment</a>
+                                <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn-book-now">Book Your Appointment</a>
                             </div>
                         </div>
                     </div>
@@ -46,15 +47,15 @@
 </section>
 
 <!-- Popular Specializations & Searches -->
-<section class="section-padding bg-white border-top">
+<section class="section-padding bg-white border-top pb-3">
     <div class="container text-center">
         <h6 class="text-primary-color fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">POPULAR SEARCHES & SPECIALIZATIONS</h6>
         <h2 class="fw-bold h3 text-dark mb-3">Therapy & Counseling Services Near You in Chennai</h2>
         <p class="text-muted mx-auto mb-0" style="max-width: 750px;">
             Whether you are looking for a <strong>good psychologist near me</strong>, <strong>child psychologist chennai</strong>, <strong>family counselling near me</strong>, or <strong>best marriage counseling in chennai</strong>, our expert therapy centers in Vadapalani, Porur, Kovur, and Vadapalani are here to support your mental wellness.
         </p>
-        <div class="mt-4 d-flex justify-content-center align-items-center gap-3">
-            <a href="https://insightcounselings.com/bookings/" target="_blank" class="btn-read-more px-5">
+        <div class="mt-4 d-flex justify-content-center align-items-center gap-3 flex-wrap">
+            <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn-read-more px-5">
                 Book Your Appointment Now
             </a>
             <a href="<?= base_url('contact') ?>" class="btn-book-now px-5">

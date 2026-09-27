@@ -5,7 +5,7 @@
 
 <!-- Page Title / Hero Banner -->
 <section class="page-header text-center bg-primary-subtle py-5">
-    <div class="container py-3">
+    <div class="container">
         <h1 class="fw-bold text-primary mb-2">About Insight Counseling Services Chennai</h1>
         <p class="lead text-muted mb-3">Supporting Emotional Well-Being Since 2016</p>
         <nav aria-label="breadcrumb">
@@ -49,7 +49,7 @@
 <!-- Our Story Section -->
 <section class="section-padding bg-primary-subtle">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center g-4">
             <div class="col-lg-7 mb-4 mb-lg-0">
                 <h6 class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">OUR JOURNEY</h6>
                 <h2 class="fw-bold mb-3 text-dark">Our Story</h2>
@@ -66,7 +66,7 @@
             </div>
             <div class="col-lg-5 ps-lg-5">
                 <div class="position-relative">
-                    <img src="<?= base_url('assets/about_story.jpg') ?>" alt="Insight Counseling Therapy Room - Consultation with Best Therapist in Chennai" class="img-fluid w-100 rounded-5 shadow-lg border">
+                    <img src="<?= base_url('assets/about_story.png') ?>" alt="Insight Counseling Therapy Room - Consultation with Best Therapist in Chennai" class="img-fluid w-100 rounded-5 shadow-lg border">
                     <div class="position-absolute bottom-0 start-0 m-4 p-3 bg-white rounded-4 shadow d-none d-sm-block">
                         <span class="h4 fw-bold text-primary mb-0 d-block">10+ Years</span>
                         <span class="small text-muted">Empowering Lives in Chennai</span>
@@ -80,16 +80,16 @@
 <!-- Meet Our Founder Section -->
 <section class="section-padding bg-white" id="founder">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center g-4">
             <div class="col-lg-5 mb-5 mb-lg-0">
                 <div class="text-center position-relative">
-                    <img src="<?= base_url('assets/about-img.png') ?>" alt="Mrs. Lekha Edwin - Best Female Psychologist in Chennai & Founder of Insight Counseling Services" class="img-fluid w-100 rounded-5 shadow-lg border">
+                    <img src="<?= base_url('assets/about-img.jpg') ?>" alt="Mrs. Lekha Edwin - Best Female Psychologist in Chennai & Founder of Insight Counseling Services" class="img-fluid w-100 rounded-5 shadow-lg border">
                 </div>
             </div>
             <div class="col-lg-7 ps-lg-5">
                 <h6 class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">LEADERSHIP & CLINICAL EXPERTISE</h6>
-                <h2 class="fw-bold text-dark mb-1">Meet Our Founder</h2>
-                <h4 class="text-primary mb-3">Mrs. Lekha Edwin</h4>
+                <h4 class="text-primary mb-3">Meet Our Founder</h4>
+                <h2 class="fw-bold text-dark mb-1">Mrs. Lekha Edwin</h2>
                 <div class="title-underline mb-4"></div>
 
                 <p class="text-muted mb-3">
@@ -118,7 +118,7 @@
             <div class="col-lg-6">
                 <div class="p-4 rounded-4 border bg-white h-100 shadow-sm">
                     <h5 class="fw-bold text-primary mb-3"><i class="fas fa-bullseye me-2"></i> Areas of Expertise</h5>
-                    <div class="d-flex flex-wrap gap-2 ms-2 ms-md-4">
+                    <div class="d-flex flex-wrap gap-2 ms-0 ms-lg-4">
                         <?php if (!empty($services)): ?>
                             <?php foreach ($services as $srv): ?>
                                 <a href="<?= base_url('services/' . esc($srv['slug'])) ?>" class="badge bg-primary-subtle text-primary p-2 px-3 fs-6 rounded-pill text-decoration-none shadow-sm hover-lift" style="transition: all 0.2s ease;">
@@ -145,7 +145,7 @@
             <div class="col-lg-6">
                 <div class="p-4 rounded-4 border bg-white h-100 shadow-sm">
                     <h5 class="fw-bold text-primary mb-3"><i class="fas fa-award me-2"></i> Professional Highlights</h5>
-                    <ul class="list-unstyled mb-0 ms-4">
+                    <ul class="list-unstyled mb-0 ms-0 ms-lg-4">
                         <li class="mb-2 d-flex align-items-start">
                             <i class="fas fa-check-circle text-success me-2 mt-1"></i>
                             <span class="text-muted"><strong>Practicing Psychologist</strong> since 2015</span>
@@ -189,7 +189,7 @@
                     <div class="swiper-wrapper">
                         <?php foreach ($team as $member): ?>
                             <div class="swiper-slide h-auto">
-                                <div class="team-card bg-white h-100 d-flex flex-column justify-content-between p-4 rounded-4 shadow-sm border text-start mt-2">
+                                <div class="team-card bg-white h-100 d-flex flex-column justify-content-between rounded-4 shadow-sm border text-start mt-2">
                                     <div>
                                         <div class="team-img-wrapper mb-3 text-center">
                                             <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" class="team-img" alt="<?= esc($member['name']) ?> - Expert Counseling Psychologist & Therapist in Chennai">
@@ -198,10 +198,10 @@
                                         <div class="team-role text-center mb-2"><?= esc($member['role']) ?></div>
                                         <p class="team-desc text-muted small mb-2 text-center"><?= esc($member['qualifications']) ?></p>
                                         <?php if (!empty($member['languages'])): ?>
-                                            <div class="team-langs text-muted small mb-3 text-center"><?= esc($member['languages']) ?></div>
+                                            <div class="team-langs text-muted small text-center"><?= esc($member['languages']) ?></div>
                                         <?php endif; ?>
                                     </div>
-                                    <div class="d-flex gap-2 justify-content-center flex-column mt-3">
+                                    <div class="d-flex gap-2 justify-content-center flex-column mt-4">
                                         <button class="btn-team-dark" data-bs-toggle="modal" data-bs-target="#teamModal" data-id="<?= $member['id'] ?>">View Profile</button>
                                         <?php 
                                             $customBtns = !empty($member['custom_buttons']) ? json_decode($member['custom_buttons'], true) : [];
@@ -213,7 +213,7 @@
                                                 </a>
                                             <?php endforeach; ?>
                                         <?php else: ?>
-                                            <a href="<?= esc($settings['booking_url'] ?? 'https://insightcounselings.com/bookings/') ?>" target="_blank" class="btn-book-now text-center">Book Your Appointment</a>
+                                            <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn-book-now text-center">Book Your Appointment</a>
                                         <?php endif; ?>
                                     </div>
                                 </div>
@@ -236,7 +236,7 @@
 <!-- Why Choose Us Section -->
 <section class="section-padding bg-white">
     <div class="container">
-        <div class="text-center mb-5">
+        <div class="text-center mb-3">
             <h6 class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">WHY CHOOSE US</h6>
             <h2 class="fw-bold text-dark">Why Choose Insight Counseling Services Chennai?</h2>
             <div class="title-underline mx-auto"></div>
@@ -246,7 +246,7 @@
             <!-- Reason 1 -->
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 rounded-4 border bg-white h-100 shadow-sm hover-top transition">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
+                    <div class="d-none d-lg-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
                         <i class="fas fa-user-clock fs-4"></i>
                     </div>
                     <h5 class="fw-bold text-dark mb-2">10+ Years Experience</h5>
@@ -257,7 +257,7 @@
             <!-- Reason 2 -->
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 rounded-4 border bg-white h-100 shadow-sm hover-top transition">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
+                    <div class="d-none d-lg-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
                         <i class="fas fa-user-md fs-4"></i>
                     </div>
                     <h5 class="fw-bold text-dark mb-2">Experienced Team</h5>
@@ -268,7 +268,7 @@
             <!-- Reason 3 -->
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 rounded-4 border bg-white h-100 shadow-sm hover-top transition">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
+                    <div class="d-none d-lg-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
                         <i class="fas fa-user-shield fs-4"></i>
                     </div>
                     <h5 class="fw-bold text-dark mb-2">Confidential & Ethical</h5>
@@ -279,7 +279,7 @@
             <!-- Reason 4 -->
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 rounded-4 border bg-white h-100 shadow-sm hover-top transition">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
+                    <div class="d-none d-lg-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
                         <i class="fas fa-hand-holding-heart fs-4"></i>
                     </div>
                     <h5 class="fw-bold text-dark mb-2">Personalized Care</h5>
@@ -290,7 +290,7 @@
             <!-- Reason 5 -->
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 rounded-4 border bg-white h-100 shadow-sm hover-top transition">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
+                    <div class="d-none d-lg-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
                         <i class="fas fa-brain fs-4"></i>
                     </div>
                     <h5 class="fw-bold text-dark mb-2">Evidence-Based Approach</h5>
@@ -301,7 +301,7 @@
             <!-- Reason 6 -->
             <div class="col-md-6 col-lg-4">
                 <div class="p-4 rounded-4 border bg-white h-100 shadow-sm hover-top transition">
-                    <div class="d-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
+                    <div class="d-none d-lg-inline-flex align-items-center justify-content-center bg-primary-subtle text-primary rounded-circle mb-3" style="width: 50px; height: 50px;">
                         <i class="fas fa-laptop-house fs-4"></i>
                     </div>
                     <h5 class="fw-bold text-dark mb-2">Online & In-Person</h5>
@@ -332,11 +332,11 @@
         </p>
 
         <div class="d-flex flex-wrap justify-content-center gap-3 align-items-center">
-            <a href="tel:<?= preg_replace('/\s+/', '', $settings['phone'] ?? '9445662922') ?>" class="btn btn-secondary px-4 py-3 rounded-pill">
-                <i class="fas fa-phone me-2"></i> <?= esc($settings['phone'] ?? '9445662922') ?>
+            <a href="tel:<?= preg_replace('/\s+/', '', $settings['phone']) ?>" class="btn btn-secondary px-4 py-3 rounded-pill">
+                <i class="fas fa-phone me-2"></i> <?= esc($settings['phone']) ?>
             </a>
-            <a href="mailto:<?= esc($settings['email'] ?? 'lekhapsy@gmail.com') ?>" class="btn btn-outline-light px-4 py-3 rounded-pill">
-                <i class="fas fa-envelope me-2"></i> <?= esc($settings['email'] ?? 'lekhapsy@gmail.com') ?>
+            <a href="mailto:<?= esc($settings['email']) ?>" class="btn btn-outline-light px-4 py-3 rounded-pill">
+                <i class="fas fa-envelope me-2"></i> <?= esc($settings['email']) ?>
             </a>
             <?php if (!empty($settings['booking_url'])): ?>
                 <a href="<?= esc($settings['booking_url']) ?>" target="_blank" rel="noopener" class="btn btn-secondary px-4 py-3 rounded-pill">
@@ -350,14 +350,14 @@
 <!-- Locations We Serve Section -->
 <section class="section-padding bg-primary-subtle">
     <div class="container">
-        <div class="row align-items-center mb-5">
+        <div class="row align-items-center g-4">
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <h6 class="text-primary fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">ACCESSIBLE CARE NEAR YOU & WORLDWIDE</h6>
                 <h2 class="fw-bold text-dark mb-3">Locations We Serve</h2>
                 <p class="text-muted mb-4">
                     Insight Counseling Services provides convenient, accessible care across major hubs in Chennai as well as worldwide online consultation.
                 </p>
-                <img src="<?= base_url('assets/about_locations.png') ?>" alt="Insight Counseling Services Clinic Locations - Best Psychologist in Chennai Centers in Porur, Kovur & Vadapalani" class="img-fluid rounded-5 shadow border">
+                <img src="<?= base_url('assets/about_locations.jpg') ?>" alt="Insight Counseling Services Clinic Locations - Best Psychologist in Chennai Centers in Porur, Kovur & Vadapalani" class="img-fluid rounded-5 shadow border">
             </div>
             <div class="col-lg-6 ps-lg-5">
                 <div class="d-flex flex-column gap-3">
@@ -405,7 +405,7 @@
                         <div class="profile-role" id="modal-role"></div>
 
                         <div class="profile-detail-item">
-                            <div class="profile-detail-icon">
+                            <div class="profile-detail-icon d-none d-lg-flex">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
                             <div class="profile-detail-content">
@@ -415,7 +415,7 @@
                         </div>
 
                         <div class="profile-detail-item">
-                            <div class="profile-detail-icon">
+                            <div class="profile-detail-icon d-none d-lg-flex">
                                 <i class="fas fa-globe"></i>
                             </div>
                             <div class="profile-detail-content">
@@ -425,7 +425,7 @@
                         </div>
 
                         <div class="profile-detail-item">
-                            <div class="profile-detail-icon">
+                            <div class="profile-detail-icon d-none d-lg-flex">
                                 <i class="fas fa-medal"></i>
                             </div>
                             <div class="profile-detail-content">
@@ -438,7 +438,7 @@
                         <div class="profile-about-text" id="modal-about"></div>
 
                         <div id="modal-buttons" class="d-flex flex-column gap-2 mt-3">
-                            <button class="btn-book-profile" onclick="window.open('<?= esc($settings['booking_url'] ?? 'https://insightcounselings.com/bookings/') ?>', '_blank')">
+                            <button class="btn-book-profile" onclick="window.open('<?= esc($settings['booking_url']) ?>', '_blank')">
                                 <i class="fas fa-comment-dots"></i> Book Appointment
                             </button>
                         </div>
@@ -541,7 +541,7 @@
                             defaultBtn.className = 'btn-book-profile';
                             defaultBtn.innerHTML = '<i class="fas fa-comment-dots me-1"></i> Book Appointment';
                             defaultBtn.onclick = function() {
-                                window.open('<?= esc($settings["booking_url"] ?? "https://insightcounselings.com/bookings/") ?>', '_blank');
+                                window.open('<?= esc($settings["booking_url"]) ?>', '_blank');
                             };
                             modalButtonsContainer.appendChild(defaultBtn);
                         }

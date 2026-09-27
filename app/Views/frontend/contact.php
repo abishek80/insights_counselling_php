@@ -32,9 +32,6 @@ $errors = session()->getFlashdata('errors') ?? [];
                     <div class="col-lg-4 col-md-6">
                         <div class="contact-card bg-primary-subtle h-100 d-flex flex-column justify-content-between">
                             <div>
-                                <div class="location-icon-box">
-                                    <i class="fas fa-location-dot"></i>
-                                </div>
                                 <h5 class="fw-bold mb-2"><?= esc($branch['name']) ?></h5>
                                 <?php if (!empty($branch['serving_areas'])): ?>
                                     <p class="text-muted small mb-3 opacity-75"><?= esc($branch['serving_areas']) ?></p>
@@ -63,7 +60,7 @@ $errors = session()->getFlashdata('errors') ?? [];
         </div>
 
         <!-- Form and Sidebar -->
-        <div class="row g-5">
+        <div class="row g-4">
             <!-- Enquiry Form -->
             <div class="col-lg-7">
                 <div class="card p-4 border-0 shadow-sm rounded-4 bg-primary-subtle">
@@ -132,7 +129,7 @@ $errors = session()->getFlashdata('errors') ?? [];
                 <div class="whatsapp-box h-auto mb-4">
                     <h3 class="fw-bold mb-3 text-white">Need a Quick Response?</h3>
                     <p class="mb-4 opacity-75 text-white">WhatsApp is the fastest way to get in touch with our intake team and book your session immediately.</p>
-                    <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp'] ?? '9445662922') ?>/" target="_blank" rel="noopener" class="btn-whatsapp-light">
+                    <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" target="_blank" rel="noopener" class="btn-whatsapp-light">
                         <i class="fab fa-whatsapp fs-4"></i> Chat on WhatsApp
                     </a>
                 </div>

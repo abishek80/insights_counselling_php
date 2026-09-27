@@ -238,7 +238,7 @@
 
         <!-- Emergency Assistance Box -->
         <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-danger text-white mb-5">
-            <div class="row align-items-center">
+            <div class="row align-items-center g-4">
                 <div class="col-lg-8">
                     <h3 class="fw-bold text-white mb-2"><i class="fas fa-exclamation-triangle me-2"></i>Emergency Assistance</h3>
                     <p class="lead text-white mb-3" style="line-height: 1.6;">

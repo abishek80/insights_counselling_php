@@ -157,7 +157,7 @@ class Team extends BaseController
             'image'          => $imageName,
             'custom_buttons' => $customButtonsJson
         ]);
-
+        
         return redirect()->to(base_url('admin/team'))->with('success', 'Team member details updated successfully.');
     }
 

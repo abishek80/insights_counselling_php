@@ -5,17 +5,7 @@ use App\Models\SettingModel;
 if (!function_exists('get_settings')) {
     function get_settings()
     {
-        try {
-            $settingModel = new SettingModel();
-            $settings = $settingModel->find(1);
-            if ($settings) {
-                return $settings;
-            }
-        } catch (\Exception $e) {
-            // Fallback to default settings if DB isn't set up yet
-        }
-
-        return [
+        $defaults = [
             'id' => 1,
             'phone' => '+91 94456 62922',
             'email' => 'lekhapsy@gmail.com',
@@ -28,5 +18,21 @@ if (!function_exists('get_settings')) {
             'whatsapp' => '9445662922',
             'booking_url' => 'https://insightcounselings.com/bookings/'
         ];
+
+        try {
+            $settingModel = new SettingModel();
+            $dbSettings = $settingModel->find(1);
+            if ($dbSettings && is_array($dbSettings)) {
+                foreach ($dbSettings as $key => $val) {
+                    if ($val !== null && trim((string)$val) !== '') {
+                        $defaults[$key] = $val;
+                    }
+                }
+            }
+        } catch (\Exception $e) {
+            // Fallback to defaults
+        }
+
+        return $defaults;
     }
 }

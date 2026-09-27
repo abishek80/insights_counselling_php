@@ -64,7 +64,7 @@
                 <div class="accordion-item faq-item-card">
                     <h2 class="accordion-header" id="heading<?= $faqId ?>">
                         <button class="accordion-button <?= $index === 0 ? '' : 'collapsed' ?>" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?= $faqId ?>" aria-expanded="<?= $index === 0 ? 'true' : 'false' ?>" aria-controls="collapse<?= $faqId ?>">
-                            <span class="faq-icon-circle fw-bold"><?= $index + 1 ?></span>
+                            <span class="faq-icon-circle fw-bold d-none d-md-flex"><?= $index + 1 ?></span>
                             <span class="faq-question-text"><?= esc($faq['question']) ?></span>
                         </button>
                     </h2>

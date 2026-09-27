@@ -234,10 +234,10 @@
                         At Insight Counseling Services, these values are more than guiding principles—they are the foundation of our practice and the commitment we make to every individual who seeks our support.
                     </p>
                     <div class="d-flex flex-wrap justify-content-center gap-3">
-                        <a href="<?= esc($settings['booking_url'] ?? base_url('contact')) ?>" target="_blank" rel="noopener" class="btn btn-light rounded-4 px-4 py-3 fw-bold text-primary-color shadow-sm">
+                        <a href="<?= esc($settings['booking_url']) ?>" target="_blank" rel="noopener" class="btn btn-light rounded-4 px-4 py-3 fw-bold text-primary-color shadow-sm">
                             <i class="fas fa-calendar-check me-2 text-primary-color"></i> Book Your Consultation
                         </a>
-                        <a href="https://wa.me/<?= esc($settings['whatsapp'] ?? '9445662922') ?>/" target="_blank" class="btn btn-outline-light rounded-4 px-4 py-3 fw-bold">
+                        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" target="_blank" class="btn btn-outline-light rounded-4 px-4 py-3 fw-bold">
                             <i class="fab fa-whatsapp me-2"></i> Chat with Us on WhatsApp
                         </a>
                     </div>

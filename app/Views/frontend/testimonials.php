@@ -26,7 +26,7 @@
                         <div class="testimonial-card shadow-sm h-100 d-flex flex-column justify-content-between">
                             <p class="text-muted mb-0">"<?= esc($testimonial['content']) ?>"</p>
                             <div>
-                                <div class="mb-2 mt-4 text-warning" style="font-size: 1rem;">
+                                <div class="mb-2 mt-2 text-warning" style="font-size: 1rem;">
                                     <?php 
                                     $ratingCount = (int)($testimonial['rating'] ?? 5);
                                     if ($ratingCount < 1) $ratingCount = 5;

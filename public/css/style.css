@@ -77,7 +77,7 @@ h6 {
 }
 
 .section-padding {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 /* Navbar */
@@ -93,7 +93,8 @@ h6 {
 }
 
 .navbar-brand img {
-    height: 50px;
+    height: 60px;
+    transition: var(--transition);
 }
 
 .nav-link {
@@ -106,7 +107,7 @@ h6 {
 .hero-section {
     background: var(--primary-color);
     color: var(--white);
-    padding: 100px 0;
+    padding: 70px 0;
 }
 
 .hero-title {
@@ -188,18 +189,22 @@ h6 {
 }
 
 .feature-list li {
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #444;
     margin-bottom: 10px;
     position: relative;
-    padding-left: 15px;
+    padding-left: 24px;
 }
 
 .feature-list li::before {
-    content: '•';
+    content: '\f058';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
     position: absolute;
     left: 0;
-    color: #444;
+    top: 3px;
+    color: var(--primary-color);
+    font-size: 0.9rem;
 }
 
 .play-button-overlay {
@@ -222,10 +227,10 @@ h6 {
 
 /* Banner Section */
 .banner-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/banner_bg.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/banner_bg.jpg');
     background-size: cover;
     background-position: center;
-    padding: 120px 0;
+    padding: 70px 0;
     color: white;
     text-align: center;
 }
@@ -264,7 +269,6 @@ h6 {
 
 .info-card p {
     font-size: 1rem;
-    opacity: 0.7;
     line-height: 1.6;
 }
 
@@ -404,7 +408,6 @@ h6 {
     color: #777;
     line-height: 1.6;
     margin-bottom: 20px;
-    padding: 0 10px;
 }
 
 .btn-read-more {
@@ -450,7 +453,7 @@ h6 {
     background: var(--primary-color);
     background-size: cover;
     background-position: center;
-    padding: 60px 0 70px 0;
+    padding: 60px 0 30px 0;
     color: white;
 }
 
@@ -477,7 +480,7 @@ h6 {
     font-weight: 800;
     color: var(--primary-color);
     line-height: 1.2;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .help-icon-box {
@@ -611,7 +614,6 @@ footer {
     color: white;
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
-    padding: 100px 0 0;
 }
 
 .footer-logo-text {
@@ -644,7 +646,7 @@ footer {
 footer {
     background-color: #0b022b;
     color: white;
-    padding: 80px 0 0px;
+    padding: 60px 0 0px;
     position: relative;
     overflow: hidden;
     text-align: left;
@@ -769,13 +771,13 @@ footer {
 .profile-role {
     color: var(--primary-color);
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .profile-detail-item {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .profile-detail-icon {
@@ -1101,7 +1103,7 @@ footer {
 /* Fixed Action Buttons */
 .fixed-actions-container {
     position: fixed;
-    bottom: 40px;
+    bottom: 30px;
     width: 100%;
     z-index: 9999;
     pointer-events: none;
@@ -1143,19 +1145,51 @@ footer {
 }
 
 @media (max-width: 991px) {
+    .navbar-brand img {
+        height: 40px;
+    }
+
     .hero-title {
-        font-size: 4rem;
+        font-size: 28px;
         line-height: 1.15;
         margin-bottom: 20px;
     }
 }
 
 @media (max-width: 768px) {
+    footer {
+        padding: 50px 0 0;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+
+    .team-card {
+        padding: 20px 15px;
+    }
+
+    .banner-section h2 {
+        font-size: 1.9rem;
+        line-height: 1.3;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
 
     .hero-title,
     .how-we-help-title {
-        font-size: 38px;
+        font-size: 28px;
         margin-bottom: 15px;
+    }
+
+    .banner-section {
+        padding: 40px 10px;
+    }
+
+    .banner-section h5 {
+        font-size: 16px;
+    }
+
+    .banner-section h5 {
+        line-height: 1.5;
     }
 
     .about-founder-title {
@@ -1163,40 +1197,44 @@ footer {
         margin-bottom: 15px;
     }
 
-    .banner-section h2 {
-        font-size: 2.5rem;
-        font-weight: 800;
-        line-height: 1.5;
-        margin-bottom: 20px;
-    }
-
     .hero-subtext {
         font-size: 1rem;
         line-height: 1.5;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
     }
 
-    .hero-section,
-    .cta-banner,
     .section-padding {
-        padding: 50px 0px;
+        padding: 40px 0px;
+    }
+
+    .cta-banner {
+        padding: 40px 0 15px;
+    }
+
+    .cta-banner p {
+        font-size: 14px;
+    }
+
+    .hero-section {
+        padding: 30px 0px 40px 0;
     }
 
     .testimonial-card,
     .profile-info-col,
     .service-modal-body,
     .direct-channels-box,
-    .whatsapp-box {
-        padding: 30px;
+    .whatsapp-box,
+    .contact-card {
+        padding: 20px;
     }
 
     .fixed-actions-container {
-        bottom: 80px;
+        bottom: 15px;
         padding: 0 15px;
     }
 
     .btn-whatsapp-fixed {
-        padding: 10px 20px;
+        padding: 10px 15px;
         font-size: 1rem;
     }
 
@@ -1212,7 +1250,7 @@ footer {
     position: relative;
     overflow: hidden;
     color: var(--white);
-    padding: 70px 0;
+    padding: 50px 0;
 }
 
 /* Subtle pattern overlay */
@@ -1241,7 +1279,7 @@ footer {
     color: rgba(255, 255, 255, 0.9) !important;
     font-size: 1.1rem;
     font-weight: 300;
-    max-width: 700px;
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     opacity: 0.85;
@@ -1295,7 +1333,7 @@ footer {
     }
 
     .page-header h1 {
-        font-size: 2.2rem;
+        font-size: 1.5rem;
     }
 
     .page-header p {

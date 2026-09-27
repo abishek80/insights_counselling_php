@@ -21,6 +21,8 @@ Insight Counseling Services provides confidential in-person counseling at clinic
 - [Frequently Asked Questions (FAQ)](https://insightcounselings.com/faq)
 - [Client Testimonials](https://insightcounselings.com/testimonials)
 - [Contact & Clinic Locations](https://insightcounselings.com/contact)
+- [Enquiry Thank You Page](https://insightcounselings.com/thank-you)
+- [Booking Thank You Page](https://insightcounselings.com/thankyou)
 
 ## Core Services
 - [Depression & Anxiety Counseling](https://insightcounselings.com/services/depression-anxiety)

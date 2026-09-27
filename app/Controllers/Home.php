@@ -241,7 +241,7 @@ class Home extends BaseController
         return redirect()->to(base_url('thank-you'))->with('success', 'Your enquiry has been submitted successfully! We will get back to you soon.');
     }
 
-    public function thankyou()
+    public function thankYouEnquiry()
     {
         $data = [
             'title' => 'Thank You for Your Enquiry | Insight Counseling Services',
@@ -249,6 +249,22 @@ class Home extends BaseController
         ];
 
         return view('frontend/thankyou', $data);
+    }
+
+    public function thankYouBooking()
+    {
+        $data = [
+            'title'     => 'Thank You for Booking Your Appointment | Insight Counseling Services',
+            'meta_desc' => 'Thank you for booking your psychological counseling appointment with Insight Counseling Services Chennai.',
+            'noindex'   => true
+        ];
+
+        return view('frontend/thankyou_booking', $data);
+    }
+
+    public function thankyou()
+    {
+        return $this->thankYouBooking();
     }
 
     public function sitemap()
@@ -264,6 +280,8 @@ class Home extends BaseController
             base_url('faq'),
             base_url('testimonials'),
             base_url('contact'),
+            base_url('thank-you'),
+            base_url('thankyou'),
             base_url('privacy-policy'),
             base_url('refund-policy'),
             base_url('our-values'),

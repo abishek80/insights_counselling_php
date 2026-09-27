@@ -317,32 +317,61 @@
     <script>
     function gtag_report_phone_conversion(url) {
         var callback = function () {
-            if (typeof(url) != 'undefined') {
+            if (typeof(url) !== 'undefined' && url && url !== '#') {
                 window.location = url;
             }
         };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-11346428021/z7JyCNXBkP4bEPWAs6Iq',
-            'event_callback': callback
-        });
+        if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-11346428021/z7JyCNXBkP4bEPWAs6Iq',
+                'event_callback': callback
+            });
+        } else if (typeof(url) !== 'undefined' && url && url !== '#') {
+            window.location = url;
+        }
         return false;
     }
-    </script>
 
     <!-- Google Ads Conversion: WhatsApp Click -->
-    <script>
     function gtag_report_whatsapp_conversion(url) {
         var callback = function () {
-            if (typeof(url) != 'undefined') {
-                window.location = url;
+            if (typeof(url) !== 'undefined' && url && url !== '#') {
+                window.open(url, '_blank');
             }
         };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-11346428021/KxQPCMnG__0bEPWAs6Iq',
-            'event_callback': callback
-        });
+        if (typeof gtag === 'function') {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-11346428021/KxQPCMnG__0bEPWAs6Iq',
+                'event_callback': callback
+            });
+        } else if (typeof(url) !== 'undefined' && url && url !== '#') {
+            window.open(url, '_blank');
+        }
         return false;
     }
+
+    // Auto-attach conversion tracking to all call & whatsapp links
+    document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('click', function(e) {
+            var link = e.target.closest('a[href*="tel:"], a[href*="wa.me"], a[href*="whatsapp.com"]');
+            if (!link) return;
+
+            var href = link.getAttribute('href') || '';
+            if (href.indexOf('tel:') !== -1) {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-11346428021/z7JyCNXBkP4bEPWAs6Iq'
+                    });
+                }
+            } else if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp.com') !== -1) {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-11346428021/KxQPCMnG__0bEPWAs6Iq'
+                    });
+                }
+            }
+        });
+    });
     </script>
 </head>
 
@@ -444,10 +473,10 @@
 
     <!-- Fixed Action Buttons -->
     <div class="fixed-actions-container">
-        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone']) ?>" class="btn-call-fixed">
+        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone']) ?>" onclick="return gtag_report_phone_conversion(this.href);" class="btn-call-fixed">
             <i class="fas fa-phone fs-4"></i>
         </a>
-        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" target="_blank" rel="noopener" class="btn-whatsapp-fixed">
+        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn-whatsapp-fixed">
             <i class="fab fa-whatsapp fs-4"></i>
             <span class="d-none d-md-block">Chat with us</span>
         </a>

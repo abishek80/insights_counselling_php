@@ -26,6 +26,7 @@ $routes->get('thankyou', 'Home::thankYouBooking');
 $routes->get('sitemap.xml', 'Home::sitemap');
 $routes->get('llms.txt', 'Home::llmsTxt');
 $routes->get('llms-full.txt', 'Home::llmsFullTxt');
+$routes->get('psychologist-near-me-chennai', 'Home::psychologistNearMeChennai');
 $routes->post('contact/submit', 'Home::submitEnquiry');
 
 // Admin Auth Routes

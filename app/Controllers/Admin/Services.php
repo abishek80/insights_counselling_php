@@ -27,11 +27,17 @@ class Services extends BaseController
         $serviceModel = new ServiceModel();
         helper('url');
 
+        $showWebsite = $this->request->getPost('show_website') ? 1 : 0;
+        $showLanding = $this->request->getPost('show_landing') ? 1 : 0;
+
         $rules = [
-            'title'             => ['label' => 'Service Title', 'rules' => 'required'],
-            'short_description' => ['label' => 'Short Description', 'rules' => 'required'],
-            'long_description'  => ['label' => 'Detailed Description', 'rules' => 'required']
+            'title' => ['label' => 'Service Title', 'rules' => 'required']
         ];
+
+        if ($showWebsite) {
+            $rules['short_description'] = ['label' => 'Website Short Description', 'rules' => 'required'];
+            $rules['long_description']  = ['label' => 'Website Detailed Description', 'rules' => 'required'];
+        }
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('error', 'Please verify that all required fields are filled.')->with('errors', $this->validator->getErrors());
@@ -60,30 +66,43 @@ class Services extends BaseController
             $secImg->move(FCPATH . 'assets/services/', $secondaryImageName);
         }
 
+        $landingBulletsPost = $this->request->getPost('landing_bullet_points');
+        $landingBulletsJson = json_encode([]);
+        if (is_array($landingBulletsPost)) {
+            $filteredBullets = array_values(array_filter(array_map('trim', $landingBulletsPost)));
+            $landingBulletsJson = json_encode($filteredBullets);
+        }
+
         $serviceModel->insert([
-            'title'             => $title,
-            'sub_title'         => $this->request->getPost('sub_title'),
-            'slug'              => $slug,
-            'meta_title'        => $this->request->getPost('meta_title'),
-            'meta_description'  => $this->request->getPost('meta_description'),
-            'short_description' => $this->request->getPost('short_description'),
-            'long_description'  => $this->request->getPost('long_description'),
-            'what_is_section'   => $this->request->getPost('what_is_section'),
-            'symptoms'          => $this->request->getPost('symptoms'),
-            'symptoms_intro'    => $this->request->getPost('symptoms_intro'),
-            'types_help'        => $this->request->getPost('types_help'),
-            'types_intro'       => $this->request->getPost('types_intro'),
-            'benefits'          => $this->request->getPost('benefits'),
-            'benefits_intro'    => $this->request->getPost('benefits_intro'),
-            'approach'          => $this->request->getPost('approach'),
-            'approach_intro'    => $this->request->getPost('approach_intro'),
-            'why_choose'        => $this->request->getPost('why_choose'),
-            'why_choose_intro'  => $this->request->getPost('why_choose_intro'),
-            'when_seek_help'    => $this->request->getPost('when_seek_help'),
-            'when_seek_outro'   => $this->request->getPost('when_seek_outro'),
-            'cta'               => $this->request->getPost('cta'),
-            'image'             => $imageName,
-            'secondary_image'   => $secondaryImageName
+            'title'                     => $title,
+            'sub_title'                 => $this->request->getPost('sub_title'),
+            'slug'                      => $slug,
+            'meta_title'                => $this->request->getPost('meta_title'),
+            'meta_description'          => $this->request->getPost('meta_description'),
+            'short_description'         => $this->request->getPost('short_description') ?? '',
+            'long_description'          => $this->request->getPost('long_description') ?? '',
+            'what_is_section'           => $this->request->getPost('what_is_section'),
+            'symptoms'                  => $this->request->getPost('symptoms'),
+            'symptoms_intro'            => $this->request->getPost('symptoms_intro'),
+            'types_help'                => $this->request->getPost('types_help'),
+            'types_intro'               => $this->request->getPost('types_intro'),
+            'benefits'                  => $this->request->getPost('benefits'),
+            'benefits_intro'            => $this->request->getPost('benefits_intro'),
+            'approach'                  => $this->request->getPost('approach'),
+            'approach_intro'            => $this->request->getPost('approach_intro'),
+            'why_choose'                => $this->request->getPost('why_choose'),
+            'why_choose_intro'          => $this->request->getPost('why_choose_intro'),
+            'when_seek_help'            => $this->request->getPost('when_seek_help'),
+            'when_seek_outro'           => $this->request->getPost('when_seek_outro'),
+            'cta'                       => $this->request->getPost('cta'),
+            'image'                     => $imageName,
+            'secondary_image'           => $secondaryImageName,
+            'show_website'              => $showWebsite,
+            'show_landing'              => $showLanding,
+            'landing_title'             => $this->request->getPost('landing_title'),
+            'landing_short_description' => $this->request->getPost('landing_short_description'),
+            'landing_description'       => $this->request->getPost('landing_description'),
+            'landing_bullet_points'     => $landingBulletsJson
         ]);
 
         return redirect()->to(base_url('admin/services'))->with('success', 'Service category created successfully.');
@@ -115,11 +134,17 @@ class Services extends BaseController
             return redirect()->to(base_url('admin/services'))->with('error', 'Service category not found.');
         }
 
+        $showWebsite = $this->request->getPost('show_website') ? 1 : 0;
+        $showLanding = $this->request->getPost('show_landing') ? 1 : 0;
+
         $rules = [
-            'title'             => ['label' => 'Service Title', 'rules' => 'required'],
-            'short_description' => ['label' => 'Short Description', 'rules' => 'required'],
-            'long_description'  => ['label' => 'Detailed Description', 'rules' => 'required']
+            'title' => ['label' => 'Service Title', 'rules' => 'required']
         ];
+
+        if ($showWebsite) {
+            $rules['short_description'] = ['label' => 'Website Short Description', 'rules' => 'required'];
+            $rules['long_description']  = ['label' => 'Website Detailed Description', 'rules' => 'required'];
+        }
 
         if (!$this->validate($rules)) {
             return redirect()->back()->withInput()->with('error', 'Please verify that all required fields are filled.')->with('errors', $this->validator->getErrors());
@@ -147,29 +172,42 @@ class Services extends BaseController
             $secImg->move(FCPATH . 'assets/services/', $secondaryImageName);
         }
 
+        $landingBulletsPost = $this->request->getPost('landing_bullet_points');
+        $landingBulletsJson = json_encode([]);
+        if (is_array($landingBulletsPost)) {
+            $filteredBullets = array_values(array_filter(array_map('trim', $landingBulletsPost)));
+            $landingBulletsJson = json_encode($filteredBullets);
+        }
+
         $serviceModel->update($id, [
-            'title'             => $this->request->getPost('title'),
-            'sub_title'         => $this->request->getPost('sub_title'),
-            'meta_title'        => $this->request->getPost('meta_title'),
-            'meta_description'  => $this->request->getPost('meta_description'),
-            'short_description' => $this->request->getPost('short_description'),
-            'long_description'  => $this->request->getPost('long_description'),
-            'what_is_section'   => $this->request->getPost('what_is_section'),
-            'symptoms'          => $this->request->getPost('symptoms'),
-            'symptoms_intro'    => $this->request->getPost('symptoms_intro'),
-            'types_help'        => $this->request->getPost('types_help'),
-            'types_intro'       => $this->request->getPost('types_intro'),
-            'benefits'          => $this->request->getPost('benefits'),
-            'benefits_intro'    => $this->request->getPost('benefits_intro'),
-            'approach'          => $this->request->getPost('approach'),
-            'approach_intro'    => $this->request->getPost('approach_intro'),
-            'why_choose'        => $this->request->getPost('why_choose'),
-            'why_choose_intro'  => $this->request->getPost('why_choose_intro'),
-            'when_seek_help'    => $this->request->getPost('when_seek_help'),
-            'when_seek_outro'   => $this->request->getPost('when_seek_outro'),
-            'cta'               => $this->request->getPost('cta'),
-            'image'             => $imageName,
-            'secondary_image'   => $secondaryImageName
+            'title'                     => $this->request->getPost('title'),
+            'sub_title'                 => $this->request->getPost('sub_title'),
+            'meta_title'                => $this->request->getPost('meta_title'),
+            'meta_description'          => $this->request->getPost('meta_description'),
+            'short_description'         => $this->request->getPost('short_description') ?? '',
+            'long_description'          => $this->request->getPost('long_description') ?? '',
+            'what_is_section'           => $this->request->getPost('what_is_section'),
+            'symptoms'                  => $this->request->getPost('symptoms'),
+            'symptoms_intro'            => $this->request->getPost('symptoms_intro'),
+            'types_help'                => $this->request->getPost('types_help'),
+            'types_intro'               => $this->request->getPost('types_intro'),
+            'benefits'                  => $this->request->getPost('benefits'),
+            'benefits_intro'            => $this->request->getPost('benefits_intro'),
+            'approach'                  => $this->request->getPost('approach'),
+            'approach_intro'            => $this->request->getPost('approach_intro'),
+            'why_choose'                => $this->request->getPost('why_choose'),
+            'why_choose_intro'          => $this->request->getPost('why_choose_intro'),
+            'when_seek_help'            => $this->request->getPost('when_seek_help'),
+            'when_seek_outro'           => $this->request->getPost('when_seek_outro'),
+            'cta'                       => $this->request->getPost('cta'),
+            'image'                     => $imageName,
+            'secondary_image'           => $secondaryImageName,
+            'show_website'              => $showWebsite,
+            'show_landing'              => $showLanding,
+            'landing_title'             => $this->request->getPost('landing_title'),
+            'landing_short_description' => $this->request->getPost('landing_short_description'),
+            'landing_description'       => $this->request->getPost('landing_description'),
+            'landing_bullet_points'     => $landingBulletsJson
         ]);
 
         return redirect()->to(base_url('admin/services'))->with('success', 'Service category updated successfully.');

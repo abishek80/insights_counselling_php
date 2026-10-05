@@ -10,6 +10,28 @@ use App\Models\BranchModel;
 
 class Home extends BaseController
 {
+    public function psychologistNearMeChennai()
+    {
+        $serviceModel = new ServiceModel();
+        $teamModel = new TeamModel();
+        $testimonialModel = new TestimonialModel();
+        $branchModel = new BranchModel();
+
+        $data = [
+            'title' => 'Psychologist Near Me in Chennai | Insight Counseling Services',
+            'meta_desc' => 'Top psychologist near you in Chennai for anxiety, depression, stress, couple & teen counselling. Kovur, Porur, Vadapalani & online sessions. Call 9445662922.',
+            'keywords' => 'psychologist near me, psychologist near me chennai, best psychologist in chennai, psychologist in chennai, counselling psychologist near me, therapist near me, therapist in chennai, counselling near me, counseling center near me, marriage counselling chennai, couple counselling chennai, relationship counselling chennai, family counselling near me, child psychologist chennai, teen counselling chennai, anxiety counselling chennai, depression counselling chennai, online counselling chennai, psychologist porur, psychologist kovur, psychologist vadapalani, Lekha Edwin, Insight Counseling Services',
+            'og_image' => base_url('assets/og-image.jpg'),
+            'services' => $serviceModel->where('status', 1)->where('show_landing', 1)->findAll(),
+            'team' => $teamModel->where('status', 1)->findAll(),
+            'testimonials' => $testimonialModel->where('status', 1)->findAll(),
+            'branches' => $branchModel->where('status', 1)->findAll(),
+            'faqs' => (new FaqModel())->where('status', 1)->findAll(8)
+        ];
+
+        return view('frontend/landing_page', $data);
+    }
+
     public function index()
     {
         $serviceModel = new ServiceModel();
@@ -19,8 +41,8 @@ class Home extends BaseController
 
         $data = [
             'title' => 'Best Psychologist in Chennai | Insight Counseling Services',
-            'meta_desc' => 'Best Psychologist in Chennai for Anxiety, Depression, Stress Management, Couple Counselling, Teen Counselling, Family Counselling, and Relationship Issues. Online & In-Person Sessions. Call 9445662922.',
-            'services' => $serviceModel->where('status', 1)->findAll(),
+            'meta_desc' => 'Best psychologist in Chennai since 2014. Confidential counselling for anxiety, depression, stress, couples & teens. Kovur, Porur, Vadapalani & online.',
+            'services' => $serviceModel->where('status', 1)->where('show_website', 1)->findAll(),
             'team' => $teamModel->where('status', 1)->findAll(),
             'testimonials' => $testimonialModel->where('status', 1)->findAll(),
             'branches' => $branchModel->where('status', 1)->findAll()
@@ -34,10 +56,10 @@ class Home extends BaseController
         $teamModel = new TeamModel();
         $serviceModel = new ServiceModel();
         $data = [
-            'title' => 'About Mrs. Lekha Edwin & Insight Counseling Services | Chennai',
-            'meta_desc' => 'Learn about Mrs. Lekha Edwin, leading Counseling Psychologist in Chennai, and the mission of Insight Counseling Services since 2014 in Kovur, Porur & Vadapalani.',
+            'title' => 'About Us | Mrs. Lekha Edwin & Insight Counseling Services | Chennai',
+            'meta_desc' => 'Meet Mrs. Lekha Edwin, leading counselling psychologist in Chennai, and learn the story of Insight Counseling Services in Kovur, Porur & Vadapalani.',
             'team' => $teamModel->where('status', 1)->findAll(),
-            'services' => $serviceModel->where('status', 1)->findAll()
+            'services' => $serviceModel->where('status', 1)->where('show_website', 1)->findAll()
         ];
 
         return view('frontend/about', $data);
@@ -47,7 +69,7 @@ class Home extends BaseController
     {
         $branchModel = new BranchModel();
         $data = [
-            'title' => 'Contact Us | Clinic Locations in Kovur, Porur & Vadapalani | Chennai',
+            'title' => 'Contact Us | Clinic Locations in Kovur, Porur & Vadapalani | Insight Counseling Services',
             'meta_desc' => 'Contact Insight Counseling Services. Book an in-person or online consultation with expert psychologists in Kovur, Porur, and Vadapalani, Chennai.',
             'branches' => $branchModel->where('status', 1)->findAll()
         ];
@@ -60,9 +82,9 @@ class Home extends BaseController
         $serviceModel = new ServiceModel();
 
         $data = [
-            'title' => 'Psychological Counseling & Therapy Services in Chennai | ICS',
-            'meta_desc' => 'Explore professional counseling services in Chennai: Individual Therapy, Couple Counseling, Teen Therapy, Academic Stress Management, LGBTQ+ Affirmative Therapy & Online Sessions.',
-            'services' => $serviceModel->where('status', 1)->findAll()
+            'title' => 'Our Services | Psychological Counseling & Therapy Services in Chennai | Insight Counseling Services',
+            'meta_desc' => 'Counselling services in Chennai: individual therapy, couple & marriage counselling, teen counselling, anxiety, depression & stress. In-person or online.',
+            'services' => $serviceModel->where('status', 1)->where('show_website', 1)->findAll()
         ];
 
         return view('frontend/services', $data);
@@ -94,7 +116,7 @@ class Home extends BaseController
         $teamModel = new TeamModel();
 
         $data = [
-            'title' => 'Our Team of Expert Psychologists & Counselors | Insight Counseling Services',
+            'title' => 'Our Team | Expert Psychologists & Counselors | Insight Counseling Services',
             'meta_desc' => 'Meet our team of licensed counseling psychologists and mental health experts at Insight Counseling Services in Chennai dedicated to your emotional well-being.',
             'team' => $teamModel->where('status', 1)->findAll()
         ];
@@ -152,7 +174,7 @@ class Home extends BaseController
     {
         $data = [
             'title' => 'Our Values | Insight Counseling Services Chennai',
-            'meta_desc' => 'Discover the core values of Insight Counseling Services in Chennai: respect, dignity, compassion, empathy, confidentiality, integrity, client-centered care, and excellence.'
+            'meta_desc' => 'Our core values at Insight Counseling Services, Chennai: respect, dignity, confidentiality and compassionate, evidence-based mental health care.'
         ];
 
         return view('frontend/our_values', $data);
@@ -161,7 +183,7 @@ class Home extends BaseController
     public function helplines()
     {
         $data = [
-            'title' => 'Mental Health Helplines Chennai & Tamil Nadu | Insight Counseling Services',
+            'title' => 'Helplines | Mental Health Helplines Chennai & Tamil Nadu | Insight Counseling Services',
             'meta_desc' => 'Directory of 24/7 mental health helplines, suicide prevention numbers, and emergency crisis support services in Chennai, Tamil Nadu & India.'
         ];
 
@@ -245,7 +267,8 @@ class Home extends BaseController
     {
         $data = [
             'title' => 'Thank You for Your Enquiry | Insight Counseling Services',
-            'meta_desc' => 'Thank you for reaching out to Insight Counseling Services. We will get back to you shortly.'
+            'meta_desc' => 'Thank you for reaching out to Insight Counseling Services. We will get back to you shortly.',
+            'noindex'   => true
         ];
 
         return view('frontend/thankyou', $data);
@@ -274,14 +297,13 @@ class Home extends BaseController
 
         $urls = [
             base_url('/'),
+            base_url('psychologist-near-me-chennai'),
             base_url('about'),
             base_url('services'),
             base_url('team'),
             base_url('faq'),
             base_url('testimonials'),
             base_url('contact'),
-            base_url('thank-you'),
-            base_url('thankyou'),
             base_url('privacy-policy'),
             base_url('refund-policy'),
             base_url('our-values'),

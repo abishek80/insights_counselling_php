@@ -16,18 +16,28 @@
 	# http://httpd.apache.org/docs/current/mod/mod_rewrite.html#rewritebase
 	# RewriteBase /
 
+	# Original path exactly as the visitor requested it. On the live server the
+	# parent .htaccess routes traffic into /insightcounselings-website/public/,
+	# which changes REQUEST_URI, so redirects must not be built from REQUEST_URI
+	# (it leaked the hosting folder into the redirect URL).
+	RewriteCond %{THE_REQUEST} ^\S+\s+([^?\s]*)
+	RewriteRule ^ - [E=ORIG_PATH:%1]
+
+	# Hide the hosting folder: /insightcounselings-website/public/about -> /about
+	RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1) [NC]
+	RewriteCond %{ENV:ORIG_PATH} ^/[^/]+/public(/.*?)?/?$
+	RewriteRule ^ https://insightcounselings.com%1 [R=301,L]
+
+	# One-hop canonical host: http:// and www. -> https://insightcounselings.com
+	RewriteCond %{HTTP_HOST} ^www\. [NC,OR]
+	RewriteCond %{HTTPS} off
+	RewriteCond %{HTTP_HOST} !^(localhost|127\.0\.0\.1) [NC]
+	RewriteRule ^ https://insightcounselings.com%{ENV:ORIG_PATH} [R=301,L]
+
 	# Redirect Trailing Slashes...
 	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_URI} (.+)/$
+	RewriteCond %{ENV:ORIG_PATH} ^(.+)/$
 	RewriteRule ^ %1 [L,R=301]
-
-	# Force HTTPS Redirect
-	RewriteCond %{HTTPS} off
-	RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-	# Rewrite "www.example.com -> example.com"
-	RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-	RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 
 	# Checks to see if the user is attempting to access a valid file,
 	# such as an image or css document, if this isn't true it sends the
@@ -45,6 +55,12 @@
 	# If we don't have mod_rewrite installed, all 404's
 	# can be sent to index.php, and everything works as normal.
 	ErrorDocument 404 index.php
+</IfModule>
+
+# Don't reveal the PHP version (X-Powered-By: PHP/8.x)
+<IfModule mod_headers.c>
+	Header always unset X-Powered-By
+	Header unset X-Powered-By
 </IfModule>
 
 # Disable server signature start

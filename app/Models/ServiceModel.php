@@ -38,7 +38,13 @@ class ServiceModel extends Model
         'cta',
         'icon',
         'price',
-        'status'
+        'status',
+        'show_website',
+        'show_landing',
+        'landing_title',
+        'landing_short_description',
+        'landing_description',
+        'landing_bullet_points'
     ];
 
     // Dates

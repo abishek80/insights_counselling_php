@@ -34,8 +34,21 @@
       gtag('config', 'AW-11346428021');
     </script>
 
-    <!-- CANONICAL URL -->
+    <!-- CANONICAL URL (no query string, so ?gclid= ad clicks don't create duplicates) -->
     <link rel="canonical" href="<?= current_url() ?>">
+
+    <!-- THEME / MOBILE -->
+    <meta name="theme-color" content="#2D2A70">
+    <meta name="format-detection" content="telephone=yes">
+    <link rel="manifest" href="<?= base_url('site.webmanifest') ?>">
+
+    <!-- PERFORMANCE: open third-party connections early (Ads landing page experience) -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="<?= base_url('assets/logo-dark.png') ?>">
 
     <!-- GEO / LOCAL SEO TAGS -->
     <meta name="geo.region" content="IN-TN">
@@ -50,8 +63,8 @@
     <meta property="og:description" content="<?= esc($meta_desc ?? 'Professional mental health support in Chennai. Individual, couple & teen counseling by expert psychologists. Online & in-person. Book your session today.') ?>">
     <meta property="og:url" content="<?= current_url() ?>">
     <meta property="og:image" content="<?= esc($og_image ?? base_url('assets/og-image.jpg')) ?>">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
     <meta property="og:image:alt" content="Insight Counseling Services - Talk. Resolve. Heal.">
     <meta property="og:locale" content="en_IN">
 
@@ -96,7 +109,7 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": ["MedicalBusiness", "LocalBusiness", "CounselingService"],
+          "@type": ["MedicalBusiness", "LocalBusiness"],
           "@id": "<?= base_url() ?>#organization",
           "name": "Insight Counseling Services",
           "alternateName": "ICS Chennai",
@@ -150,11 +163,60 @@
             "opens": "09:00",
             "closes": "20:00"
           },
-          "sameAs": [
-            "<?= esc($settings['facebook'] ?? '') ?>",
-            "<?= esc($settings['instagram'] ?? '') ?>",
-            "<?= esc($settings['youtube'] ?? '') ?>"
-          ]
+          "areaServed": [
+            {"@type": "City", "name": "Chennai"},
+            {"@type": "Place", "name": "Porur"},
+            {"@type": "Place", "name": "Kovur"},
+            {"@type": "Place", "name": "Vadapalani"}
+          ],
+          "availableService": [
+            {"@type": "MedicalTherapy", "name": "Individual Counselling"},
+            {"@type": "MedicalTherapy", "name": "Couple & Marriage Counselling"},
+            {"@type": "MedicalTherapy", "name": "Teen & Adolescent Counselling"},
+            {"@type": "MedicalTherapy", "name": "Family Counselling"},
+            {"@type": "MedicalTherapy", "name": "Anxiety & Depression Counselling"},
+            {"@type": "MedicalTherapy", "name": "Online Counselling"}
+          ],
+          <?php if (!empty($branches)): ?>
+          "department": [
+            <?php
+            $branchItems = [];
+            foreach ($branches as $b) {
+                $branchItems[] = json_encode(array_filter([
+                    '@type'     => 'MedicalClinic',
+                    'name'      => 'Insight Counseling Services - ' . $b['name'],
+                    'telephone' => $b['phone'] ?? null,
+                    'email'     => $b['email'] ?? null,
+                    'hasMap'    => $b['map_url'] ?? null,
+                    'address'   => [
+                        '@type'           => 'PostalAddress',
+                        'streetAddress'   => $b['address'] ?? '',
+                        'addressLocality' => 'Chennai',
+                        'addressRegion'   => 'Tamil Nadu',
+                        'addressCountry'  => 'IN',
+                    ],
+                ]), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+            }
+            echo implode(',', $branchItems);
+            ?>
+          ],
+          <?php endif; ?>
+          "sameAs": <?= json_encode(array_values(array_filter([
+              $settings['facebook'] ?? '',
+              $settings['instagram'] ?? '',
+              $settings['youtube'] ?? '',
+          ])), JSON_UNESCAPED_SLASHES) ?>
+        },
+        {
+          "@type": "WebPage",
+          "@id": "<?= current_url() ?>#webpage",
+          "url": "<?= current_url() ?>",
+          "name": <?= json_encode($title ?? 'Insight Counseling Services', JSON_UNESCAPED_UNICODE) ?>,
+          "description": <?= json_encode($meta_desc ?? '', JSON_UNESCAPED_UNICODE) ?>,
+          "isPartOf": {"@id": "<?= base_url() ?>#website"},
+          "about": {"@id": "<?= base_url() ?>#organization"},
+          "primaryImageOfPage": {"@type": "ImageObject", "url": "<?= esc($og_image ?? base_url('assets/og-image.jpg')) ?>"},
+          "inLanguage": "en-IN"
         },
         {
           "@type": "WebSite",
@@ -165,7 +227,7 @@
           "publisher": {
             "@id": "<?= base_url() ?>#organization"
           },
-          "inLanguage": "en-US"
+          "inLanguage": "en-IN"
         },
         {
           "@type": "BreadcrumbList",
@@ -281,11 +343,12 @@
         return false;
     }
 
-    // Auto-attach conversion tracking to all call & whatsapp links
+    // Auto-attach conversion tracking to call & whatsapp links that don't already
+    // report via onclick (otherwise one click would be counted twice)
     document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('click', function(e) {
             var link = e.target.closest('a[href*="tel:"], a[href*="wa.me"], a[href*="whatsapp.com"]');
-            if (!link) return;
+            if (!link || link.hasAttribute('onclick')) return;
 
             var href = link.getAttribute('href') || '';
             if (href.indexOf('tel:') !== -1) {
@@ -313,10 +376,10 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Header / Navigation -->
-    <header>
-        <nav class="navbar navbar-expand-lg bg-white py-2 sticky-top shadow-sm" aria-label="Main Navigation">
+    <header class="sticky-top bg-white shadow-sm" style="top: 0; z-index: 1030;">
+        <nav class="navbar navbar-expand-lg bg-white py-2" aria-label="Main Navigation">
             <div class="container">
-                <a class="navbar-brand" href="<?= base_url() ?>">
+                <a class="navbar-brand" href="<?= base_url() ?>psychologist-near-me-chennai">
                     <img src="<?= base_url('assets/logo-dark.png') ?>" alt="Insight Counseling Services - Best Psychologist in Chennai">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -324,13 +387,12 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url() ?>">Home</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('about') ?>">About</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('services') ?>">Services</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('team') ?>">Team</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('faq') ?>">FAQ</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('testimonials') ?>">Testimonial</a></li>
-                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url('contact') ?>">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url() ?>psychologist-near-me-chennai#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url() ?>psychologist-near-me-chennai#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url() ?>psychologist-near-me-chennai#team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url() ?>psychologist-near-me-chennai#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url() ?>psychologist-near-me-chennai#testimonials">Testimonial</a></li>
+                        <li class="nav-item"><a class="nav-link fw-semibold text-primary-color px-3" href="<?= base_url() ?>psychologist-near-me-chennai#contact">Contact Us</a></li>
                     </ul>
                     <a href="<?= esc($settings['booking_url']) ?>" target="_blank" rel="noopener"
                         class="btn btn-primary px-4 fw-semibold mt-3 mt-lg-0"
@@ -347,65 +409,70 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container pb-4">
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <img src="<?= base_url('assets/logo-light.png') ?>" alt="Insight Counseling Services - Best Therapist & Counseling Center in Chennai" class="footer-logo-main mb-3" style="max-height: 70px;">
-                    <p class="text-white pe-0 pe-md-4">
-                        Insight Counseling Services (ICS), Chennai established in the year 2014.
-                        Providing compassionate, confidential, and evidence-based psychological support for all.
-                    </p>
-                </div>
-                <div class="col-lg-2 col-md-4">
-                    <p class="h5 text-white fw-bold mb-3">Quick Links</p>
-                    <ul class="list-unstyled text-white ms-3">
-                        <li class="mb-2"><a href="<?= base_url() ?>" class="text-reset text-decoration-none">Home</a></li>
-                        <li class="mb-2"><a href="<?= base_url('about') ?>" class="text-reset text-decoration-none">About Us</a></li>
-                        <li class="mb-2"><a href="<?= base_url('services') ?>" class="text-reset text-decoration-none">Our Services</a></li>
-                        <li class="mb-2"><a href="<?= base_url('team') ?>" class="text-reset text-decoration-none">Our Team</a></li>
-                        <li class="mb-2"><a href="<?= base_url('faq') ?>" class="text-reset text-decoration-none">FAQs</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <p class="h5 text-white fw-bold mb-3">Policy & Legal</p>
-                    <ul class="list-unstyled text-white ms-3">
-                        <li class="mb-2"><a href="<?= base_url('privacy-policy') ?>" class="text-reset text-decoration-none">Privacy Policy</a></li>
-                        <li class="mb-2"><a href="<?= base_url('refund-policy') ?>" class="text-reset text-decoration-none">Refund Policy</a></li>
-                        <li class="mb-2"><a href="<?= base_url('our-values') ?>" class="text-reset text-decoration-none">Our Values</a></li>
-                        <li class="mb-2"><a href="<?= base_url('helpline-details') ?>" class="text-reset text-decoration-none">Helpline Details</a></li>
-                        <li class="mb-2"><a href="<?= base_url('contact') ?>" class="text-reset text-decoration-none">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-4">
-                    <p class="h5 text-white fw-bold mb-3">Connect With Us</p>
-                    <a href="tel:+91<?= preg_replace('/[^0-9]/', '', $settings['phone']) ?>" class="ms-3 text-white d-block text-decoration-none mb-2"><i class="fas fa-phone me-2"></i> <?= esc($settings['phone']) ?></a>
-                    <a href="mailto:<?= esc($settings['email']) ?>" class="ms-3 text-white d-block text-decoration-none mb-3"><i class="fas fa-envelope me-2"></i> <?= esc($settings['email']) ?></a>
-                    <div class="ms-3 footer-social-circles gap-1">
-                        <?php if (!empty($settings['facebook'])): ?>
-                            <a href="<?= esc($settings['facebook']) ?>" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i><span class="visually-hidden">Insight Counseling on Facebook</span></a>
-                        <?php endif; ?>
-                        <?php if (!empty($settings['instagram'])): ?>
-                            <a href="<?= esc($settings['instagram']) ?>" target="_blank" rel="noopener"><i class="fab fa-instagram"></i><span class="visually-hidden">Insight Counseling on Instagram</span></a>
-                        <?php endif; ?>
-                        <?php if (!empty($settings['youtube'])): ?>
-                            <a href="<?= esc($settings['youtube']) ?>" target="_blank" rel="noopener"><i class="fab fa-youtube"></i><span class="visually-hidden">Insight Counseling on YouTube</span></a>
-                        <?php endif; ?>
+        <div class="container text-center">
+            <!-- Center Logo -->
+            <img src="<?= base_url('assets/logo-light.png') ?>" alt="Insight Counseling Services Chennai logo" loading="lazy" class="footer-logo-main">
+
+            <!-- Description Text -->
+            <p class="footer-description mb-3">
+                Insight Counseling Services (ICS), Chennai established in the year 2014.
+                Providing compassionate, confidential, and evidence-based psychological support for all,
+                helping individuals and couples navigate life's challenges with professional care.
+            </p>
+
+            <!-- Contact Bar -->
+            <div class="footer-contact-bar">
+                <a href="mailto:<?= esc($settings['email']) ?>" class="footer-contact-item">
+                    <i class="fas fa-envelope"></i> <?= esc($settings['email']) ?>
+                </a>
+                <div class="footer-separator"></div>
+                <a href="tel:+91<?= preg_replace('/[^0-9]/', '', $settings['phone']) ?>" class="footer-contact-item">
+                    <i class="fas fa-phone"></i> <?= esc($settings['phone']) ?>
+                </a>
+                <div class="footer-separator"></div>
+                <div class="d-flex align-items-center">
+                    <div class="footer-social-circles">
+                        <div class="ms-3 footer-social-circles gap-1">
+                            <?php if (!empty($settings['facebook'])): ?>
+                                <a href="<?= esc($settings['facebook']) ?>" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i><span class="visually-hidden">Insight Counseling on Facebook</span></a>
+                            <?php endif; ?>
+                            <?php if (!empty($settings['instagram'])): ?>
+                                <a href="<?= esc($settings['instagram']) ?>" target="_blank" rel="noopener"><i class="fab fa-instagram"></i><span class="visually-hidden">Insight Counseling on Instagram</span></a>
+                            <?php endif; ?>
+                            <?php if (!empty($settings['youtube'])): ?>
+                                <a href="<?= esc($settings['youtube']) ?>" target="_blank" rel="noopener"><i class="fab fa-youtube"></i><span class="visually-hidden">Insight Counseling on YouTube</span></a>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
-            <hr class="border-secondary my-4">
-            <div class="text-center text-white">
-                &copy; <?= date('Y') ?> Insight Counseling Services. All Rights Reserved. Developed By <a href="https://abishek80.github.io/portfolio.github.io/" target="_blank" class="text-white fw-bold text-decoration-none"> Antony Abishek</a>.
+
+            <!-- Quick SEO Links Bar -->
+            <div class="footer-links-bar my-3 d-flex flex-wrap justify-content-center gap-3 small text-white-50">
+                <a href="<?= base_url('privacy-policy') ?>" class="text-white    text-decoration-none hover-white">Privacy Policy</a>
+                <span>•</span>
+                <a href="<?= base_url('refund-policy') ?>" class="text-white     text-decoration-none hover-white">Refund Policy</a>
+                <span>•</span>
+                <a href="<?= base_url('our-values') ?>" class="text-white    text-decoration-none hover-white">Our Values</a>
+                <span>•</span>
+                <a href="<?= base_url('helpline-details') ?>" class="text-white  text-decoration-none hover-white">Helplines</a>
+            </div>
+
+            <!-- Bottom Divider and Flex -->
+            <div class="footer-divider pb-4">
+                <p class="mb-0 small opacity-75">
+                    &copy; <?= date('Y') ?> Insight Counseling Services. All Rights Reserved. Developed By <a href="https://abishek80.github.io/portfolio.github.io/" target="_blank" class="text-white fw-bold text-decoration-none"> Antony Abishek</a>.
+                </p>
             </div>
         </div>
     </footer>
 
     <!-- Fixed Action Buttons -->
     <div class="fixed-actions-container">
-        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone']) ?>" onclick="return gtag_report_phone_conversion(this.href);" class="btn-call-fixed">
+        <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone']) ?>" onclick="return gtag_report_phone_conversion(this.href);" class="btn-call-fixed" aria-label="Call Insight Counseling Services">
             <i class="fas fa-phone fs-4"></i><span class="visually-hidden">Call Insight Counseling Services</span>
         </a>
-        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn-whatsapp-fixed">
+        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn-whatsapp-fixed" aria-label="Chat with us on WhatsApp">
             <i class="fab fa-whatsapp fs-4"></i><span class="visually-hidden d-md-none">WhatsApp</span>
             <span class="d-none d-md-block">Chat with us</span>
         </a>

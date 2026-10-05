@@ -34,14 +34,14 @@
                 </div>
             </div>
             <div class="col-lg-7 ps-lg-5">
-                <h6 class="text-primary-color fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">ABOUT FOUNDER</h6>
+                <p class="h6 text-primary-color fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">ABOUT FOUNDER</p>
                 <h2 class="about-founder-title">MRS. LEKHA EDWIN</h2>
                 <div class="title-underline"></div>
                 <div class="about-content">
                     <p class="text-muted mb-3" style="font-size: 1rem;">Mrs. Lekha Edwin is a Counseling Psychologist in Chennai, providing professional mental health support for clients in India and abroad. She offers online therapy for international clients and in-person counseling sessions in Chennai for individuals, teenagers, and couples.</p>
                     <p class="text-muted mb-4" style="font-size: 1rem;">She helps clients understand their emotions, thoughts, and behaviors, supporting them in building healthier coping strategies and emotional balance.</p>
 
-                    <h6 class="fw-bold mb-4 mb-lg-2 text-dark">She works with:</h6>
+                    <p class="h6 fw-bold mb-4 mb-lg-2 text-dark">She works with:</p>
                     <div class="row g-2 mb-4">
                         <div class="col-md-6 m-0">
                             <ul class="feature-list my-0 my-lg-3">
@@ -70,8 +70,8 @@
 <!-- Banner -->
 <section class="banner-section">
     <div class="container">
-        <h2 class="fw-bold">Guiding you through life's challenges.</h2>
-        <h5 class="mb-0 fw-medium">"Our mission is to provide you with the professional support and tools needed to <br class="d-none d-lg-black"> achieve emotional balance and mental well-being."</h5>
+        <h2 class="h2 mb-4 fw-bold">Guiding you through life's challenges.</h2>
+        <p class="h5 mb-0 fw-medium">"Our mission is to provide you with the professional support and tools needed to <br class="d-none d-lg-black"> achieve emotional balance and mental well-being."</p>
     </div>
 </section>
 
@@ -84,7 +84,7 @@
                     <div class="icon-box d-none d-lg-flex">
                         <i class="fas fa-eye"></i>
                     </div>
-                    <h4 class="fw-bold">Our Vision</h4>
+                    <h3 class="h4 fw-bold">Our Vision</h3>
                     <p class="mb-0">To impart essential skills to take care of mental health of individuals belonging to all the age group.</p>
                 </div>
             </div>
@@ -93,7 +93,7 @@
                     <div class="icon-box d-none d-lg-flex">
                         <i class="fas fa-globe-asia"></i>
                     </div>
-                    <h4 class="fw-bold">Our Mission</h4>
+                    <h3 class="h4 fw-bold">Our Mission</h3>
                     <p class="mb-0">Aspiring to serve the Indians all over the world to come forward in taking care of their mental health.</p>
                 </div>
             </div>
@@ -102,7 +102,7 @@
                     <div class="icon-box d-none d-lg-flex">
                         <i class="fas fa-award"></i>
                     </div>
-                    <h4 class="fw-bold">Our Motto</h4>
+                    <h3 class="h4 fw-bold">Our Motto</h3>
                     <p class="mb-0">Empowering lives through personalized support, healing, and transformational guidance.</p>
                 </div>
             </div>
@@ -127,7 +127,7 @@
                                 <div class="team-img-wrapper mb-3 text-center">
                                     <img src="<?= base_url('assets/team/' . esc($member['image'])) ?>" class="team-img" alt="<?= esc($member['name']) ?> - Expert Counseling Psychologist & Therapist in Chennai">
                                 </div>
-                                <h5 class="fw-bold text-dark mb-1 text-center"><?= esc($member['name']) ?></h5>
+                                <h3 class="h5 fw-bold text-dark mb-1 text-center"><?= esc($member['name']) ?></h3>
                                 <div class="team-role text-center mb-2"><?= esc($member['role']) ?></div>
                                 <p class="team-desc text-muted small mb-2 text-center"><?= esc($member['qualifications']) ?></p>
                                 <?php if (!empty($member['languages'])): ?>
@@ -141,12 +141,12 @@
                                 ?>
                                 <?php if (!empty($customBtns) && is_array($customBtns)): ?>
                                     <?php foreach ($customBtns as $b): ?>
-                                        <a href="<?= esc($b['url']) ?>" target="<?= esc($b['target'] ?? '_blank') ?>" class="btn <?= esc($b['style'] ?? 'btn-primary') ?> btn-sm fw-bold shadow-sm py-2 rounded-pill text-center text-decoration-none" style="font-size: 0.88rem;">
+                                        <a href="<?= esc($b['url']) ?>" target="<?= esc($b['target'] ?? '_blank') ?>" rel="noopener nofollow" class="btn <?= esc($b['style'] ?? 'btn-primary') ?> btn-sm fw-bold shadow-sm py-2 rounded-pill text-center text-decoration-none" style="font-size: 0.88rem;">
                                             <?= esc($b['label']) ?>
                                         </a>
                                     <?php endforeach; ?>
                                 <?php else: ?>
-                                    <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn-book-now text-center">Book Your Appointment</a>
+                                    <a href="<?= esc($settings['booking_url']) ?>" target="_blank" rel="noopener nofollow" class="btn-book-now text-center">Book Your Appointment<span class="visually-hidden"> with <?= esc($member['name']) ?></span></a>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -176,12 +176,12 @@
                                 <div class="service-card h-100 d-flex justify-content-between flex-column text-start mt-2">
                                     <div>
                                         <img src="<?= base_url('assets/services/' . esc($service['image'])) ?>" class="card-img-top" alt="<?= esc($service['title']) ?>">
-                                        <h5><?= esc($service['title']) ?></h5>
+                                        <h3 class="h5"><?= esc($service['title']) ?></h3>
                                         <p class="mb-0"><?= esc($service['short_description']) ?></p>
                                     </div>
                                     <div class="d-flex gap-3 flex-column text-center justify-content-between mt-2">
-                                        <a href="<?= base_url('services/' . esc($service['slug'])) ?>" class="btn-read-more">Read More</a>
-                                        <a href="<?= esc($settings['booking_url']) ?>" target="_blank" class="btn-book-now">Book Your Appointment</a>
+                                        <a href="<?= base_url('services/' . esc($service['slug'])) ?>" class="btn-read-more">Read More<span class="visually-hidden"> about <?= esc($service['title']) ?></span></a>
+                                        <a href="<?= esc($settings['booking_url']) ?>" target="_blank" rel="noopener nofollow" class="btn-book-now">Book Your Appointment<span class="visually-hidden"> for <?= esc($service['title']) ?></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -207,7 +207,7 @@
     <div class="container">
         <div class="row align-items-center g-4">
             <div class="col-lg-8 text-center text-lg-start">
-                <h6 class="text-white opacity-75 fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">QUICK FIND & SPECIALIZATIONS</h6>
+                <p class="h6 text-white opacity-75 fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">QUICK FIND & SPECIALIZATIONS</p>
                 <h2 class="fw-bold mb-3 display-5 text-white">Need Counseling?</h2>
                 <p class="mb-0 text-white opacity-75" style="max-width: 750px;">
                     Insight Counseling Services is a private mental health clinic in Chennai offering compassionate, confidential, and evidence-based psychological support for all. Looking for a <strong>good psychologist near me</strong> or <strong>marriage counselor near me</strong> in Chennai? We provide certified mental health guidance across Vadapalani, Porur, Kovur, Vadapalani, and online therapy globally.
@@ -253,7 +253,7 @@
                 <img src="<?= base_url('assets/service.jpg') ?>" alt="Psychotherapy session with Best Therapist in Chennai - Insight Counseling Services" class="img-fluid w-100 rounded-5 shadow-lg border">
             </div>
             <div class="col-lg-7 ps-lg-5">
-                <h6 class="text-primary-color fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">HOW WE HELP YOU</h6>
+                <p class="h6 text-primary-color fw-bold text-uppercase mb-2" style="letter-spacing: 1px;">HOW WE HELP YOU</p>
                 <h2 class="how-we-help-title">Guiding you through life's challenges.</h2>
                 <p class="text-muted mb-4">Our team of experts is dedicated to providing you with the best possible support and guidance to help you navigate life's challenges. We combine clinical expertise with a deeply human approach.</p>
 
@@ -262,7 +262,7 @@
                         <i class="fas fa-shield-halved"></i>
                     </div>
                     <div>
-                        <h5 class="help-feature-title">Expert Guidance</h5>
+                        <h3 class="h5 help-feature-title">Expert Guidance</h3>
                         <p class="help-feature-desc mb-0">Our team of experts is dedicated to providing you with the best possible support through evidence-based interventions.</p>
                     </div>
                 </div>
@@ -272,7 +272,7 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <div>
-                        <h5 class="help-feature-title">Holistic Healing</h5>
+                        <h3 class="h5 help-feature-title">Holistic Healing</h3>
                         <p class="help-feature-desc mb-0">We believe in a holistic approach to healing that addresses the mind, body, and spirit for long-lasting change.</p>
                     </div>
                 </div>
@@ -285,7 +285,7 @@
 <section class="section-padding bg-primary-subtle" id="testimonial">
     <div class="container">
         <div class="text-center mb-4 mb-lg-5">
-            <h2 class="fw-bold display-5">Our Clients Loves Us</h2>
+            <h2 class="fw-bold display-5">Our Clients Love Us</h2>
             <div class="mx-auto" style="width: 60px; height: 4px; background: var(--primary-color);"></div>
         </div>
         <div class="swiper testimonialSwiper pb-5">
@@ -310,7 +310,7 @@
                                         <div class="d-flex align-items-center">
                                             <div class="avatar-initial"><?= strtoupper(substr($testimonial['client_name'], 0, 1)) ?></div>
                                             <div>
-                                                <h6 class="mb-0 fw-bold"><?= esc($testimonial['client_name']) ?></h6>
+                                                <p class="h6 mb-0 fw-bold"><?= esc($testimonial['client_name']) ?></p>
                                                 <p class="mb-0 text-muted small"><?= esc($testimonial['meta_info']) ?></p>
                                             </div>
                                         </div>
@@ -348,7 +348,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="contact-card bg-primary-subtle h-100 d-flex flex-column justify-content-between">
                             <div>
-                                <h5 class="fw-bold mb-2"><?= esc($branch['name']) ?></h5>
+                                <h3 class="h5 fw-bold mb-2"><?= esc($branch['name']) ?></h3>
                                 <?php if (!empty($branch['serving_areas'])): ?>
                                     <p class="text-muted small mb-3 opacity-75"><?= esc($branch['serving_areas']) ?></p>
                                 <?php endif; ?>
@@ -364,7 +364,7 @@
                                     <a href="mailto:<?= esc($branch['email']) ?>" class="text-decoration-none text-reset"><?= esc($branch['email']) ?></a>
                                 </div>
                                 <?php if (!empty($branch['map_url'])): ?>
-                                    <a href="<?= esc($branch['map_url']) ?>" target="_blank" class="text-primary-color fw-bold text-decoration-none">GET DIRECTIONS <i class="fas fa-external-link-alt ms-1"></i></a>
+                                    <a href="<?= esc($branch['map_url']) ?>" target="_blank" class="text-primary-color fw-bold text-decoration-none">GET DIRECTIONS<span class="visually-hidden"> to <?= esc($branch['name']) ?></span> <i class="fas fa-external-link-alt ms-1"></i></a>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -388,13 +388,13 @@
             </div>
             <div class="col-lg-6">
                 <div class="direct-channels-box mb-0">
-                    <h5 class="fw-bold mb-4">Direct Channels</h5>
+                    <h4 class="h5 fw-bold mb-4">Direct Channels</h4>
                     <div class="channel-item">
                         <div class="channel-icon-box">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="channel-content">
-                            <h6>EMAIL US</h6>
+                            <p class="h6">EMAIL US</p>
                             <p><a href="mailto:<?= esc($settings['email']) ?>" class="text-decoration-none text-white"><?= esc($settings['email']) ?></a></p>
                         </div>
                     </div>
@@ -403,7 +403,7 @@
                             <i class="fas fa-phone-volume"></i>
                         </div>
                         <div class="channel-content">
-                            <h6>CALL US</h6>
+                            <p class="h6">CALL US</p>
                             <p><a href="tel:<?= preg_replace('/\s+/', '', $settings['phone']) ?>" class="text-decoration-none text-white"><?= esc($settings['phone']) ?></a></p>
                         </div>
                     </div>
@@ -424,7 +424,7 @@
                 <div class="row g-0">
                     <div class="col-lg-5 profile-img-col d-none d-lg-block" id="modal-img-col"></div>
                     <div class="col-lg-7 profile-info-col">
-                        <h2 class="fw-bold mb-1" id="modal-name"></h2>
+                        <p class="h2 fw-bold mb-1" id="modal-name"></p>
                         <div class="profile-role" id="modal-role"></div>
 
                         <div class="profile-detail-item">
@@ -432,7 +432,7 @@
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
                             <div class="profile-detail-content">
-                                <h6>Qualifications</h6>
+                                <p class="h6">Qualifications</p>
                                 <p id="modal-qual"></p>
                             </div>
                         </div>
@@ -442,7 +442,7 @@
                                 <i class="fas fa-globe"></i>
                             </div>
                             <div class="profile-detail-content">
-                                <h6>Languages</h6>
+                                <p class="h6">Languages</p>
                                 <p id="modal-langs"></p>
                             </div>
                         </div>
@@ -452,7 +452,7 @@
                                 <i class="fas fa-medal"></i>
                             </div>
                             <div class="profile-detail-content">
-                                <h6>Specialties</h6>
+                                <p class="h6">Specialties</p>
                                 <div id="modal-specialties" class="d-flex flex-wrap gap-1 mt-1"></div>
                             </div>
                         </div>

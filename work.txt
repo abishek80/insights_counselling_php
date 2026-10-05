@@ -11,3 +11,25 @@ payment conformtation
 invoice
 thankyou page
 email notification
+
+
+
+
+-- 1. ADD NEW COLUMNS TO THE SERVICES TABLE
+ALTER TABLE `services` 
+ADD COLUMN IF NOT EXISTS `show_website` TINYINT(1) NOT NULL DEFAULT 1 AFTER `status`,
+ADD COLUMN IF NOT EXISTS `show_landing` TINYINT(1) NOT NULL DEFAULT 1 AFTER `show_website`,
+ADD COLUMN IF NOT EXISTS `landing_title` VARCHAR(255) NULL AFTER `show_landing`,
+ADD COLUMN IF NOT EXISTS `landing_short_description` TEXT NULL AFTER `landing_title`,
+ADD COLUMN IF NOT EXISTS `landing_description` TEXT NULL AFTER `landing_short_description`,
+ADD COLUMN IF NOT EXISTS `landing_bullet_points` TEXT NULL AFTER `landing_description`;
+
+-- 2. COPY EXISTING WEBSITE DATA INTO LANDING PAGE FIELDS FOR ALL EXISTING SERVICES
+UPDATE `services` 
+SET 
+  `show_website` = 1,
+  `show_landing` = 1,
+  `landing_title` = `title`,
+  `landing_short_description` = `short_description`,
+  `landing_description` = `long_description`
+WHERE `landing_title` IS NULL OR `landing_title` = '';

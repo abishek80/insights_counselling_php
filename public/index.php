@@ -1,5 +1,8 @@
 <?php
 
+// Don't reveal the PHP version to visitors / SEO scanners
+header_remove('X-Powered-By');
+
 /*
  *---------------------------------------------------------------
  * CHECK PHP VERSION

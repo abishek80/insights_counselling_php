@@ -196,3 +196,60 @@ window.addEventListener('scroll', function() {
         }
     }
 });
+
+// Auto-collapse mobile navbar menu & perform smooth scroll without layout offset jump
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-collapse .btn');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+
+    if (navLinks.length) {
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                const href = link.getAttribute('href') || '';
+                
+                if (href.includes('#')) {
+                    const hashParts = href.split('#');
+                    const targetId = hashParts[1];
+                    
+                    if (targetId) {
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            e.preventDefault();
+                            
+                            const isMobileOpen = navbarCollapse && navbarCollapse.classList.contains('show');
+                            
+                            if (isMobileOpen) {
+                                if (typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
+                                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse, { toggle: false });
+                                    bsCollapse.hide();
+                                } else {
+                                    navbarCollapse.classList.remove('show');
+                                }
+                            }
+                            
+                            // Delay scroll slightly on mobile so collapsing navbar height transition does not throw off position
+                            const delay = isMobileOpen ? 320 : 0;
+                            
+                            setTimeout(function() {
+                                const header = document.querySelector('header');
+                                const headerHeight = header ? header.offsetHeight : 70;
+                                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                                const offsetPosition = elementPosition - headerHeight + 5;
+
+                                window.scrollTo({
+                                    top: Math.max(0, offsetPosition),
+                                    behavior: 'smooth'
+                                });
+
+                                if (history.pushState) {
+                                    history.pushState(null, null, '#' + targetId);
+                                }
+                            }, delay);
+                        }
+                    }
+                }
+            });
+        });
+    }
+});

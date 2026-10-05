@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?? 'Admin Panel | Insight Counseling Services' ?></title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="<?= base_url('assets/favicon.png') ?>">
-    <link rel="apple-touch-icon" href="<?= base_url('assets/favicon.png') ?>">
+    <link rel="icon" href="<?= base_url('favicon.ico?v=2') ?>" sizes="any">
+    <link rel="icon" type="image/png" sizes="96x96" href="<?= base_url('assets/favicon-96.png?v=2') ?>">
+    <link rel="apple-touch-icon" href="<?= base_url('assets/favicon-192.png') ?>">
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts (Outfit) -->

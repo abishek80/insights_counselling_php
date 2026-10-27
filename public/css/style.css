@@ -1,6 +1,6 @@
 :root {
     --primary-color: #2e2a70;
-    --secondary-color: #fce28a;
+    --secondary-color: #ffd34c;
     --text-dark: #222222;
     --text-muted: #777777;
     --bg-light: #f4f6f9;
@@ -1476,7 +1476,7 @@ footer {
     border-color: #1a184c !important;
 }
 .btn-secondary {
-    background-color: #fce28a !important;
+    background-color: #ffd34c !important;
     border-color: #2D2A70 !important;
     color: #2D2A70 !important;
     font-weight: 600 !important;

@@ -34,7 +34,7 @@
                         Connect directly with our intake team on WhatsApp for instant confirmation, location details, or appointment guidance.
                     </p>
                     <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn-whatsapp-light rounded-pill text-white" style="background-color: #25D366 !important; border-color: #25D366 !important;">
+                        <a href="<?= esc($settings['whatsapp']) ?>" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn-whatsapp-light rounded-pill text-white" style="background-color: #25D366 !important; border-color: #25D366 !important;">
                             <i class="fab fa-whatsapp me-2 fs-5"></i> Chat on WhatsApp
                         </a>
                         <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone']) ?>" onclick="return gtag_report_phone_conversion(this.href);" class="btn-whatsapp-light rounded-pill">

@@ -103,20 +103,20 @@
             </div>
         <?php endif; ?>
 
-        <form class="needs-validation" novalidate action="<?= base_url('admin/login') ?>" method="POST">
+        <form class="needs-validation" novalidate action="<?= base_url('admin/login') ?>" method="POST" autocomplete="off">
             <?= csrf_field() ?>
             <div class="mb-3">
                 <label for="username" class="form-label fw-bold text-dark small">Username</label>
                 <div class="input-group">
                     <span class="input-group-text bg-light border-end-0"><i class="fas fa-user text-muted"></i></span>
-                    <input type="text" name="username" class="form-control border-start-0" id="username" placeholder="Enter username" required autocomplete="username">
+                    <input type="text" name="username" class="form-control border-start-0" id="username" placeholder="Enter username" value="<?= esc(old('username')) ?>" required autocomplete="off">
                 </div>
             </div>
             <div class="mb-4">
                 <label for="password" class="form-label fw-bold text-dark small">Password</label>
                 <div class="input-group">
                     <span class="input-group-text bg-light border-end-0"><i class="fas fa-lock text-muted"></i></span>
-                    <input type="password" name="password" class="form-control border-start-0 border-end-0" id="password" placeholder="Enter password" required autocomplete="current-password">
+                    <input type="password" name="password" class="form-control border-start-0 border-end-0" id="password" placeholder="Enter password" required autocomplete="off">
                     <button type="button" class="btn bg-light border border-start-0 text-muted" id="togglePassword" aria-label="Toggle password visibility">
                         <i class="fas fa-eye" id="togglePasswordIcon"></i>
                     </button>

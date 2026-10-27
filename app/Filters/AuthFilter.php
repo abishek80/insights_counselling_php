@@ -13,7 +13,7 @@ class AuthFilter implements FilterInterface
         // Check if the user is logged in
         if (!session()->get('isLoggedIn')) {
             // Redirect to login page
-            return redirect()->to(base_url('admin/login'))->with('error', 'Please log in to access the admin dashboard.');
+            return redirect()->to(base_url('admin/login'));
         }
     }
 

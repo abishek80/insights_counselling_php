@@ -582,6 +582,28 @@
         .sidebar-close-btn {
             display: none;
         }
+        /* Suppress Bootstrap valid green checkmarks and borders on valid/optional inputs */
+        .was-validated .form-control:valid,
+        .was-validated .form-select:valid,
+        .form-control.is-valid,
+        .form-select.is-valid {
+            border-color: #dee2e6 !important;
+            background-image: none !important;
+            padding-right: 0.75rem !important;
+        }
+        .was-validated .form-control-lg:valid,
+        .form-control-lg.is-valid {
+            padding-right: 1rem !important;
+        }
+        .input-group .form-control.is-valid,
+        .was-validated .input-group .form-control:valid {
+            padding-right: 16px !important;
+        }
+        .was-validated .form-control:valid:focus,
+        .was-validated .form-select:valid:focus {
+            border-color: #86b7fe !important;
+            box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+        }
     </style>
     <!-- jQuery (required for Summernote) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -621,6 +643,12 @@
             </li>
             <li class="sidebar-item <?= strpos(uri_string(), 'admin/branches') !== false ? 'active' : '' ?>">
                 <a href="<?= base_url('admin/branches') ?>"><i class="fas fa-map-marker-alt"></i> Branch Locations</a>
+            </li>
+            <li class="sidebar-item <?= strpos(uri_string(), 'admin/letterpad') !== false ? 'active' : '' ?>">
+                <a href="<?= base_url('admin/letterpad') ?>"><i class="fas fa-file-contract"></i> Letter Pad</a>
+            </li>
+            <li class="sidebar-item <?= strpos(uri_string(), 'admin/certificate') !== false ? 'active' : '' ?>">
+                <a href="<?= base_url('admin/certificate') ?>"><i class="fas fa-award"></i> Certificates</a>
             </li>
             <li class="sidebar-item <?= strpos(uri_string(), 'admin/settings') !== false ? 'active' : '' ?>">
                 <a href="<?= base_url('admin/settings') ?>"><i class="fas fa-cog"></i> Settings</a>

@@ -82,7 +82,6 @@ $errors = session()->getFlashdata('errors') ?? [];
                 <?php endif; ?>
                 </div>
             </div>
-
         </div>
 
         <button type="submit" class="btn btn-primary px-4 fw-bold mt-2"><i class="fas fa-save me-1"></i> Save Changes</button>

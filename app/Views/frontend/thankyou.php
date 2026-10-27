@@ -31,7 +31,7 @@
                     <a href="<?= base_url() ?>" class="btn btn-primary rounded-pill px-4 py-3 fw-bold shadow-sm">
                         <i class="fas fa-house me-2"></i> Go Back Home
                     </a>
-                    <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" target="_blank" rel="noopener" class="btn btn-success rounded-pill px-4 py-3 fw-bold shadow-sm" style="background-color: #25D366 !important; border-color: #25D366 !important;">
+                    <a href="<?= esc($settings['whatsapp']) ?>" target="_blank" rel="noopener" class="btn btn-success rounded-pill px-4 py-3 fw-bold shadow-sm" style="background-color: #25D366 !important; border-color: #25D366 !important;">
                         <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
                     </a>
                 </div>

@@ -56,7 +56,7 @@ if (!empty($branches)) {
                         <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone']) ?>" onclick="return gtag_report_phone_conversion(this.href);" class="btn btn-primary px-4 py-3 fw-bold rounded-pill shadow-sm d-inline-flex align-items-center text-decoration-none">
                             <i class="fas fa-phone me-2"></i> Call Us Now
                         </a>
-                        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn btn-success px-4 py-3 fw-bold rounded-pill shadow-sm d-inline-flex align-items-center text-decoration-none" style="background-color: #25D366; border-color: #25D366;">
+                        <a href="<?= esc($settings['whatsapp']) ?>" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn btn-success px-4 py-3 fw-bold rounded-pill shadow-sm d-inline-flex align-items-center text-decoration-none" style="background-color: #25D366; border-color: #25D366;">
                             <i class="fab fa-whatsapp me-2 fs-5"></i> Chat on WhatsApp
                         </a>
                     </div>
@@ -276,7 +276,7 @@ if (!empty($branches)) {
                 <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone']) ?>" onclick="return gtag_report_phone_conversion(this.href);" class="btn btn-outline-light px-4 py-3 fw-bold rounded-pill shadow-sm d-inline-flex align-items-center text-decoration-none">
                     <i class="fas fa-phone me-2"></i> Call Us Now
                 </a>
-                <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn btn-success px-4 py-3 fw-bold rounded-pill shadow-sm d-inline-flex align-items-center text-decoration-none" style="background-color: #25D366; border-color: #25D366;">
+                <a href="<?= esc($settings['whatsapp']) ?>" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn btn-success px-4 py-3 fw-bold rounded-pill shadow-sm d-inline-flex align-items-center text-decoration-none" style="background-color: #25D366; border-color: #25D366;">
                     <i class="fab fa-whatsapp me-2 fs-5"></i> Chat on WhatsApp
                 </a>
             </div>

@@ -381,7 +381,7 @@
                 <div class="whatsapp-box mb-0 h-auto">
                     <h3 class="fw-bold mb-3">Need a Quick Response?</h3>
                     <p class="mb-4 opacity-75">WhatsApp is the fastest way to get in touch with our intake team and book your session immediately.</p>
-                    <a href="https://wa.me/<?= esc($settings['whatsapp']) ?>/" target="_blank" class="btn-whatsapp-light">
+                    <a href="<?= esc($settings['whatsapp']) ?>" target="_blank" class="btn-whatsapp-light">
                         <i class="fab fa-whatsapp fs-4"></i> Chat on WhatsApp
                     </a>
                 </div>

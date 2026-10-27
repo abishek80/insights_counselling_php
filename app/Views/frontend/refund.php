@@ -106,7 +106,7 @@
                             </p>
                         </div>
                         <div>
-                            <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" target="_blank" class="btn btn-light rounded-4 px-4 py-3 fw-bold d-inline-flex align-items-center shadow-sm" style="color: var(--primary-color, #2e2a70); background-color: #ffffff; border: none;">
+                            <a href="<?= esc($settings['whatsapp']) ?>" target="_blank" class="btn btn-light rounded-4 px-4 py-3 fw-bold d-inline-flex align-items-center shadow-sm" style="color: var(--primary-color, #2e2a70); background-color: #ffffff; border: none;">
                                 <i class="fab fa-whatsapp me-2 fs-6" style="color: #2e2a70;"></i> Chat on WhatsApp
                             </a>
                         </div>

@@ -33,9 +33,6 @@
                             </td>
                             <td>
                                 <strong><?= esc($service['title']) ?></strong>
-                                <?php if(!empty($service['landing_title'])): ?>
-                                    <div class="extra-small text-success fw-semibold"><i class="fas fa-rocket me-1"></i> <?= esc($service['landing_title']) ?></div>
-                                <?php endif; ?>
                             </td>
                             <td>
                                 <div class="d-flex flex-wrap gap-1">

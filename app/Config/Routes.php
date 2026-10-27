@@ -88,6 +88,22 @@ $routes->group('admin', ['filter' => 'adminAuth'], function($routes) {
     $routes->get('enquiries', 'Admin\Enquiries::index');
     $routes->get('enquiries/delete/(:num)', 'Admin\Enquiries::delete/$1');
 
+    // Letter Pad Management
+    $routes->get('letterpad', 'Admin\Letterpad::index');
+    $routes->get('letterpad/get/(:num)', 'Admin\Letterpad::getJson/$1');
+    $routes->post('letterpad/store', 'Admin\Letterpad::store');
+    $routes->get('letterpad/view/(:num)', 'Admin\Letterpad::view/$1');
+    $routes->post('letterpad/update/(:num)', 'Admin\Letterpad::update/$1');
+    $routes->get('letterpad/delete/(:num)', 'Admin\Letterpad::delete/$1');
+
+    // Certificate Management
+    $routes->get('certificate', 'Admin\Certificate::index');
+    $routes->get('certificate/get/(:num)', 'Admin\Certificate::getJson/$1');
+    $routes->post('certificate/store', 'Admin\Certificate::store');
+    $routes->get('certificate/view/(:num)', 'Admin\Certificate::view/$1');
+    $routes->post('certificate/update/(:num)', 'Admin\Certificate::update/$1');
+    $routes->get('certificate/delete/(:num)', 'Admin\Certificate::delete/$1');
+
     // General Settings
     $routes->get('settings', 'Admin\Settings::index');
     $routes->post('settings/update', 'Admin\Settings::update');

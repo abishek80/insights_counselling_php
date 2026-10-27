@@ -405,7 +405,7 @@
         <a href="tel:<?= preg_replace('/[^0-9+]/', '', $settings['phone']) ?>" onclick="return gtag_report_phone_conversion(this.href);" class="btn-call-fixed">
             <i class="fas fa-phone fs-4"></i><span class="visually-hidden">Call Insight Counseling Services</span>
         </a>
-        <a href="https://wa.me/<?= preg_replace('/[^0-9]/', '', $settings['whatsapp']) ?>/" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn-whatsapp-fixed">
+        <a href="<?= esc($settings['whatsapp']) ?>" onclick="return gtag_report_whatsapp_conversion(this.href);" target="_blank" rel="noopener" class="btn-whatsapp-fixed">
             <i class="fab fa-whatsapp fs-4"></i><span class="visually-hidden d-md-none">WhatsApp</span>
             <span class="d-none d-md-block">Chat with us</span>
         </a>

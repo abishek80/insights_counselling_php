@@ -33,3 +33,17 @@ SET
   `landing_short_description` = `short_description`,
   `landing_description` = `long_description`
 WHERE `landing_title` IS NULL OR `landing_title` = '';
+
+-- 3. ADD TO_NAME, DESIGNATION, LOCATION TO LETTERPADS TABLE
+ALTER TABLE `letterpads` 
+ADD COLUMN IF NOT EXISTS `to_name` VARCHAR(255) NULL AFTER `title`,
+ADD COLUMN IF NOT EXISTS `designation` VARCHAR(255) NULL AFTER `to_name`,
+ADD COLUMN IF NOT EXISTS `location` VARCHAR(255) NULL AFTER `designation`;
+
+-- 4. ADD TEAM_MEMBER_ID, REGARDS_NAME, REGARDS_ROLE FOR LETTERPAD SIGN-OFF
+ALTER TABLE `letterpads`
+ADD COLUMN IF NOT EXISTS `team_member_id` INT(11) NULL AFTER `location`,
+ADD COLUMN IF NOT EXISTS `regards_name` VARCHAR(255) NULL AFTER `team_member_id`,
+ADD COLUMN IF NOT EXISTS `regards_role` VARCHAR(255) NULL AFTER `regards_name`;
+
+

@@ -105,9 +105,9 @@
                                     </span>
                                 <?php endif; ?>
                                 <?php if (!empty($pRole)): ?>
-                                    <span class="text-secondary small"><?= esc($pRole) ?></span>
+                                    <span class="text-secondary small d-block"><?= esc($pRole) ?></span>
                                 <?php endif; ?>
-                                <?php if (empty($pName) && empty($pRole)): ?>
+                                <?php if (empty($pName) && empty($pRole) && empty($item['signature_image'])): ?>
                                     <span class="text-muted small">—</span>
                                 <?php endif; ?>
                             </td>
@@ -149,7 +149,7 @@
 <!-- ========================================== -->
 <div class="modal fade" id="letterpadModal" tabindex="-1" aria-labelledby="letterpadModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-        <form action="<?= base_url('admin/letterpad/store') ?>" method="POST" id="letterpadForm" class="modal-content border-0 shadow-lg rounded-4 overflow-hidden needs-validation" novalidate>
+        <form action="<?= base_url('admin/letterpad/store') ?>" method="POST" enctype="multipart/form-data" id="letterpadForm" class="modal-content border-0 shadow-lg rounded-4 overflow-hidden needs-validation" novalidate>
             <?= csrf_field() ?>
             
             <div class="modal-header border-bottom pb-3 pt-4 px-4 bg-white">
@@ -234,6 +234,27 @@
                             <label for="modalProviderDesignation" class="form-label fw-bold small text-secondary mb-1">Provider Designation</label>
                             <input type="text" name="provider_designation" id="modalProviderDesignation" class="form-control" placeholder="e.g. Counseling Psychologist">
                         </div>
+                    </div>
+
+                    <!-- SIGNATURE IMAGE UPLOAD -->
+                    <div class="mt-3 pt-3 border-top">
+                        <label class="form-label fw-bold small text-secondary mb-1">
+                            Authorized Signature Image (Optional)
+                        </label>
+                        <div class="d-flex flex-wrap align-items-center gap-3">
+                            <div class="flex-grow-1">
+                                <input type="file" name="signature_image" id="modalLpSignature" class="form-control" accept="image/png, image/jpeg, image/jpg, image/webp" onchange="previewLpSignature(this)">
+                            </div>
+                            <div id="lpSignaturePreviewWrapper" class="d-none text-center">
+                                <div class="position-relative d-inline-block border rounded-2 p-1 bg-white shadow-sm">
+                                    <img id="lpSignaturePreview" src="" alt="Signature Preview" style="max-height: 48px; max-width: 140px; object-fit: contain; display: block;">
+                                    <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 translate-middle badge rounded-pill" onclick="clearLpSignature()" title="Remove Signature" style="cursor: pointer;">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="remove_signature" id="modalLpRemoveSignature" value="0">
                     </div>
                 </div>
             </div>
@@ -378,6 +399,12 @@ function openAddModal() {
     document.getElementById('modalProviderDesignation').value = "";
     document.getElementById('modalRegardsClosing').value = "";
 
+    // Reset signature preview
+    document.getElementById('modalLpSignature').value = "";
+    document.getElementById('modalLpRemoveSignature').value = "0";
+    document.getElementById('lpSignaturePreview').src = "";
+    document.getElementById('lpSignaturePreviewWrapper').classList.add('d-none');
+
     const defaultContent = '';
     if (typeof $ !== 'undefined' && $.fn.summernote) {
         $('#modalDescriptionInput').summernote('code', defaultContent);
@@ -417,6 +444,17 @@ function openEditModal(id) {
             document.getElementById('modalProviderDesignation').value = data.provider_designation || data.regards_role || "";
             document.getElementById('modalRegardsClosing').value = data.regards_closing || "";
 
+            // Handle signature preview
+            document.getElementById('modalLpSignature').value = "";
+            document.getElementById('modalLpRemoveSignature').value = "0";
+            if (data.signature_url) {
+                document.getElementById('lpSignaturePreview').src = data.signature_url;
+                document.getElementById('lpSignaturePreviewWrapper').classList.remove('d-none');
+            } else {
+                document.getElementById('lpSignaturePreview').src = "";
+                document.getElementById('lpSignaturePreviewWrapper').classList.add('d-none');
+            }
+
             if (typeof $ !== 'undefined' && $.fn.summernote) {
                 $('#modalDescriptionInput').summernote('code', data.description || "");
             } else {
@@ -428,6 +466,25 @@ function openEditModal(id) {
         .catch(err => {
             alert("Error loading document details: " + err.message);
         });
+}
+
+function previewLpSignature(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('lpSignaturePreview').src = e.target.result;
+            document.getElementById('lpSignaturePreviewWrapper').classList.remove('d-none');
+            document.getElementById('modalLpRemoveSignature').value = "0";
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function clearLpSignature() {
+    document.getElementById('modalLpSignature').value = "";
+    document.getElementById('lpSignaturePreview').src = "";
+    document.getElementById('lpSignaturePreviewWrapper').classList.add('d-none');
+    document.getElementById('modalLpRemoveSignature').value = "1";
 }
 </script>
 <?= $this->endSection() ?>

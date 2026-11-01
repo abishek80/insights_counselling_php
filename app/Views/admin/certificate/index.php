@@ -94,7 +94,7 @@
                                     <?= esc($item['provider_name']) ?>
                                 </span>
                                 <?php if (!empty($item['provider_designation'])): ?>
-                                    <span class="text-secondary small"><?= esc($item['provider_designation']) ?></span>
+                                    <span class="text-secondary small d-block"><?= esc($item['provider_designation']) ?></span>
                                 <?php endif; ?>
                             </td>
                             <td>
@@ -135,7 +135,7 @@
 <!-- ========================================== -->
 <div class="modal fade" id="certificateModal" tabindex="-1" aria-labelledby="certificateModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
-        <form action="<?= base_url('admin/certificate/store') ?>" method="POST" id="certificateForm" class="modal-content border-0 shadow-lg rounded-4 overflow-hidden needs-validation" novalidate>
+        <form action="<?= base_url('admin/certificate/store') ?>" method="POST" enctype="multipart/form-data" id="certificateForm" class="modal-content border-0 shadow-lg rounded-4 overflow-hidden needs-validation" novalidate>
             <?= csrf_field() ?>
             
             <div class="modal-header border-bottom py-3 px-4 bg-white">
@@ -167,17 +167,37 @@
                 
                 <div class="row g-3 mb-3">
                     <!-- 6. PROVIDER NAME (INPUT) -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-lg-4">
                         <label for="modalProviderName" class="form-label fw-bold text-dark">Provider Name <span class="text-danger">*</span></label>
                         <input type="text" name="provider_name" id="modalProviderName" class="form-control form-control-lg" placeholder="e.g. MRS. LEKHA EDWIN" value="MRS. LEKHA EDWIN" required>
                         <div class="invalid-feedback">Provider name is mandatory.</div>
                     </div>
 
                     <!-- 7. PROVIDER DESIGNATION (INPUT) -->
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-lg-4">
                         <label for="modalProviderDesignation" class="form-label fw-bold text-dark">Provider Designation <span class="text-danger">*</span></label>
                         <input type="text" name="provider_designation" id="modalProviderDesignation" class="form-control form-control-lg" placeholder="e.g. Counseling Psychologist" value="Counseling Psychologist" required>
                         <div class="invalid-feedback">Provider designation is mandatory.</div>
+                    </div>
+
+                    <!-- 7. PROVIDER DESIGNATION (INPUT) -->
+                    <div class="col-md-6 col-lg-4">
+                        <label class="form-label fw-bold text-dark">Provider Signature Image (Optional)</label>
+                        
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="flex-grow-1">
+                                <input type="file" name="signature_image" id="modalCertSignature" class="form-control" accept="image/png, image/jpeg, image/jpg, image/webp" onchange="previewCertSignature(this)">
+                            </div>
+                            <div id="certSignaturePreviewWrapper" class="d-none text-center">
+                                <div class="position-relative d-inline-block border rounded-2 p-1 bg-white shadow-sm">
+                                    <img id="certSignaturePreview" src="" alt="Signature Preview" style="max-height: 52px; max-width: 140px; object-fit: contain; display: block;">
+                                    <button type="button" class="btn btn-danger btn-sm position-absolute top-0 end-0 translate-middle badge rounded-pill" onclick="clearCertSignature()" title="Remove Signature" style="cursor: pointer;">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="remove_signature" id="modalCertRemoveSignature" value="0">
                     </div>
                 </div>
 
@@ -333,6 +353,12 @@ function openAddModal() {
     document.getElementById('modalProviderName').value = "";
     document.getElementById('modalProviderDesignation').value = "";
 
+    // Reset signature preview
+    document.getElementById('modalCertSignature').value = "";
+    document.getElementById('modalCertRemoveSignature').value = "0";
+    document.getElementById('certSignaturePreview').src = "";
+    document.getElementById('certSignaturePreviewWrapper').classList.add('d-none');
+
     certModalInstance.show();
 }
 
@@ -364,11 +390,41 @@ function openEditModal(id) {
             document.getElementById('modalProviderName').value = data.provider_name || "MRS. LEKHA EDWIN";
             document.getElementById('modalProviderDesignation').value = data.provider_designation || "Counseling Psychologist";
 
+            // Handle signature image preview
+            document.getElementById('modalCertSignature').value = "";
+            document.getElementById('modalCertRemoveSignature').value = "0";
+            if (data.signature_url) {
+                document.getElementById('certSignaturePreview').src = data.signature_url;
+                document.getElementById('certSignaturePreviewWrapper').classList.remove('d-none');
+            } else {
+                document.getElementById('certSignaturePreview').src = "";
+                document.getElementById('certSignaturePreviewWrapper').classList.add('d-none');
+            }
+
             certModalInstance.show();
         })
         .catch(err => {
             alert("Error loading certificate details: " + err.message);
         });
+}
+
+function previewCertSignature(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('certSignaturePreview').src = e.target.result;
+            document.getElementById('certSignaturePreviewWrapper').classList.remove('d-none');
+            document.getElementById('modalCertRemoveSignature').value = "0";
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function clearCertSignature() {
+    document.getElementById('modalCertSignature').value = "";
+    document.getElementById('certSignaturePreview').src = "";
+    document.getElementById('certSignaturePreviewWrapper').classList.add('d-none');
+    document.getElementById('modalCertRemoveSignature').value = "1";
 }
 </script>
 <?= $this->endSection() ?>

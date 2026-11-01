@@ -36,14 +36,16 @@ class Letterpad extends BaseController
         if (!$letterpad) {
             return $this->response->setStatusCode(404)->setJSON(['error' => 'Document not found']);
         }
+        $letterpad['signature_url'] = !empty($letterpad['signature_image']) ? base_url('assets/signatures/' . $letterpad['signature_image']) : null;
         return $this->response->setJSON($letterpad);
     }
 
     public function store()
     {
         $rules = [
-            'title'       => ['label' => 'Title', 'rules' => 'required|min_length[3]|max_length[255]'],
-            'description' => ['label' => 'Description / Content', 'rules' => 'required']
+            'title'           => ['label' => 'Title', 'rules' => 'required|min_length[3]|max_length[255]'],
+            'description'     => ['label' => 'Description / Content', 'rules' => 'required'],
+            'signature_image' => ['label' => 'Signature Image', 'rules' => 'permit_empty|is_image[signature_image]|mime_in[signature_image,image/jpg,image/jpeg,image/png,image/webp]|max_size[signature_image,3072]']
         ];
 
         if (!$this->validate($rules)) {
@@ -60,6 +62,13 @@ class Letterpad extends BaseController
         $providerDesignation = trim((string)$this->request->getPost('provider_designation'));
         $regardsClosing = trim((string)$this->request->getPost('regards_closing'));
 
+        $signatureImageName = null;
+        $sigFile = $this->request->getFile('signature_image');
+        if ($sigFile && $sigFile->isValid() && !$sigFile->hasMoved()) {
+            $signatureImageName = $sigFile->getRandomName();
+            $sigFile->move(FCPATH . 'assets/signatures/', $signatureImageName);
+        }
+
         $insertedId = $this->letterpadModel->insert([
             'title'                => $this->request->getPost('title'),
             'to_name'              => $this->request->getPost('to_name'),
@@ -69,6 +78,7 @@ class Letterpad extends BaseController
             'regards_role'         => $providerDesignation,
             'provider_name'        => $providerName,
             'provider_designation' => $providerDesignation,
+            'signature_image'      => $signatureImageName,
             'regards_closing'      => $regardsClosing,
             'description'          => $this->request->getPost('description'),
             'reference_no'         => $refNo !== '' ? $refNo : null,
@@ -92,8 +102,9 @@ class Letterpad extends BaseController
         }
 
         $rules = [
-            'title'       => ['label' => 'Title', 'rules' => 'required|min_length[3]|max_length[255]'],
-            'description' => ['label' => 'Description / Content', 'rules' => 'required']
+            'title'           => ['label' => 'Title', 'rules' => 'required|min_length[3]|max_length[255]'],
+            'description'     => ['label' => 'Description / Content', 'rules' => 'required'],
+            'signature_image' => ['label' => 'Signature Image', 'rules' => 'permit_empty|is_image[signature_image]|mime_in[signature_image,image/jpg,image/jpeg,image/png,image/webp]|max_size[signature_image,3072]']
         ];
 
         if (!$this->validate($rules)) {
@@ -106,6 +117,23 @@ class Letterpad extends BaseController
         $providerDesignation = trim((string)$this->request->getPost('provider_designation'));
         $regardsClosing = trim((string)$this->request->getPost('regards_closing'));
 
+        $signatureImageName = $letterpad['signature_image'] ?? null;
+        if ($this->request->getPost('remove_signature') === '1') {
+            if (!empty($signatureImageName) && file_exists(FCPATH . 'assets/signatures/' . $signatureImageName)) {
+                @unlink(FCPATH . 'assets/signatures/' . $signatureImageName);
+            }
+            $signatureImageName = null;
+        }
+
+        $sigFile = $this->request->getFile('signature_image');
+        if ($sigFile && $sigFile->isValid() && !$sigFile->hasMoved()) {
+            if (!empty($signatureImageName) && file_exists(FCPATH . 'assets/signatures/' . $signatureImageName)) {
+                @unlink(FCPATH . 'assets/signatures/' . $signatureImageName);
+            }
+            $signatureImageName = $sigFile->getRandomName();
+            $sigFile->move(FCPATH . 'assets/signatures/', $signatureImageName);
+        }
+
         $this->letterpadModel->update($id, [
             'title'                => $this->request->getPost('title'),
             'to_name'              => $this->request->getPost('to_name'),
@@ -115,6 +143,7 @@ class Letterpad extends BaseController
             'regards_role'         => $providerDesignation,
             'provider_name'        => $providerName,
             'provider_designation' => $providerDesignation,
+            'signature_image'      => $signatureImageName,
             'regards_closing'      => $regardsClosing,
             'description'          => $this->request->getPost('description'),
             'reference_no'         => $refNo !== '' ? $refNo : null,
@@ -134,6 +163,9 @@ class Letterpad extends BaseController
         $letterpad = $this->letterpadModel->find($id);
 
         if ($letterpad) {
+            if (!empty($letterpad['signature_image']) && file_exists(FCPATH . 'assets/signatures/' . $letterpad['signature_image'])) {
+                @unlink(FCPATH . 'assets/signatures/' . $letterpad['signature_image']);
+            }
             $this->letterpadModel->delete($id);
             return redirect()->to(base_url('admin/letterpad'))->with('success', 'Letter Pad document deleted successfully.');
         }

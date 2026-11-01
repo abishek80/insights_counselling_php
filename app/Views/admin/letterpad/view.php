@@ -248,6 +248,23 @@
             font-size: 10.5pt;
             font-weight: 700;
             color: #2e2a70;
+            margin-bottom: 2px;
+        }
+
+        .sign-signature-wrap {
+            margin-bottom: -5px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .sign-signature-img {
+            max-height: 95px;
+            max-width: 250px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: left;
+            display: block;
         }
 
         /* Print Settings */
@@ -379,27 +396,29 @@
                 <!-- 4. DOCUMENT SIGN-OFF (REGARDS / PROVIDER): Left Aligned at Bottom -->
                 <?php 
                     $closing = !empty($letterpad['regards_closing']) ? trim($letterpad['regards_closing']) : '';
-                    $closingDisplay = !empty($closing) ? rtrim($closing, ',: ') . ' :' : '';
+                    $closingDisplay = !empty($closing) ? rtrim($closing) : '';
                     $regardsName = !empty($letterpad['provider_name']) ? trim($letterpad['provider_name']) : (!empty($letterpad['regards_name']) ? trim($letterpad['regards_name']) : '');
                     $regardsRole = !empty($letterpad['provider_designation']) ? trim($letterpad['provider_designation']) : (!empty($letterpad['regards_role']) ? trim($letterpad['regards_role']) : '');
-                    $regardsLocation = !empty($letterpad['location']) ? trim($letterpad['location']) : '';
-                    $hasSignOff = !empty($closing) || !empty($regardsName) || !empty($regardsRole) || !empty($regardsLocation);
+                    $hasSignature = !empty($letterpad['signature_image']) && file_exists(FCPATH . 'assets/signatures/' . $letterpad['signature_image']);
+                    $hasSignOff = !empty($closing) || !empty($regardsName) || !empty($regardsRole) || $hasSignature;
                 ?>
                 <?php if ($hasSignOff): ?>
                 <div class="doc-sign-off">
                     <div class="sign-box">
+                        <?php if ($hasSignature): ?>
+                            <div class="sign-signature-wrap">
+                                <img src="<?= base_url('assets/signatures/' . $letterpad['signature_image']) ?>" class="sign-signature-img" alt="Authorized Signature">
+                            </div>
+                        <?php endif; ?>
                         <?php if (!empty($closingDisplay)): ?>
                             <div class="sign-closing"><?= esc($closingDisplay) ?></div>
                         <?php endif; ?>
                         <div class="sign-details">
                             <?php if (!empty($regardsName)): ?>
-                                <div class="sign-line-text"><?= esc(rtrim($regardsName, '.')) ?>.</div>
+                                <div class="sign-line-text"><?= esc(rtrim($regardsName, '.')) ?></div>
                             <?php endif; ?>
                             <?php if (!empty($regardsRole)): ?>
-                                <div class="sign-line-text"><?= esc(rtrim($regardsRole, '.')) ?>.</div>
-                            <?php endif; ?>
-                            <?php if (!empty($regardsLocation)): ?>
-                                <div class="sign-line-text"><?= esc(rtrim($regardsLocation, '.')) ?>.</div>
+                                <div class="sign-line-text"><?= esc(rtrim($regardsRole, '.')) ?></div>
                             <?php endif; ?>
                         </div>
                     </div>

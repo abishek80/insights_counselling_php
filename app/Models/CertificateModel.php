@@ -21,7 +21,8 @@ class CertificateModel extends Model
         'duration',
         'issue_date',
         'provider_name',
-        'provider_designation'
+        'provider_designation',
+        'signature_image'
     ];
 
     // Dates

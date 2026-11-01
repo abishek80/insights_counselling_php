@@ -231,12 +231,34 @@
         .cert-signatory {
             position: absolute;
             top: 81.5%;
-            left: 67.2%;
+            left: 65%;
             text-align: left;
-            background-color: #ffffff;
+            background-color: transparent;
             padding: 0 8px 0 0;
             line-height: 1.3;
             min-width: 220px;
+        }
+
+        .cert-signatory.has-signature {
+            top: 72.8%;
+        }
+
+        .cert-signature-container {
+            height: 60px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+        }
+
+        .cert-signature-img {
+            max-height: 90px;
+            max-width: 240px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            object-position: left;
+            display: block;
+            margin-bottom: -4px;
         }
 
         .cert-provider-name {
@@ -381,8 +403,14 @@
             <?php 
                 $providerName = !empty($certificate['provider_name']) ? $certificate['provider_name'] : 'MRS. LEKHA EDWIN';
                 $providerRole = !empty($certificate['provider_designation']) ? $certificate['provider_designation'] : 'Counseling Psychologist';
+                $hasSignature = !empty($certificate['signature_image']) && file_exists(FCPATH . 'assets/signatures/' . $certificate['signature_image']);
             ?>
-            <div class="cert-signatory">
+            <div class="cert-signatory <?= $hasSignature ? 'has-signature' : '' ?>">
+                <?php if ($hasSignature): ?>
+                    <div class="cert-signature-container">
+                        <img src="<?= base_url('assets/signatures/' . $certificate['signature_image']) ?>" class="cert-signature-img" alt="Authorized Signature">
+                    </div>
+                <?php endif; ?>
                 <div class="cert-provider-name"><?= esc($providerName) ?></div>
                 <div class="cert-provider-role"><?= esc($providerRole) ?></div>
             </div>

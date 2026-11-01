@@ -21,6 +21,7 @@ class LetterpadModel extends Model
         'regards_role',
         'provider_name',
         'provider_designation',
+        'signature_image',
         'regards_closing',
         'description',
         'reference_no',
